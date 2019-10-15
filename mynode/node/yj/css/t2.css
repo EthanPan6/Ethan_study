@@ -1,0 +1,14 @@
+.vertical-text {
+  writing-mode: vertical-rl;
+}
+.vertical-text h3 {
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #d60f5c;
+}
+.vertical-text p {
+  line-height: 30px;
+  letter-spacing: 7px;
+  color: #ee1166;
+}

@@ -1,0 +1,9 @@
+.reverse-text {
+  word-break: break-all;
+  direction: rtl;
+  font-weight: bold;
+  font-size: 30px;
+  color: #f13f84;
+  width: 400px;
+  letter-spacing: -70px;
+}
