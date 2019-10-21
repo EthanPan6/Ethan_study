@@ -1,0 +1,15 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "description": "db",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index",
+    "start": "mongod --dbpath F:/homework/github/Ethan_study/mynode/node/mymg/database"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mongodb": "^3.3.3"
+  }
+}
