@@ -8,15 +8,15 @@ fs.readFile('sample.js', (err, data) => {
         var str = data.toString()
 
         var reg1 = /^\/\/.*$/igm;//js单行注释
-        // var reg2 = /\/\*(.|\n)*\*\//igm;//js多行注释
+        var reg2 = /\/\*(.|\n)*\*\//igm;//js多行注释
         var reg2 = /^\/\*(.|\r\n)*\*\/$/igm;//js多行注释
         //  windows的换行是/r/n
 
-        var reg3 = /console\.log\(.*?\)/g;//打印信息
+        // var reg3 = /console\.log\(.*?\)/g;//打印信息
 
         var reg4 = /;(?!\s*\n*\s*\()/g;//分号
-        //（、[、+、-、和/  这五个字符开始的语句，那么最好前面不要省略分号。
-        
+        //(、[、+、-、和/  这五个字符开始的语句，那么最好前面不要省略分号。
+
         // var reg5 = /\s*\n\s*\(/g;//换行
         // 换行+去空格(分号)??编译错误
         //在return、throw、break、continue、++或--的参数之前绝不能换行
