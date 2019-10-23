@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="./angular.js"></script>
+</head>
+
+<body>
+
+    <div ng-app="">
+        <p>我的第一个表达式： {{ 5 + 5 }}</p>
+    </div>
+
+</body>
+<script>
+    function I(b) {
+        return function () {
+            var a = arguments[0], c;
+            c = "[" + (b ? b + ":" : "") + a + "] http://errors.angularjs.org/1.4.6/" + (b ? b + "/" : "") + a;
+            for (a = 1; a < arguments.length; a++) {
+                c = c + (1 == a ? "?" : "&") + "p" + (a - 1) + "=";
+                var d = encodeURIComponent,
+                    e;
+                e = arguments[a];
+                e = "function" == typeof e ? e.toString().replace(/ \{[\s\S]*$/, "") : "undefined" == typeof e ?
+                    "undefined" : "string" != typeof e ? JSON.stringify(e) : e;
+                c += d(e)
+            }
+            return Error(c)
+        }
+    }
+
+    var b = 99
+    var s = b ? b + ":" : ""
+    console.log(s);
+</script>
+
+</html>
