@@ -1,0 +1,6 @@
+<template>
+    <p name="yao">hello world
+        <span style="color:red">{name}</span>
+        <span>{model}</span>
+    </p>
+</template>

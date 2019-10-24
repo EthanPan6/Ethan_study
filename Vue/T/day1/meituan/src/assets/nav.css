@@ -1,0 +1,149 @@
+.navbar {
+    height: 1.01rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    position: relative;
+    background-image: linear-gradient(135deg, #FFD000 0%, #FFBD00 100%);
+    border: none;
+}
+
+.navbar .nav-city {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-family: PingFangSC-Medium;
+    font-size: 0.28rem;
+    color: #222222;
+    margin: 0.31rem 0 0.31rem 0.37rem;
+}
+
+.navbar .box-search {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    line-height: .64rem;
+    -webkit-box-sizing: border-box;
+    position: relative;
+    margin-top: .2rem;
+    opacity: 0.9;
+    background: #FFFFFF;
+    border-radius: 0.18rem;
+    width: 4.85rem;
+    height: 0.64rem;
+    color: #999999;
+}
+
+.navbar .box-search span {
+    font-size: .26rem;
+    box-sizing: border-box;
+    width: 100%;
+    color: #999999;
+    padding-left: 0rem;
+    display: contents;
+}
+
+.nav-city img.icn_down {
+    width: 0.16rem;
+    height: 0.09rem;
+    padding-right: 0.315rem;
+    margin-left: -0.1rem;
+    margin-top: -0.07rem;
+}
+
+.nav-wrap-right img.icn_mine {
+    width: 0.48rem;
+    height: 0.48rem;
+}
+
+a.react img.icn_search {
+    width: 0.28rem;
+    height: 0.28rem;
+    padding: 0.15rem 0.13rem 0.16rem 0.27rem;
+}
+
+a.react .nav-btn img.icn_home {
+    width: 0.48rem;
+    height: 0.48rem;
+}
+
+a.back img.icn_back {
+    width: 0.2rem;
+    height: 0.36rem;
+}
+
+.navbar .h1.nav-header {
+    font-family: PingFangSC-Regular;
+    font-size: 0.32rem;
+    color: #222222;
+}
+
+.nav-btn img.icn_search_2 {
+    width: 0.48rem;
+    height: 0.48rem;
+    padding-right: 0.2rem;
+}
+
+.nav-btn img.icn_edit {
+    width: 0.48rem;
+    height: 0.48rem;
+}
+
+.nav-btn img.icn_menu {
+    width: 0.48rem;
+    height: 0.48rem;
+}
+
+img.icn_drop_home,
+img.icn_drop_mine,
+img.icn_drop_search {
+    width: 0.48rem;
+    height: 0.48rem;
+}
+
+.navbar .nav-dropdown {
+    position: absolute;
+    right: .04rem;
+    top: 1rem;
+    width: 2rem;
+    opacity: 1;
+    -webkit-transition: height .1s;
+    background: #FFFFFF;
+    color: #222222;
+    box-shadow: 0 0.12rem 0.6rem 0 rgba(196, 196, 196, 0.60);
+    border-radius: 0.1rem;
+    overflow: visible;
+    z-index: 100;
+    display: none;
+}
+
+.nav-dropdown li {
+    height: .83rem;
+    line-height: .83rem;
+    border-bottom: none;
+    text-align: center;
+}
+
+.nav-dropdown.active {
+    display: block !important;
+    height: 2.5rem;
+    width: 2rem;
+}
+
+.navbar .nav-dropdown:before {
+    content: "";
+    background-image: url('https://p0.meituan.net/travelcube/dc0f73a6ecc53ad44da9d5bc10ceff96421.png');
+    background-size: contain;
+    display: block;
+    width: 0.38rem;
+    height: 0.12rem;
+    position: absolute;
+    top: -0.12rem;
+    right: 0.2rem;
+    box-shadow: 0 0 0 0 rgba(196, 196, 196, 0.60);
+    border-radius: 0.05rem;
+}
+
+.icn_collection,
+.icn_nocollection {
+    width: .48rem;
+    height: .48rem;
+}

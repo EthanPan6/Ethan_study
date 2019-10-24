@@ -13,5 +13,10 @@
   "license": "ISC",
   "devDependencies": {
     "raw-loader": "^3.1.0"
+  },
+  "dependencies": {
+    "css-loader": "^3.2.0",
+    "html-loader": "^0.5.5",
+    "style-loader": "^1.0.0"
   }
 }

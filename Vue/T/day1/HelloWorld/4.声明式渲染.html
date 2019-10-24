@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- View -->
+    <div id="app">
+        <!-- view的作用域 -->
+        <p>{{name}}</p>
+    </div>
+    <p>{{name}}</p>
+    <script src="./vue.js"></script>
+    <script>
+        // vm拥有多个实例属性
+        const vm = new window.Vue({
+            // V
+            el: "#app",
+            // M
+            data: {
+                name: 'yao'
+            }
+        })
+    </script>
+    <!-- 数据 视图分开管理 数据驱动视图 -->
+</body>
+</html>
