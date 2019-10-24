@@ -10,5 +10,8 @@
     "webpack"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "raw-loader": "^3.1.0"
+  }
 }

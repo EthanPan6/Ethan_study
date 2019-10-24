@@ -97,6 +97,18 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 
 /***/ }),
 
+/***/ "./src/assets/test.txt":
+/*!*****************************!*\
+  !*** ./src/assets/test.txt ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"<!DOCTYPE html>\\r\\n<html lang=\\\"en\\\">\\r\\n\\r\\n<head>\\r\\n    <meta charset=\\\"UTF-8\\\">\\r\\n    <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\r\\n    <meta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"ie=edge\\\">\\r\\n    <title>test</title>\\r\\n\\r\\n</head>\\r\\n\\r\\n<body>\\r\\n\\r\\n</body>\\r\\n\\r\\n\\r\\n</html>\");\n\n//# sourceURL=webpack:///./src/assets/test.txt?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -104,7 +116,7 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const $ = __webpack_require__(/*! jquery */ \"./node_modules/_jquery@3.4.1@jquery/dist/jquery.js\")\r\n// import $ from 'jquery'\r\n// import 'weui'\r\n// // require('weui')\r\n// // 把样式文件当作模块引入到代码里面\r\n// import './assets/styles.scss'\r\n// import header from './template/header.html'\r\n// import search from './template/search.html'\r\n// import panel from './template/panel.html'\r\n// const styles = require('./assets/styles.scss')\r\n// const header = require('./template/header.html')\r\n// const search = require('./template/search.html')\r\n// const panel = require('./template/panel.html')\r\n// $('body').html(header+search+panel)\r\n$('body').html('header+search+panel')\r\n\r\n// es6  规范\r\n// import template from './assets/template.txt'\r\n// es5 commonn.js规范\r\n// const template = require('./assets/template.txt')\r\n// console.log(template.default)\r\n// const fs = require('fs')\r\n// $('body').html(template.default)\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const $ = __webpack_require__(/*! jquery */ \"./node_modules/_jquery@3.4.1@jquery/dist/jquery.js\")\r\n// const styles = require('./assets/style.css')\r\nconst test = __webpack_require__(/*! ./assets/test.txt */ \"./src/assets/test.txt\")\r\n$('body').html(test.default)\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

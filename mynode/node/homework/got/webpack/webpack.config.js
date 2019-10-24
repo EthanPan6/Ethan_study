@@ -11,7 +11,12 @@ module.exports = {
 
     output: {
         //出口
-        path: path.resolve(__dirname, 'dist'),//输出路径
+        path: path.resolve(__dirname, './dist'),//输出路径
         filename: 'bundle.js'//输出文件名(bundle:打包),打包后的模块文件
+    },
+    module: {
+        rules: [
+            { test: /\.txt$/, use: 'raw-loader' }
+        ]
     }
 };
