@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script src="./vue.js"></script>
+    <script>
+        // v-if的用出就是接受一个布尔值，如果为真，增加，否则删除
+        new Vue({
+            el: '#demo',
+            // M 基本类型 特殊类型(对象，数组，函数)
+            data: {
+                bool: !0,
+
+            },
+            methods: {
+                test: function () {
+                    console.log('触发了点击事件')
+                }
+            },
+            template: `
+                <div>
+                    <button v-on:click="test()">ok</button>
+                    <button v-on:click="test">ok</button>
+                    <button @click="test">ok</button>
+                </div>
+            `,
+
+        })
+    </script>
+</body>
+
+</html>

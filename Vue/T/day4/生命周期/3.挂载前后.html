@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            // 选项
+            el: '#demo',
+            data: {
+                name: 'yao'
+            },
+            // template: `
+            //     <div v-if="true">
+            //         {{name}}
+            //     </div>
+            // `,
+            render(h) {
+                console.log('--------------render---------------')
+                let virtualdom = h('div', null, this.name)
+                // 虚拟DOM对象，是该函数接受新的Model之后执行得到的对象
+                console.log(virtualdom)
+                return virtualdom
+            },
+            // 创建前 没M没有V(虚拟DOM真实DOM)
+            beforeCreate() {
+                console.log('--------------beforeCreate---------------')
+                console.log('View', this.$el)
+                console.log('Model', this.$data)
+            },
+            // 创建后 修改数据一般发生created里面 ajax在这里触发，因为这里是最早拿到数据
+            created() {
+                console.log('--------------created---------------')
+                console.log('View', this.$el)
+                console.log('Model', this.$data)
+            },
+            // 挂载前 没M没有V(虚拟DOM真实DOM) 读取了模板，但是没更新上去，编译模板
+            beforeMount() {
+                console.log('--------------beforeMount---------------')
+                console.log('View', this.$el)
+                console.log('Model', this.$data)
+            },
+            // 挂载后 V和M都更新完毕 V已经完全更新了，所以一般把DOM的操作放在这里
+            mounted() {
+                console.log('--------------mounted---------------')
+                console.log('View', this.$el)
+                console.log('Model', this.$data)
+            }
+        })
+    </script>
+</body>
+
+</html>

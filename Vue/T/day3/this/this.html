@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log(this)
+        // function a(){
+        //     console.log(this)
+        //     function b(){
+        //         console.log(this)
+        //     }
+        //     b()
+        // }
+        // a()
+        
+        // (function(a,b){
+        //     a()
+        //     console.log(this)
+        // })(
+        //     function(){
+        //         function c(){
+        //             console.log(this)
+        //         }
+        //         c()
+        //         console.log(this)
+        //     },
+        //     function(){}
+        // )
+
+        function Vue(option){
+            this.el = option.el,
+            this.data = option.data
+        }
+        const vm = new Vue({
+            el:"#demo",
+            data:{
+                name: 'yao'
+            },
+            methods:{
+                a(){
+                    function b(){
+                        console.log(this)
+                    }
+                    b()
+                    console.log(this)
+                }
+            }
+        })
+        console.log(vm.el)
+    </script>
+</body>
+
+</html>

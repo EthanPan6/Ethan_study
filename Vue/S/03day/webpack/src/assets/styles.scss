@@ -1,0 +1,25 @@
+$size: 50px;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    line-height: $size;
+    width: 100%;
+    height: $size;
+    background-color: red;
+    color: white
+}
+
+.weui-tabbar {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.weui-panel {
+    margin-bottom: 60px;
+}

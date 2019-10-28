@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        // 创建一个“子类” 拓展继承
+        // 基于Vue去拓展一个子类，该子类是一个组件
+        const Header = Vue.extend({
+            // el不可用
+            // el
+            // data必须是一个函数
+            // 浅拷贝指针，指向，每一个组件不能指向同一个数据源
+            // 用函数，在每次复用的时候，重新创建一份新的数据源
+            data(){
+                return {
+                    name: "测试使用的"
+                }
+            },
+            // 选项
+            template: `<div>
+                组件1
+                <p>{{name}}</p>
+            </div>`,
+        })
+        // 注册使用 名字为Header
+        Vue.component('Yao', Header)
+        // 注册一个组件
+        new Vue({
+            el: "#demo",
+            data:{
+                name: "测试使用的"
+            },
+            template: `
+                <div>
+                    <Yao></Yao>
+                    <Yao></Yao>
+                    <Yao></Yao>
+                    <Yao></Yao>
+                    <Yao></Yao>
+                </div>
+            `
+        })
+    </script>
+</body>
+
+</html>

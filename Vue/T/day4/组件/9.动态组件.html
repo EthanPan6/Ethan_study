@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            width: 100%;
+            line-height: 50px;
+            height: 50px;
+            background-color: red;
+            color: white
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        // <component :is="componentId"></component>是Vue的内置标签
+        const Header = Vue.extend({
+            // 属性值，获取该标签的属性值
+            // 继承老爸的数据
+            props: ['jjjjjj'],
+            // 自己的数据
+            data() {
+                return {
+                    title: "微信"
+                }
+            },
+            // 选项
+            template: `<header :style="{backgroundColor:jjjjjj}">
+                {{title}}
+            </header>`,
+            created() {
+                console.log('头部创建了')
+            }
+        })
+
+        const Footer = Vue.extend({
+            data() {
+                return {
+                    title: "底部组件"
+                }
+            },
+            // 选项
+            template: `<header :style="{backgroundColor:'blue'}">
+                <input v-model="title" />
+                {{title}}
+            </header>`,
+            activated() {
+                console.log('底部组件活跃')
+            },
+            deactivated() {
+                console.log('底部组件不活跃')
+            },
+            beforeDestroy() {
+                console.log("底部组件销毁")
+            }
+        })
+        // 选项卡
+        // 动态组件
+        // component取决于is的组件名字
+        // 如果有keep-alive，那组件将永远不会销毁
+        // 内存不会回收，真实DOM消失了，但是虚拟DOM不消失
+        new Vue({
+            el: "#demo",
+            data: {
+                componentName: "Header"
+            },
+            template: `
+                <div>
+                    <keep-alive>
+                        <component :is="componentName"></component>
+                    </keep-alive>
+                    <button @click="toggle('Header')">头部</button>
+                    <button @click="toggle('Footer')">底部</button>
+                </div>
+            `,
+            methods: {
+                toggle(componentName) {
+                    this.componentName = componentName
+                }
+            },
+            components: {
+                Header,
+                Footer
+            }
+        })
+    </script>
+</body>
+
+</html>

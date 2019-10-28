@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .cp1{
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const Child = Vue.extend({
+            data(){
+                return {
+                    name: "测试使用的2"
+                }
+            },
+            // 选项
+            template: `<div>
+                组件2
+                <p>{{name}}</p>
+            </div>`,
+        })
+        const Header = Vue.extend({
+            data(){
+                return {
+                    name: "测试使用的"
+                }
+            },
+            // 选项
+            template: `<div>
+                组件1
+                <p>{{name}}</p>
+                <Child />
+            </div>`,
+            components:{
+                Child
+            }
+        })
+        new Vue({
+            el: "#demo",
+            data:{
+                name: "测试使用的"
+            },
+            template: `
+                <div class="cp1">
+                    <Yao-yi-yao style="color:red" />
+                </div>
+            `,
+            components:{
+                'Yao-yi-yao': Header
+            }
+        })
+    </script>
+</body>
+
+</html>

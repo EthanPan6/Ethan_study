@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script src="./Vue.js"></script>
+    <script>
+        //不要使用箭头函数
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: 'lisi'
+            },
+            // template: `
+            // <div>
+            //     {{name}}
+            // </div>`,
+            render(h) {
+                console.log('************ render *****************');
+                //在beforeMount()与mounted()间触发
+                let virtualdom = h('div', null, this.name)
+                return virtualdom
+            },
+            beforeCreate() {
+                console.log('************ beforeCreate *****************');
+                console.log('V:', this.$el);//undefined
+                console.log('M:', this.$data);//undefined
+            },
+            created() {
+                console.log('************ created *****************');
+                console.log('V:', this.$el);//undefined
+                console.log('M:', this.$data);//Object
+                //ajax在这里触发
+                //最早获得数据的地方,可以修改数据了
+            },
+            beforeMount() {
+                console.log('************ beforeMount *****************');
+                console.log('V:', this.$el);//<div id="app"></div>
+                console.log('M:', this.$data);//Object
+                //只有虚拟DOM,虚拟DOM未完成
+            },
+            mounted() {
+                console.log('************ mounted *****************');
+                console.log('V:', this.$el);//<div>lisi</div>
+                console.log('M:', this.$data);//Object
+                //M&&V挂载完毕,真实DOM可以操作
+            },
+            methos: {
+                test() {
+                    console.log('1');
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        <p>{{name+'ing'}}</p>
+        <p>{{nameComputed}}</p>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: "#demo",
+            data: {
+                name: 'see'
+            },
+            // 计算属性它能缓存数据，开了新的内存去缓存
+            // 结果会被缓存的
+            computed: {
+                // 计算后的属性，不能跟data属性一样
+                // 上面用了name下面就不要用name
+                // nameComputed计算结果： 计算公式()=>{}
+                nameComputed: function () {
+                    return this.name + 'ing'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

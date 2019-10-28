@@ -1,0 +1,16 @@
+<div :class="['weui-search-bar',
+{'weui-search-bar_focusing':searchM.isFocuse}]" id="searchBar">
+    <form class="weui-search-bar__form">
+        <div class="weui-search-bar__box">
+            <i class="weui-icon-search"></i>
+            <input type="search" v-model="searchM.keyword" class="weui-search-bar__input" id="searchInput"
+                placeholder="搜索" required="">
+            <a href="javascript:" @click="clear" class="weui-icon-clear" id="searchClear"></a>
+        </div>
+        <label class="weui-search-bar__label" @click="focus" id="searchText">
+            <i class="weui-icon-search"></i>
+            <span>搜索</span>
+        </label>
+    </form>
+    <a href="javascript:" @click="cancel" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+</div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <p>{{name}}</p>
+        <button @click="a">ok</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#demo",
+            data:{
+                name: 'yao'
+            },
+            methods:{
+                a(){
+                    this.name = 'jing'
+                    // vm.name = 'jing'
+                    // true
+                    console.log(this===vm);
+                    [1,2,3].filter(function(item){
+                        console.log(this)
+                    });
+                    console.log(this)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

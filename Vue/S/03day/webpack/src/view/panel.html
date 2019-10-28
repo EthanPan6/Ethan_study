@@ -1,0 +1,20 @@
+<div class="weui-panel weui-panel_access">
+    <div class="weui-panel__hd">图文组合列表</div>
+    <div class="weui-panel__bd">
+        <a v-for="n in panelM.news" href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd" v-if="n.has_image">
+                <img class="weui-media-box__thumb" :src="n.image_url" alt="">
+            </div>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title" v-text="n.title"></h4>
+                <p class="weui-media-box__desc" v-text="n.abstract"></p>
+            </div>
+        </a>
+    </div>
+    <div class="weui-panel__ft">
+        <a @click="more" href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+            <div class="weui-cell__bd">查看更多</div>
+            <span class="weui-cell__ft"></span>
+        </a>
+    </div>
+</div>

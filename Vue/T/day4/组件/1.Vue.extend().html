@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        // 创建一个“子类” 拓展继承
+        // 基于Vue去拓展一个子类，该子类是一个组件
+        const Header = Vue.extend({
+            // 选项
+            template:`<div>组件1</div>`,
+            // computed,
+            // watch:{},
+            // created(){},
+            // methods:{},
+            // data(){}
+        })
+        new Header().$mount('#demo')
+        console.log(new Header)
+        // 注册一个组件
+        // new Vue({
+        //     el:"#demo",
+        //     template:``
+        // })
+    </script>
+</body>
+</html>

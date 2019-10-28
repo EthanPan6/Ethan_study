@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        {{name}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        // 构造函数
+        // 构造函数在实例化，会经历每一个周期，你可以把对应的逻辑放在对应的周期
+        // 把逻辑以一种面向对象的形式写在选项里面
+        var vm = new Vue({
+            // 选项
+            el: '#demo',
+            data: {
+                name: 'yao'
+            },
+            created() {
+                setTimeout(() => {
+                    vm.name = 'jing'
+                }, 2000)
+            },
+            // this === vm
+        })
+        // setTimeout(() => {
+        //     vm.name = 'jing'
+        // }, 2000)
+        // console.log(vm)
+    </script>
+</body>
+
+</html>

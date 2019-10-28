@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo" style="height: 2000px;">
+        <button @click="destroy">触发销毁</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            // 选项
+            el: '#demo',
+            data: {
+                name: 'yao',
+                timer: null
+            },
+            // 创建前 没M没有V(虚拟DOM真实DOM)
+            beforeCreate() {
+                console.log('--------------beforeCreate---------------')
+                console.log('View', this.$el)
+                console.log('Model', this.$data)
+            },
+            // 创建后
+            created() {
+                console.log('--------------created---------------')
+                console.log('View', this.$el)
+                console.log('Model', this.$data)
+                // 定时器是Vue实例化后触发的，如果你现在销毁的时候不清楚定时器
+                this.timer = window.setInterval(() => {
+                    console.log(1)
+                }, 1000)
+                window.onscroll = () => {
+                    console.log('滚动了')
+                }
+                window.aname = 'yao'
+            },
+            // 创建前 没M没有V(虚拟DOM真实DOM)
+            beforeDestroy() {
+                console.log('--------------beforeDestroy---------------')
+                console.log('View', this.$el)
+                console.log('Model', this.$data)
+                // 清楚滚动事件
+                window.onscroll = null
+                // 清除定时器
+                window.clearInterval(this.timer)
+                // 删除全局变量 释放内存
+                // 手动垃圾回收
+                window.aname = null
+                delete window.aname
+                delete window.Vue
+                delete window.$
+                delete window.document.cookie
+                delete window.alert
+            },
+            // 创建后
+            destroyed() {
+                console.log('--------------destroyed---------------')
+                console.log('View', this.$el)
+                console.log('Model', this.$data)
+
+            },
+            methods: {
+                destroy() {
+                    console.log(this.timer)
+                    this.$destroy()
+                }
+            }
+        })
+
+        // 全局变量
+        // 局部变量 自动垃圾回收
+    </script>
+</body>
+
+</html>

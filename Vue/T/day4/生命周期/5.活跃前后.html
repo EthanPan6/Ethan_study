@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            // 选项
+            el: '#demo',
+            data: {
+                name: 'yao'
+            },
+            render(h) {
+                console.log('--------------render---------------')
+                let virtualdom = h('div', null, this.name)
+                // 虚拟DOM对象，是该函数接受新的Model之后执行得到的对象
+                console.log(virtualdom)
+                return virtualdom
+            }
+        })
+    </script>
+</body>
+</html>

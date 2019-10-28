@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <script src="./vue.js"></script>
+    <script>
+        // v-for可以循环它所在的标签
+        new Vue({
+            el: '#demo',
+            // M
+            data: {
+                arr: [1, 2, 3],
+                arr2: [{
+                    name: 'yao',
+                    skill: ['ps']
+                }, {
+                    name: 'jing',
+                    skill: ['js', 'html', 'ts']
+                }, {
+                    name: 'lin',
+                    skill: ['sass', 'less']
+                }],
+                name: 'lin'
+            },
+            template: `
+                <div>
+                    <p>1.v-for</p>
+                    <p v-for="a in arr">{{a}}</p>
+
+                    <ul v-for="(a2,index) in arr2" :key="index" v-if="a2.name===name">
+                        {{a2.name}}
+                        <li v-for="s in a2.skill">{{s}}</li>
+                    </ul>
+                </div>
+            `
+        })
+    </script>
+</body>
+
+</html>
