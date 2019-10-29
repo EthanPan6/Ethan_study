@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            width: 100%;
+            line-height: 50px;
+            height: 50px;
+            background-color: red;
+            color: white
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const Header = Vue.extend({
+            // 属性值，获取该标签的属性值
+            // 继承老爸的数据
+            props:['name','jjjjjj'],
+            // 自己的数据
+            data() {
+                return {
+                    title: "微信"
+                }
+            },
+            // 选项
+            template: `<header :style="{backgroundColor:jjjjjj}">
+                {{name}}
+            </header>`
+        })
+        new Vue({
+            el: "#demo",
+            data: {
+                name: "微信"
+            },
+            template: `
+                <div>
+                    <Header :name="name" jjjjjj="green" />
+                    <Header name="支付宝" jjjjjj="red" />
+                    <Header />
+                </div>
+            `,
+            components: {
+                Header
+            }
+        })
+    </script>
+</body>
+</html>

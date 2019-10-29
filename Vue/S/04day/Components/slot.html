@@ -14,43 +14,39 @@
     </div>
     <script src="./Vue.js"></script>
     <script>
-        const Son = Vue.extend({
-            //组件内的data必须是函数,实现深拷贝,保证数据间的相互独立
-            data() {
-                return {
-                    name: 'Son',
-
-                }
-            },
-            template: ` <div><p>{{name}}</p></div>`,
-        })
         const Father = Vue.extend({
             data() {
                 return {
                     name: 'Father'
-
                 }
             },
-            template: ` <div><p>{{name}}</p>
-                <Son/>
-                </div>`,
+            props: ['attr', 'attr2'],
+            //从父组件获取属性为attr的属性值,还可以获取到设置这个属性的标签的内容,再通过<slot>标签插入
+            template: ` 
+            <div>
+                <p>{{name}}</p>
+                <span><slot/></span>
+            </div>`,
             components: {
-                Son
             }
         })
         const vm = new Vue({
             el: '#app',
             data: {
-
+                name: '王老五'
             },
             template: ` <div>
-                <ET name:'zs'></ET>
-                <ET/>
+                    <Father attr2="s0">
+                        你好
+                    </Father> 
+                    <Father attr2="s1">
+                        大家好
+                    </Father>
                 </div>`,
+            //设置一个拥有attr属性的标签,用来传值给子组件
             components: {
-                'ET': Father
+                Father
             }
-
         });
 
 
