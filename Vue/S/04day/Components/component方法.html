@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script src="./Vue.js"></script>
+    <script>
+        //方式一
+        //注册组件(子类)
+        const Header = Vue.extend({//全局注册
+            //组件内的data必须是函数,实现深拷贝,保证数据间的相互独立
+            data() {
+                return {
+                    name: 'lisi',
+                    age: 18
+                }
+            },
+            template: ` <div>{{name+age}}</div>`
+
+        })
+        Vue.component('ET', Header)//组件别名(自定义标签名)和实例化的组件名
+
+        //方式二
+        Vue.component('ET', {
+            data() {
+                return {
+                    name: 'lisi',
+                    age: 18
+                }
+            },
+            template: ` <div>{{name+age}}</div>`
+        })
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+            },
+            template: ` <div>
+                <ET></ET>
+                <ET/>
+                </div>`,
+        });
+
+
+    </script>
+</body>
+
+</html>

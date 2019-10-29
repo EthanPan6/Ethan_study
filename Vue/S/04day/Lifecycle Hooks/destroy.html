@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{name}}
+    </div>
+    <script src="./Vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: 'lisi',
+                timer: null
+            },
+            template: `
+            <div>
+                <button @click='destroy'>click to destroy</button>  
+            </div>
+            `,
+            beforeCreate() {
+                console.log('--------------beforeCreate---------------')
+                console.log('View', this.$el)
+                console.log('Model', this.$data)
+
+            }
+            ,
+            created() {
+                console.log('--------------created---------------')
+                console.log('View', this.$el)
+                console.log('Model', this.$data)
+                this.timer = setInterval(() => {
+                    console.log('1');
+                }, 500)
+            },
+            beforeDestroy() {
+                console.log('--------------beforeDestroy---------------')
+                console.log('View', this.$el.outerHTML)
+                console.log('Model', this.$data)
+                clearInterval(this.timer)
+            }
+            ,
+            destroyed() {
+                console.log('--------------destroyed---------------')
+                console.log('View', this.$el.outerHTML)
+                console.log('Model', this.$data)
+                // 一般用在手动销毁全局变量,懒加载,滚动事件
+                //
+            },
+            methods: {
+                destroy() {
+                    this.$destroy()
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

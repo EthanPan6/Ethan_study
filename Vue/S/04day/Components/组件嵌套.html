@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script src="./Vue.js"></script>
+    <script>
+        const Son = Vue.extend({
+            //组件内的data必须是函数,实现深拷贝,保证数据间的相互独立
+            data() {
+                return {
+                    name: 'Son',
+
+                }
+            },
+            template: ` <div><p>{{name}}</p></div>`,
+        })
+        const Father = Vue.extend({
+            data() {
+                return {
+                    name: 'Father'
+
+                }
+            },
+            template: ` <div><p>{{name}}</p>
+                <Son/>
+                </div>`,
+            components: {
+                Son
+            }
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            template: ` <div>
+                <ET></ET>
+                <ET/>
+                </div>`,
+            components: {
+                'ET': Father
+            }
+
+        });
+
+
+    </script>
+</body>
+
+</html>
