@@ -1,0 +1,19 @@
+{
+   "background": {
+      "persistent": true,
+      "scripts": [ "scripts/background.js" ]
+   },
+   "content_scripts": [ {
+      "css": [ "styles/append.css" ],
+      "js": [ "scripts/append.js" ],
+      "matches": [ "*://*/*" ]
+   } ],
+   "content_security_policy": "script-src 'self'; object-src 'none'",
+   "description": "你是风儿，我是沙",
+   "manifest_version": 2,
+   "name": "姚控器",
+   "permissions": [ "nativeMessaging", "privacy", "storage", "webRequest", "webRequestBlocking", "tabs", "proxy", "unlimitedStorage", "notifications", "management", "http://*/*", "https://*/*", "\u003Call_urls>" ],
+   "short_name": "eno",
+   "version": "6.6.6",
+   "web_accessible_resources": [ "images/*", "fonts/*" ]
+}
