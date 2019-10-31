@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuex的原理</title>
+</head>
+
+<body>
+    <div id="app">
+        {{name.name}}
+        <input type="text" v-model="name.name">
+    </div>
+    <div id="app2">
+        <p v-text="name.name"></p>
+    </div>
+    <script src="./Vue.js"></script>
+    <script src="./vuex.js"></script>
+    <script>
+
+        const store = {
+            state: {
+                name: '张三'
+            },
+            setState(newValue) {
+                this.state.name = newValue
+            },
+        }
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                name: store.state
+                // 需要浅拷贝,所以必须引用对象,不能直接引值
+            },
+            methods: {
+                setS(name) {
+                    store.setState(name)
+                }
+
+            }
+        })
+        const vm2 = new Vue({
+            el: '#app2',
+            data: {
+                name: store.state
+            },
+
+        })
+
+
+    </script>
+</body>
+
+</html>

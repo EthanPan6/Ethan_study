@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuex的原理</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="name" />
+    </div>
+    <div id="app2">
+        {{name}}
+    </div>
+    <script src="./Vue.js"></script>
+    <script src="./vuex.js"></script>
+    <script>
+        //两个(多个)组件共用共同的外部数据源(common),从而实现数据互通
+        //缺点:调试时(出错时),无法确定问题源头,
+        const common = {
+            name: 'Ethan'
+        }
+        const vm = new Vue({
+            el: '#app',
+            data: common,
+            // template: `
+            // <div>
+            //     hello world!
+            // </div>
+            // `
+        })
+        const vm2 = new Vue({
+            el: '#app2',
+            data: common
+        })
+
+    </script>
+</body>
+
+</html>
