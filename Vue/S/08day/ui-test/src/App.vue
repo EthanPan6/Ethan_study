@@ -1,23 +1,36 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <NavBar />
     <Search />
+    <Grid />
+    <Divider />
+    <Tabbar />
+    <Card />
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import NavBar from "./components/Header.vue";
 import Search from "./components/Search.vue";
+import Grid from "./components/Grid";
+import Tabbar from "./components/Tabbar";
+import Divider from "./components/Divider";
+import Card from "./components/Card";
 
 export default {
   name: "app",
   components: {
-    // HelloWorld
-    Search
+    NavBar,
+    Search,
+    Grid,
+    Tabbar,
+    Divider,
+    Card
   }
 };
+
 </script>
 
 <style>
 </style>
+
