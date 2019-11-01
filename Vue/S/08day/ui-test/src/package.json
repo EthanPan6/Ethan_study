@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "vant": "^2.2.10"
-  },
-  "devDependencies": {
-    "babel-plugin-import": "^1.12.2"
-  }
-}
