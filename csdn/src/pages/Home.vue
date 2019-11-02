@@ -5,13 +5,12 @@
   </div>
 </template>
 <script>
-import Search1 from "../components/Search1";
-import Tabs1 from "../components/Tabs1";
+import Search1 from "../components/Search1.vue";
+import Tabs1 from "../components/Tabs1.vue";
 export default {
-  componnet: {
+  components: {
     Search1,
     Tabs1
   }
 };
-
 </script>

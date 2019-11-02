@@ -5,7 +5,6 @@
         <van-icon name="scan" size="2em" />
       </div>
     </van-search>
-
   </div>
 </template>
 <script>
@@ -26,6 +25,7 @@ export default {
     }
   }
 };
+//csdn接口:https://so.csdn.net/so/search/s.do?q=vue
 //https://youzan.github.io/vant/?source=vuejsorg#/zh-CN/search
 //https://youzan.github.io/vant/?source=vuejsorg#/zh-CN/icon
 </script>
