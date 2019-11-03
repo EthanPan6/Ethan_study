@@ -12,7 +12,7 @@ import Mine from '../pages/Mine'
 import Recommend from '../components/Recommend'
 import Trends from '../components/Trends'
 import Safety from '../components/Safety'
-import Fontback from '../components/Fontback'
+import Frontend from '../components/Frontend'
 import Architecture from '../components/Architecture'
 import Sql from '../components/Sql'
 
@@ -37,9 +37,9 @@ const routes = [
                 name: 'safety',
                 component: Safety
             }, {
-                path: 'fontback',
-                name: 'fontback',
-                component: Fontback
+                path: 'frontend',
+                name: 'frontend',
+                component: Frontend
             }, {
                 path: 'architecture',
                 name: 'architecture',

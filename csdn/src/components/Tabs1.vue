@@ -25,6 +25,7 @@ export default {
   methods: {
     onFouce(val) {
       window.console.log(val);
+      //获取tab名,没用
       return val;
     },
     topath(index) {
@@ -37,7 +38,7 @@ export default {
           path = "trends";
           break;
         case "前端":
-          path = "fontback";
+          path = "frontend";
           break;
         case "安全":
           path = "safety";
@@ -49,6 +50,7 @@ export default {
           path = "sql";
           break;
       }
+      //同时发送axios获取相应数据
       return path;
     }
   },

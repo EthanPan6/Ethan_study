@@ -1,44 +1,64 @@
 <template>
   <div>
-    <Article v-for="(i,s) in Articles" :key="s" />
+    <div class="article-item" v-for="(i,s) in Articles" :key="s" :data-src="i.asrc">
+      <!-- :to="article"不应该用路由,应该是一个新的页面 -->
+      <h3>{{i.title}}</h3>
+      <p>{{i.essay}}</p>
+      <span>{{i.author}}</span>
+    </div>
   </div>
 </template>
 <script>
-import Article from "./Article";
 export default {
   data() {
     return {
       Articles: [
         {
-          title: "我可是title",
+          title: "我可是title1",
           essay: "我可是文章",
+          author: "我可是作者",
+          asrc: "http://www.baidu.com"
+        },
+        {
+          title: "我可是title",
+          essay: "我可是文章2",
           author: "我可是作者"
         },
         {
           title: "我可是title",
           essay: "我可是文章",
-          author: "我可是作者"
+          author: "我可是作者3"
         },
         {
-          title: "我可是title",
+          title: "我可是title4",
           essay: "我可是文章",
           author: "我可是作者"
         },
         {
           title: "我可是title",
-          essay: "我可是文章",
-          author: "我可是作者"
-        },
-        {
-          title: "我可是title",
-          essay: "我可是文章",
+          essay: "我可是文章5",
           author: "我可是作者"
         }
       ]
     };
   },
-  components: {
-    Article
-  }
+  components: {}
 };
 </script>
+<style  scoped>
+.article-item {
+  margin: 0 0.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+p {
+  font-size: 1em;
+}
+
+span {
+  font-size: 0.8em;
+}
+</style>

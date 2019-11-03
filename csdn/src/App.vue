@@ -3,17 +3,20 @@
     <keep-alive>
       <router-view />
     </keep-alive>
+    <Article />
     <Tabbar />
   </div>
 </template>
 
 <script>
 import Tabbar from "./components/Tabbar.vue";
+import Article from "./components/Article";
 
 export default {
   name: "app",
   components: {
-    Tabbar
+    Tabbar,
+    Article
   }
 };
 </script>
