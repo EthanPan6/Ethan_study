@@ -3,12 +3,18 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+//最外层
+import Main from '../pages/Main'
+import Article from '../components/Article'
+
+//二层
 import Home from '../pages/Home'
 import Study from '../pages/Study'
 import Blink from '../pages/Blink'
 import Bbs from '../pages/Bbs'
 import Mine from '../pages/Mine'
 
+//三层
 import Recommend from '../components/Recommend'
 import Trends from '../components/Trends'
 import Safety from '../components/Safety'
@@ -16,11 +22,88 @@ import Frontend from '../components/Frontend'
 import Architecture from '../components/Architecture'
 import Sql from '../components/Sql'
 
+
 const routes = [
     {
-        path: '/home',
-        name: 'home',
-        component: Home,
+        path: '/main',
+        name: 'main',
+        component: Main,
+        children: [
+            {
+                path: 'home',
+                name: 'home',
+                component: Home,
+                children: [
+                    {
+                        path: 'recommend',
+                        name: 'recommend',
+                        component: Recommend
+                    },
+                    {
+                        path: 'trends',
+                        name: 'trends',
+                        component: Trends
+                    },
+                    {
+                        path: 'safety',
+                        name: 'safety',
+                        component: Safety
+                    }, {
+                        path: 'frontend',
+                        name: 'frontend',
+                        component: Frontend
+                    }, {
+                        path: 'architecture',
+                        name: 'architecture',
+                        component: Architecture
+                    }, {
+                        path: 'sql',
+                        name: 'sql',
+                        component: Sql
+                    }
+                ]
+            },
+            {
+                path: 'blink',
+                name: 'blink',
+                component: Blink
+            },
+            {
+                path: 'bbs',
+                name: 'bbs',
+                component: Bbs
+            },
+            {
+                path: 'mine',
+                name: 'mine',
+                component: Mine
+            },
+            {
+                path: 'study',
+                name: 'study',
+                component: Study
+            }
+        ]
+    },
+    {
+        path: '/article',///:id
+        name: 'article',
+        component: Article
+    }
+
+]
+
+
+const router = new VueRouter({
+    routes,
+    // hash
+    // mode: 'history'
+})
+
+export default router
+/*
+  {
+
         children: [
             {
                 path: 'recommend',
@@ -51,33 +134,5 @@ const routes = [
             }
         ]
     },
-     {
-        path: '/blink',
-        name: 'blink',
-        component: Blink
-    }, 
-    {
-        path: '/bbs',
-        name: 'bbs',
-        component: Bbs
-    }, 
-    {
-        path: '/mine',
-        name: 'mine',
-        component: Mine
-    }, 
-    {
-        path: '/study',
-        name: 'study',
-        component: Study
-    }
-]
 
-
-const router = new VueRouter({
-    routes,
-    // hash
-    // mode: 'history'
-})
-
-export default router 
+    */
