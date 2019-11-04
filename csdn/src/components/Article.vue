@@ -5,8 +5,8 @@
       <div class="zuozhe">
         <img :src="imgurl" />
         <span>{{author}}</span>
+        <i style="color:#f00">关注</i>
         <i>私信</i>
-        <i>关注</i>
       </div>
     </div>
     <div class="main" v-html="essay"></div>
@@ -62,12 +62,12 @@ export default {
   vertical-align: middle;
   font-size: 0.8em;
   float: right;
-  padding: 0.3em;
-  margin-right: 0.3em;
-  margin-top: 0.8em;
+  padding: 0.3em 0.6em;
+  margin-right: 1.8em;
+  margin-top: 1.4em;
   border-radius: 0.2em;
   font-style: normal;
-  border: 0.1em #000 solid;
+  border: 0.1em #666 solid;
   background-color: transparent;
 }
 .artcle-item .main {
