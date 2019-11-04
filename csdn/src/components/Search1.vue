@@ -1,6 +1,9 @@
 <template>
   <div>
-    <van-search v-model="value" placeholder="请输入搜索关键词" show-action @search="onSearch">
+    <van-search v-model="value"
+     placeholder="请输入搜索关键词" 
+     show-action 
+     @search="onSearch">
       <div slot="action">
         <van-icon name="scan" size="2em" />
       </div>

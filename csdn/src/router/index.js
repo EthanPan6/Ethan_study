@@ -6,11 +6,11 @@ Vue.use(VueRouter)
 //最外层
 import Main from '../pages/Main'
 import Article from '../components/Article'
+import Search from '../pages/Search'
 
 //二层
 import Home from '../pages/Home'
 import Study from '../pages/Study'
-import Blink from '../pages/Blink'
 import Bbs from '../pages/Bbs'
 import Mine from '../pages/Mine'
 
@@ -21,6 +21,10 @@ import Safety from '../components/Safety'
 import Frontend from '../components/Frontend'
 import Architecture from '../components/Architecture'
 import Sql from '../components/Sql'
+
+
+import Jishu from '../components/Jishuqu'
+import Shenghuo from '../components/Shenghuoqu'
 
 
 const routes = [
@@ -64,14 +68,22 @@ const routes = [
                 ]
             },
             {
-                path: 'blink',
-                name: 'blink',
-                component: Blink
-            },
-            {
                 path: 'bbs',
                 name: 'bbs',
-                component: Bbs
+                component: Bbs,
+                children: [
+                    {
+                        path: 'jishu',
+                        name: 'jishu',
+                        component: Jishu,
+                    },
+                    {
+                        path: 'shenghuo',
+                        name: 'shenghuo',
+                        component: Shenghuo,
+                    }
+
+                ]
             },
             {
                 path: 'mine',
@@ -89,6 +101,11 @@ const routes = [
         path: '/article',///:id
         name: 'article',
         component: Article
+    },
+    {
+        path: '/search',
+        name: 'search',
+        component: Search
     }
 
 ]

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Search1 />
+    <router-link :to="{name:'search'}">
+      <Search1 />
+    </router-link>
+
     <Tabs1 />
   </div>
 </template>

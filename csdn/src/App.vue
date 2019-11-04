@@ -1,15 +1,19 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <!-- <keep-alive>
       <router-view />
-    </keep-alive>
+    </keep-alive>-->
+    <Edit />
   </div>
 </template>
 
 <script>
+import Edit from "./pages/Edit";
 export default {
   name: "app",
-  components: {}
+  components: {
+    Edit
+  }
 };
 </script>
 
