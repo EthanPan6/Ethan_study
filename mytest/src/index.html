@@ -5,55 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>canvas</title>
 </head>
 
 <body>
-    <script src="../node_modules/vue/dist/vue.js"></script>
-    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <canvas width="40" height="60" style="border:1px solid #000000;">
+        5465
+    </canvas>
+    <canvas width="40" height="60" style="border:1px solid #000000;">
 
-    <div id="app">
-        <h1>Hello App!</h1>
-        <p>
-            <!-- 使用 router-link 组件来导航. -->
-            <!-- 通过传入 `to` 属性指定链接. -->
-            <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-            <router-link to="/foo">Go to Foo</router-link>
-            <router-link to="/bar">Go to Bar</router-link>
-        </p>
-        <!-- 路由出口 -->
-        <!-- 路由匹配到的组件将渲染在这里 -->
-        <router-view></router-view>
-    </div>
-    <script>
-        const Foo = { template: '<div>foo</div>' }
-        const Bar = { template: '<div>bar</div>' }
+    </canvas>
+    <canvas width="40" height="60" style="border:1px solid #000000;">
 
-        // 2. 定义路由
-        // 每个路由应该映射一个组件。 其中"component" 可以是
-        // 通过 Vue.extend() 创建的组件构造器，
-        // 或者，只是一个组件配置对象。
-        // 我们晚点再讨论嵌套路由。
-        const routes = [
-            { path: '/foo', component: Foo },
-            { path: '/bar', component: Bar }
-        ]
+    </canvas>
+    <canvas width="40" height="60" style="border:1px solid #000000;">
 
-        // 3. 创建 router 实例，然后传 `routes` 配置
-        // 你还可以传别的配置参数, 不过先这么简单着吧。
-        const router = new VueRouter({
-            routes // (缩写) 相当于 routes: routes
-        })
+    </canvas>
+    <canvas width="40" height="60" style="border:1px solid #000000;">
 
-        // 4. 创建和挂载根实例。
-        // 记得要通过 router 配置参数注入路由，
-        // 从而让整个应用都有路由功能
-        const app = new Vue({
-            router
-        }).$mount('#app')
-
-
-    </script>
+    </canvas>
 </body>
+<script>
+    const cvs = document.querySelector('canvas')
+    var ctx = cvs.getContext("2d");
+    var grd = ctx.createLinearGradient(40, 00, 40, 6);
+    grd.addColorStop(0, "black");
+    grd.addColorStop(1, "red");
+
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, 40, 6);
+
+    ctx.fillStyle = "#000000";
+    ctx.font = "16px Arial ";
+    ctx.fillText("5", 16, 30);
+    ctx.font = "12px Arial";
+    ctx.fillText("11月", 7, 50);
+    var i = 0;
+    i += -(i - (i + 1))
+    console.log(i)
+</script>
 
 </html>

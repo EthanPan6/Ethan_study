@@ -8,8 +8,8 @@
   </div>
 </template>
 <script>
-import Search1 from "../components/Search1.vue";
-import Tabs1 from "../components/Tabs1.vue";
+import Search1 from "./pages/Search1";
+import Tabs1 from "./pages/Tabs1.vue";
 export default {
   components: {
     Search1,

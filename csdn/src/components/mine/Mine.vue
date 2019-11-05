@@ -63,7 +63,7 @@
 <script>
 import Vue from "vue";
 import { Grid, GridItem, Icon, Divider, Cell, CellGroup } from "vant";
-import Jpg from "../assets/author.jpg";
+import Jpg from "@/assets/author.jpg";
 Vue.use(Grid)
   .use(GridItem)
   .use(Icon)

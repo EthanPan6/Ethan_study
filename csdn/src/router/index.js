@@ -4,27 +4,29 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 //最外层
-import Main from '../pages/Main'
+import Main from '../components/Main'
 import Article from '../components/Article'
-import Search from '../pages/Search'
+import Search from '../components/Search'
+import Edit from '../components/Edit'
+import Login from '../components/Login'
 
 //二层
-import Home from '../pages/Home'
-import Study from '../pages/Study'
-import Bbs from '../pages/Bbs'
-import Mine from '../pages/Mine'
+import Home from '../components/home/Home'
+import Study from '../components/study/Study'
+import Bbs from '../components/bbs/Bbs'
+import Mine from '../components/mine/Mine'
 
 //三层
-import Recommend from '../components/Recommend'
-import Trends from '../components/Trends'
-import Safety from '../components/Safety'
-import Frontend from '../components/Frontend'
-import Architecture from '../components/Architecture'
-import Sql from '../components/Sql'
+import Recommend from '../components/home/pages/Recommend'
+import Trends from '../components/home/pages/Trends'
+import Safety from '../components/home/pages/Safety'
+import Frontend from '../components/home/pages/Frontend'
+import Architecture from '../components/home/pages/Architecture'
+import Sql from '../components/home/pages/Sql'
 
 
-import Jishu from '../components/Jishuqu'
-import Shenghuo from '../components/Shenghuoqu'
+import Jishu from '../components/bbs/pages/Jishuqu'
+import Shenghuo from '../components/bbs/pages/Shenghuoqu'
 
 
 const routes = [
@@ -106,6 +108,17 @@ const routes = [
         path: '/search',
         name: 'search',
         component: Search
+    },
+    {
+        path: '/edit',
+        name: 'edit',
+        component: Edit
+    }
+    ,
+    {
+        path: '/login',
+        name: 'login',
+        component: Login
     }
 
 ]

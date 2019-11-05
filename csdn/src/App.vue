@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <!-- <keep-alive>
-      <router-view />
-    </keep-alive>-->
-    <Edit />
+    <!-- <keep-alive> -->
+    <router-view />
+    <!-- </keep-alive> -->
+    <!-- <Edit /> -->
   </div>
 </template>
 
 <script>
-import Edit from "./pages/Edit";
+// import Edit from "./components/Edit";
 export default {
   name: "app",
   components: {
-    Edit
+    // Edit
   }
 };
 </script>

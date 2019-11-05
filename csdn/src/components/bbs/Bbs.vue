@@ -21,7 +21,7 @@ Vue.use(Tab)
 export default {
   methods: {
     toEdit() {
-      this.$router.push("/"); //编辑页
+      this.$router.push("/edit"); //编辑页
     }
   }
 };
