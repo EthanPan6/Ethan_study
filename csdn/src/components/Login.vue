@@ -32,6 +32,11 @@
     <div class="loginBtn">
       <van-button type="danger" size="large">登录</van-button>
     </div>
+    <div class="agree">
+      登录/注册即代表同意
+      <u>《用户服务条款》</u>与
+      <u>《隐私协议》</u>
+    </div>
   </div>
 </template>
 <script>
@@ -90,5 +95,13 @@ export default {
 }
 .loginBtn {
   margin: 0 1em;
+}
+.agree {
+  position: absolute;
+  bottom: 2em;
+  left: 2em;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.8em;
 }
 </style>

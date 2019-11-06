@@ -5,7 +5,7 @@
         <img :src="img" alt="头像" />
       </div>
       <div class="info">
-        <h2 class="name">用户名</h2>
+        <h2 class="name" v-text="username"></h2>
         <div class="signature">个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名</div>
       </div>
     </div>
@@ -64,7 +64,10 @@
 import Vue from "vue";
 import { Grid, GridItem, Icon, Divider, Cell, CellGroup } from "vant";
 import Jpg from "@/assets/author.jpg";
-Vue.use(Grid)
+
+import VueCookies from "vue-cookies";
+Vue.use(VueCookies)
+  .use(Grid)
   .use(GridItem)
   .use(Icon)
   .use(Divider)
@@ -73,9 +76,20 @@ Vue.use(Grid)
 export default {
   data() {
     return {
-      img: Jpg
+      img: Jpg,
+      username: "用户名"
     };
-  }
+  },
+  methods: {
+    hasToken() {
+      if (this.$cookies.isKey("token")) {
+        this.username = "用户名";
+      } else {
+        this.username = "请登录";
+      }
+    }
+  },
+  computed: {}
 };
 </script>
 <style  scoped>
