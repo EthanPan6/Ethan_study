@@ -9,6 +9,7 @@ import Article from '../components/Article'
 import Search from '../components/Search'
 import Edit from '../components/Edit'
 import Login from '../components/Login'
+import Atest from '../components/atest'
 
 //二层
 import Home from '../components/home/Home'
@@ -119,6 +120,12 @@ const routes = [
         path: '/login',
         name: 'login',
         component: Login
+    }
+    ,
+    {
+        path: '/atest',
+        name: 'atest',
+        component: Atest
     }
 
 ]

@@ -30,7 +30,7 @@
       </van-cell-group>
     </div>
     <div class="loginBtn">
-      <van-button type="danger" size="large">登录</van-button>
+      <van-button type="danger" size="large" @click="login">登录</van-button>
     </div>
     <div class="agree">
       登录/注册即代表同意
@@ -43,6 +43,8 @@
 import Vue from "vue";
 import { NavBar, Toast, CellGroup, Field } from "vant";
 import Logo from "../assets/csdn-logo_.png";
+import VueCookies from "vue-cookies";
+Vue.use(VueCookies);
 Vue.use(NavBar)
   .use(Toast)
   .use(CellGroup)
@@ -71,6 +73,11 @@ export default {
       this.checkTip = "验证码已发送";
       this.disabled = true;
       window.console.log("验证码");
+    },
+    login() {
+      //发送axios
+      // axios.post(url)
+      this.$cookies.set("token", "dfsdfsdf", 60 * 60 * 24 * 7);
     }
   }
 };

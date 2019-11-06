@@ -3,17 +3,23 @@ var router = express.Router();
 
 /* GET home page. */
 //改这里
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// router.get('/', function (req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
 
 
-const { find,insert } = require('../database/multiple');
+const { find, insert } = require('../database/multiple');
 // router.get('/entries', async function (req, res, next) {
 //   res.append('Access-Control-Allow-Origin', '*');
 //   let data = await find('element');
 //   res.json(data);
 // });
+
+router.get('/user', async function (req, res, next) {
+  res.append('Access-Control-Allow-Origin', '*');
+  let data = await find('userlist', {});
+  res.json(data);
+});
 
 // router.get('/restaurants', async function (req, res, next) {
 //   res.append('Access-Control-Allow-Origin', '*');
@@ -30,6 +36,10 @@ const { find,insert } = require('../database/multiple');
 // });
 
 
-//https://blog.csdn.net/api/ArticleDigg/isDiggList
-//https://www.csdn.net/api/articles?type=more&category=home&shown_offset=1572837969150326
+//推荐:https://www.csdn.net/api/articles?type=more&category=home
+//前端:https://www.csdn.net/api/articles?type=more&category=web
+//动态:https://www.csdn.net/api/articles?type=more&category=career
+//架构:https://www.csdn.net/api/articles?type=more&category=arch
+//安全:https://www.csdn.net/api/articles?type=more&category=sec
+//数据库:https://www.csdn.net/api/articles?type=more&category=db
 module.exports = router;

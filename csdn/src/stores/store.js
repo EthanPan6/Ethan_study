@@ -4,7 +4,8 @@ import Vue from 'vue'
 Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {//数据
-        count: 0
+        count: 0,
+        token:''
     },
     mutations: {//修改数据的唯一方法,需要通过this.$store.commit('setCount',option)唤醒
         setCount(state, newValue) {

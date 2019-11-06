@@ -4,7 +4,7 @@
       <div class="icon">
         <img :src="img" alt="头像" />
       </div>
-      <div class="info">
+      <div class="info" @click="toW">
         <h2 class="name" v-text="username"></h2>
         <div class="signature">个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名</div>
       </div>
@@ -80,12 +80,20 @@ export default {
       username: "用户名"
     };
   },
+  mounted() {
+    if (this.$cookies.isKey("token")) {
+      this.username = "用户名";
+    } else {
+      this.username = "请登录";
+    }
+  },
   methods: {
-    hasToken() {
+    toW() {
+      window.console.log("去哪儿");
       if (this.$cookies.isKey("token")) {
-        this.username = "用户名";
+        this.$router.push("/main/mine");
       } else {
-        this.username = "请登录";
+        this.$router.push("/login");
       }
     }
   },
