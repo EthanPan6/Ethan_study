@@ -8,7 +8,7 @@
       @click-right="onClickRight"
     />
     <div style="height:12em" class="logo">
-      <img :src="Logo" alt />
+      <!-- <img :src="Logo" alt /> -->
     </div>
     <div class="outBorder">
       <van-cell-group v-if="way">
@@ -42,7 +42,7 @@
 <script>
 import Vue from "vue";
 import { NavBar, Toast, CellGroup, Field } from "vant";
-import Logo from "../assets/csdn-logo_.png";
+// import Logo from "../assets/csdn-logo_.png";
 import VueCookies from "vue-cookies";
 Vue.use(VueCookies);
 Vue.use(NavBar)
@@ -57,8 +57,8 @@ export default {
       password: "",
       sms: "",
       checkTip: "发送验证码",
-      disabled: false,
-      Logo
+      disabled: false
+      // Logo
     };
   },
   methods: {

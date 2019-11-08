@@ -2,7 +2,7 @@
   <div>
     <div class="head">
       <div class="icon">
-        <img :src="img" alt="头像" />
+        <!-- <img :src="img" alt="头像" /> -->
       </div>
       <div class="info" @click="toW">
         <h2 class="name" v-text="username"></h2>
@@ -63,7 +63,7 @@
 <script>
 import Vue from "vue";
 import { Grid, GridItem, Icon, Divider, Cell, CellGroup } from "vant";
-import Jpg from "@/assets/author.jpg";
+// import Jpg from "@/assets/author.jpg";
 
 import VueCookies from "vue-cookies";
 Vue.use(VueCookies)
@@ -76,7 +76,7 @@ Vue.use(VueCookies)
 export default {
   data() {
     return {
-      img: Jpg,
+      // img: Jpg,
       username: "用户名"
     };
   },
