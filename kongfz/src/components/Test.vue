@@ -2,22 +2,26 @@
   <div>
     <input v-model="value" />
     <button @click="send">send</button>
-    <p v-text="text"></p>
+    {{value}}
   </div>
 </template>
 <script>
 import ajax from "../ajax";
 
-const url1 = "http://localhost:3000/test";
+const url = "http://localhost:3000/result";
 export default {
   data() {
     return {
-      value: "",
-      text: ""
+      value: ""
     };
   },
+
   methods: {
     send() {
+      window.console.log(1111);
+
+      // Vue.http.get("/someUrl", [options]).then(successCallback, errorCallback);
+
       //   ajax({
       //     data: {
       //       name: "post",
@@ -31,11 +35,14 @@ export default {
       //   });
       ajax({
         data: {
-          name: "get",
-          age: this.value
+          count: 20,
+          key: "李白"
         },
-        url: url1,
-        type: "get"
+        url: url,
+        type: "get",
+        success: data => {
+          this.value = data;
+        }
       });
     }
   }

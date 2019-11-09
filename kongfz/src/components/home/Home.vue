@@ -866,7 +866,6 @@ export default {
       this.active === 4 ? (this.active = 1) : this.active++;
     },
     toTop() {
-      window.console.log(55555);
       document.documentElement.scrollTop = document.body.scrollTop = 0;
     }
   }

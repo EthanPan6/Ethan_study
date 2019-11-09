@@ -8,6 +8,7 @@ import Main from '../components/Main'
 import Search from '../components/search/Search'
 import Login from '../components/Login'
 import Test from '../components/Test'
+import Goods from '../components/Goods'
 import NotFoundComponent from '../components/NotFoundComponent'
 
 //二层
@@ -18,6 +19,7 @@ import Cart from '../components/cart/Cart'
 import Mine from '../components/mine/Mine'
 
 import Result from '../components/search/pages/Result'
+import SearchResult from '../components/search/pages/SearchResult'
 
 
 
@@ -40,7 +42,10 @@ const routes = [
             {
                 path: 'mine',
                 name: 'mine',
-                component: Mine
+                component: Mine,
+                meta: {
+                    isLogin: true
+                }
             },
             {
                 path: 'auction',
@@ -50,7 +55,10 @@ const routes = [
             {
                 path: 'cart',
                 name: 'cart',
-                component: Cart
+                component: Cart,
+                meta: {
+                    isLogin: true
+                }
             }
         ]
     },
@@ -63,6 +71,10 @@ const routes = [
                 path: 'result',
                 name: 'result',
                 component: Result
+            },
+            {
+                path: '',
+                component: SearchResult
             }
         ]
     },
@@ -70,6 +82,12 @@ const routes = [
         path: '/login',
         name: 'login',
         component: Login
+    }
+    ,
+    {
+        path: '/goods',
+        name: 'goods',
+        component: Goods
     }
     ,
     {
@@ -87,7 +105,7 @@ const router = new VueRouter({
     routes,
     // hash
     // mode: 'history'
-    
+
 })
 
 export default router

@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017';// Connection URL
-const dbName = 'csdn';// Database Name
+const dbName = 'kongfz';// Database Name
 
 // Use connect method to connect to the server
 const connect = () => {
