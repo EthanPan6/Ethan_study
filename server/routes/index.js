@@ -1,8 +1,12 @@
 const express = require('express');
 const URL = require('url')
 const https = require('https');
+
 // const querystring = require('querystring');
 const router = express.Router();
+
+
+
 
 let url2 = 'https://m.kongfz.com/api-search/Suggest/Suggest/suggest?bizType=wap&query='
 //https://m.kongfz.com/api-search/Suggest/Suggest/suggest?bizType=wap&query=%E6%9D%8E%E7%99%BD
@@ -36,6 +40,55 @@ MongoClient.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, 
     });
 
   });
+
+  router.post('/login', async function (req, res, next) {
+    res.append('Access-Control-Allow-Origin', '*');
+    let query = JSON.parse(JSON.stringify(req.body))
+    // console.log(query)
+    dbo.collection("userList").find(query).toArray(function (err, result) {
+      if (err) throw err;
+      console.log(result)
+      //返回token
+      //将用户名直接返回和手机号和密码加密后再返回
+      let { username, password, tel } = result[0]
+      // let { password, tel } = result[0]
+      console.log(username, password, tel)
+      // "pt"作为区分点
+      let token = Buffer.from(JSON.stringify(password + '"pt"' + tel)).toString('base64').split('').reverse().join('')
+      res.json({ username, token });
+
+    });
+  });
+
+  //未作用户已存在功能
+  router.post('/register', async function (req, res, next) {
+    res.append('Access-Control-Allow-Origin', '*');
+    let query = JSON.parse(JSON.stringify(req.body))
+    dbo.collection("userList").insertOne(query, (err, res1) => {
+      if (err) throw err;
+      let { password, tel } = query;
+      let username = '用户' + tel.substr(-4)
+      // console.log(username, password, tel)
+      let token = Buffer.from(JSON.stringify(password + '"pt"' + tel)).toString('base64').split('').reverse().join('')
+      res.json({ username, token });
+    })
+  })
+
+  //加入购物车
+  router.post('/inCart', async function (req, res, next) {
+    res.append('Access-Control-Allow-Origin', '*');
+    let query = JSON.parse(JSON.stringify(req.body))
+    let token = query.token
+    let pt = Buffer.from(token.split('').reverse().join(''), 'base64').toString('utf8')//
+    dbo.collection("userList").insertOne(query, (err, res1) => {
+      if (err) throw err;
+      let { password, tel } = query;
+      let username = '用户' + tel.substr(-4)
+      // console.log(username, password, tel)
+      let token = Buffer.from(JSON.stringify(password + '"pt"' + tel)).toString('base64').split('').reverse().join('')
+      res.json({ username, token });
+    })
+  })
 
 
 

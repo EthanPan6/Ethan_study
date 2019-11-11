@@ -5,11 +5,14 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {//数据
         count: 0,
-        token:''
+        token: localStorage.getItem('token') ? localStorage.getItem('token') : ''
     },
     mutations: {//修改数据的唯一方法,需要通过this.$store.commit('setCount',option)唤醒
-        setCount(state, newValue) {
-            state.count = newValue
+        changeLogin(state, user) {
+            //state->state
+            //user->new
+            state.token = user.token;//store存
+            localStorage.setItem('token', user.token);//localStorage存
         }
     },
     actions: {//类似mutations
@@ -19,9 +22,10 @@ const store = new Vuex.Store({
         }
     },
     getters: {
-        getCount(state) {
-            return state.count
-        }
+        // getToken(state) {
+        //     return state.token
+        // },
+
     }
 })
 export default store

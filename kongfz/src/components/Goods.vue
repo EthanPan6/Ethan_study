@@ -61,7 +61,8 @@ import {
   GoodsActionButton,
   Notify
 } from "vant";
-import axios from "axios";
+// import axios from "axios";
+import ajax from "../ajax";
 const url = "http://localhost:3000/inCart";
 
 Vue.use(Swipe)
@@ -111,14 +112,28 @@ export default {
       this.isMenu = !this.isMenu;
     },
     joinCart() {
-      axios
-        .get(url, {
-          params: this.info
-        })
-        .then(data => {
+      // axios
+      //   .get(url, {
+      //     params: this.info
+      //   })
+      //   .then(data => {
+      //     let message = data === "ok" ? "加入购物车成功" : "加入失败";
+      //     Notify({ type: "danger", message });
+      //   });
+      let token = this.$store.state.token;
+      window.console.log(token);
+      ajax({
+        data: {
+          token,
+          info: this.info
+        },
+        url,
+        type: "post",
+        success: data => {
           let message = data === "ok" ? "加入购物车成功" : "加入失败";
           Notify({ type: "danger", message });
-        });
+        }
+      });
     }
   }
 };

@@ -8,7 +8,7 @@
 <script>
 import ajax from "../ajax";
 
-const url = "http://localhost:3000/result";
+const url = "http://localhost:3000/login";
 export default {
   data() {
     return {
@@ -22,28 +22,29 @@ export default {
 
       // Vue.http.get("/someUrl", [options]).then(successCallback, errorCallback);
 
-      //   ajax({
-      //     data: {
-      //       name: "post",
-      //       age: this.value
-      //     },
-      //     url: url1,
-      //     type: "post",
-      //     success: data => {
-      //       this.text = data;
-      //     }
-      //   });
       ajax({
         data: {
-          count: 20,
-          key: "李白"
+          tel: 13687688556,
+          password: 1234
+          // username: "Tom"
         },
         url: url,
-        type: "get",
+        type: "post",
         success: data => {
           this.value = data;
         }
       });
+      // ajax({
+      //   data: {
+      //     count: 20,
+      //     key: "李白"
+      //   },
+      //   url: url,
+      //   type: "get",
+      //   success: data => {
+      //     this.value = data;
+      //   }
+      // });
     }
   }
 };

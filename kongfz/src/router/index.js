@@ -64,7 +64,7 @@ const routes = [
     },
     {
         path: '/search',
-        name: 'search',
+
         component: Search,
         children: [
             {
@@ -74,6 +74,7 @@ const routes = [
             },
             {
                 path: '',
+                name: 'search',
                 component: SearchResult
             }
         ]
