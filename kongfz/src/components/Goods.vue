@@ -112,14 +112,7 @@ export default {
       this.isMenu = !this.isMenu;
     },
     joinCart() {
-      // axios
-      //   .get(url, {
-      //     params: this.info
-      //   })
-      //   .then(data => {
-      //     let message = data === "ok" ? "加入购物车成功" : "加入失败";
-      //     Notify({ type: "danger", message });
-      //   });
+ 
       let token = this.$store.state.token;
       window.console.log(token);
       ajax({

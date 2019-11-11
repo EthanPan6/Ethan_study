@@ -56,7 +56,6 @@ MongoClient.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, 
       // "pt"作为区分点
       let token = Buffer.from(JSON.stringify(password + '"pt"' + tel)).toString('base64').split('').reverse().join('')
       res.json({ username, token });
-
     });
   });
 

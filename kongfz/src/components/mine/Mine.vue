@@ -64,10 +64,8 @@
 import Vue from "vue";
 import { Grid, GridItem, Icon, Divider, Cell, CellGroup } from "vant";
 // import Jpg from "@/assets/author.jpg";
-
-import VueCookies from "vue-cookies";
-Vue.use(VueCookies)
-  .use(Grid)
+import ajax from "../../ajax";
+Vue.use(Grid)
   .use(GridItem)
   .use(Icon)
   .use(Divider)
@@ -77,24 +75,33 @@ export default {
   data() {
     return {
       // img: Jpg,
-      username: "用户名"
+      username: "用户名",
+      isLogin: false
     };
   },
-  mounted() {
-    if (this.$cookies.isKey("token")) {
-      this.username = "用户名";
-    } else {
-      this.username = "请登录";
+  created() {
+    let token = localStorage.getItem("token");
+    let username = localStorage.getItem("username");
+    if (token && username) {
+      this.isLogin = true;
+      ajax({
+        type: "get",
+        url: "",
+        data: {
+          token,username
+        },
+        success: cb => {
+          this.username = cb.username;
+        }
+      });
     }
   },
+  mounted() {},
   methods: {
     toW() {
       window.console.log("去哪儿");
-      if (this.$cookies.isKey("token")) {
-        this.$router.push("/main/mine");
-      } else {
-        this.$router.push("/login");
-      }
+      let route = this.isLogin ? "/main/mine" : "/login";
+      this.$router.push(route);
     }
   },
   computed: {}

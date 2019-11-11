@@ -892,8 +892,8 @@ li {
   width: 20em;
   /* display: inline-block; */
 }
-.banner img {
-  height: 010em;
+.banner .van-swipe .van-swipe-item img {
+  height: 10em;
 }
 .nav {
   margin: 0em auto;

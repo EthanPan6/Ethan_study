@@ -45,8 +45,7 @@ import ajax from "../ajax";
 import { mapMutations } from "vuex";
 const urlL = "http://localhost:3000/login";
 const urlR = "http://localhost:3000/register";
-import VueCookies from "vue-cookies";
-Vue.use(VueCookies);
+
 Vue.use(NavBar)
   .use(Toast)
   .use(CellGroup)
