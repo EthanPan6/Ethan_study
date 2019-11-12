@@ -74,20 +74,20 @@ MongoClient.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, 
   })
 
   //加入购物车
-  router.post('/inCart', async function (req, res, next) {
-    res.append('Access-Control-Allow-Origin', '*');
-    let query = JSON.parse(JSON.stringify(req.body))
-    let token = query.token
-    let pt = Buffer.from(token.split('').reverse().join(''), 'base64').toString('utf8')//
-    dbo.collection("userList").insertOne(query, (err, res1) => {
-      if (err) throw err;
-      let { password, tel } = query;
-      let username = '用户' + tel.substr(-4)
-      // console.log(username, password, tel)
-      let token = Buffer.from(JSON.stringify(password + '"pt"' + tel)).toString('base64').split('').reverse().join('')
-      res.json({ username, token });
-    })
-  })
+  // router.post('/inCart', async function (req, res, next) {
+  //   res.append('Access-Control-Allow-Origin', '*');
+  //   let query = JSON.parse(JSON.stringify(req.body))
+  //   let token = query.token
+  //   let pt = Buffer.from(token.split('').reverse().join(''), 'base64').toString('utf8')//
+  //   dbo.collection("userList").insertOne(query, (err, res1) => {
+  //     if (err) throw err;
+  //     let { password, tel } = query;
+  //     let username = '用户' + tel.substr(-4)
+  //     // console.log(username, password, tel)
+  //     let token = Buffer.from(JSON.stringify(password + '"pt"' + tel)).toString('base64').split('').reverse().join('')
+  //     res.json({ username, token });
+  //   })
+  // })
 
 
 
