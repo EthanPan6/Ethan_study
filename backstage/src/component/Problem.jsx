@@ -1,7 +1,7 @@
 import React from 'react'
 import { Input, Button } from 'antd';
 
-const { TextArea } = Input;
+
 export default class Problem extends React.Component {
     constructor(props) {
         super(props)
@@ -16,13 +16,16 @@ export default class Problem extends React.Component {
     };
     render() {
         return (
-            <div className='complaint'>
-                <label>学员姓名:</label>
-                <Input placeholder="Basic usage" style={{ width: 120 }} />
-                {/* <div style={{ textAlign: 'center', color: '#f00', fontSize: 18, marginBottom: 18 }}>投诉内容</div>
-                <TextArea style={{ width: 660, height: 360 }} placeholder="本投诉是匿名投诉，不会暴露您的信息" allowClear onChange={this.getInputValue} value={this.state.textAreaValue} /> */}
+            <div className='problem'>
+                <div className="content">
+
+                    <label>学员姓名:</label>
+                    <Input placeholder="Basic usage" style={{ width: 120 }} readOnly value="fskdnfkj" /><br />
+                    <label>问题描述:</label>
+                    <textarea style={{ width: 520, height: 90 }} placeholder="本投诉是匿名投诉，不会暴露您的信息" onChange={this.getInputValue} value={this.state.textAreaValue}></textarea>
+                </div>
                 <div className='btn-Cp'>
-                    <Button type="primary" size='large' icon='check'>添加</Button>
+                    <Button type="primary" size='large' icon='check'>提问</Button>
                     <Button size='large' icon='undo'>返回</Button>
                 </div>
             </div>

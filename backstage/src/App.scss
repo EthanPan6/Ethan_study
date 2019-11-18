@@ -1,0 +1,321 @@
+// @import '~antd/dist/antd.css';
+
+.ant-layout-header {
+    padding: 0;
+}
+
+.dropdown {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+
+    .ant-dropdown-link {
+        color: #fff;
+    }
+
+}
+
+.ant-layout-sider {
+    border-right: 1px solid #e8e8e8;
+
+}
+
+.complaint {
+    width: 95%;
+    margin: 20px auto;
+    border: 1px solid #c5d0dc;
+    padding: 16px 12px;
+    text-align: center;
+
+
+}
+
+.btn-Cp {
+    margin: 20px 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.problem {
+    width: 95%;
+    margin: 20px auto;
+    border: 1px solid #c5d0dc;
+    padding: 16px 12px;
+
+    .content {
+        margin-left: 100px;
+
+        label {
+            display: inline-block;
+            margin-bottom: 40px;
+            margin-right: 20px;
+            width: 100px;
+            text-align-last: justify;
+            color: #f00;
+            vertical-align: top;
+        }
+
+        input {
+            vertical-align: top;
+        }
+
+        textarea {
+            vertical-align: middle;
+        }
+
+    }
+
+}
+
+.itemupload {
+    width: 95%;
+    margin: 0px auto;
+
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        border: 1px solid #c5d0dc;
+        padding: 16px 12px;
+        text-align: center;
+
+        label {
+            display: inline-block;
+            margin-bottom: 40px;
+            margin-right: 20px;
+            width: 100px;
+            text-align-last: justify;
+            color: #f00;
+        }
+
+        .ant-upload {
+            margin-right: 20px;
+
+            i {
+                font-style: normal;
+                font-size: 12px;
+            }
+        }
+
+    }
+}
+
+.stuvip {
+    width: 95%;
+    margin: 20px auto;
+    border: 1px solid #c5d0dc;
+    padding: 16px 12px;
+
+    h2 {
+        text-align: center;
+        color: #f00;
+    }
+
+    .content {
+        margin-left: 100px;
+
+        label {
+            display: inline-block;
+            margin-bottom: 40px;
+            margin-right: 20px;
+            width: 100px;
+            text-align-last: justify;
+            color: #f00;
+            vertical-align: top;
+        }
+
+        input {
+            vertical-align: top;
+        }
+
+        textarea {
+            vertical-align: middle;
+        }
+
+    }
+}
+
+.weekly {
+    width: 95%;
+    margin: 20px auto;
+    border: 1px solid #c5d0dc;
+    padding: 16px 12px;
+
+    .content {
+        margin-left: 100px;
+
+        label {
+            display: inline-block;
+            margin-bottom: 40px;
+            margin-right: 20px;
+            width: 100px;
+            text-align-last: justify;
+            color: #f00;
+            vertical-align: top;
+        }
+
+        input {
+            vertical-align: top;
+        }
+
+        textarea {
+            vertical-align: middle;
+        }
+
+    }
+}
+
+.moneyDetail {
+    h2 {
+        text-align: center;
+        width: 95%;
+        margin: 0 auto 20px;
+
+        border-bottom: 1px solid #e2e2e2;
+    }
+
+    .content {
+        margin: 0 50px;
+
+        table {
+            font-size: 14px;
+            border-collapse: collapse;
+            text-indent: 10px;
+            width: 100%;
+
+            tr {
+                height: 30px;
+                line-height: 30px;
+
+                td {
+                    border: 1px solid #ddd;
+                    font-size: 12px;
+                }
+
+                th {
+                    border: 1px solid #ddd;
+                    white-space: nowrap;
+
+                }
+            }
+
+            thead {
+                background-color: #eee;
+            }
+
+            tbody {
+                tr:nth-child(odd) {
+                    background-color: #fff;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f9f9f9;
+                }
+            }
+        }
+    }
+}
+
+.evaluate {
+    .alert {
+        width: 95%;
+        margin: 20px auto;
+        color: #468847;
+        font-size: 14px;
+        height: 50px;
+        padding: 15px;
+        border: 1px solid #d6e9c6;
+        margin-bottom: 20px;
+        background-color: #dff0d8;
+    }
+
+    .content {
+        width: 95%;
+        margin: 20px auto;
+
+
+        table {
+            width: 100%;
+            font-size: 14px;
+            border-collapse: collapse;
+            text-indent: 10px;
+            width: 100%;
+            text-align: center;
+
+            thead {
+                background-color: #eee;
+            }
+
+            tr {
+                height: 30px;
+                line-height: 30px;
+
+                td {
+                    border: 1px solid #ddd;
+                    font-size: 12px;
+                }
+
+                th {
+                    border: 1px solid #ddd;
+                    white-space: nowrap;
+
+                }
+            }
+        }
+    }
+}
+
+.inquiry {
+    .content {
+        width: 95%;
+        margin: 20px auto;
+
+
+        table {
+            width: 100%;
+            font-size: 14px;
+            border-collapse: collapse;
+            text-indent: 10px;
+            width: 100%;
+            text-align: center;
+
+            thead {
+                background-color: #eee;
+            }
+
+            tr {
+                height: 30px;
+                line-height: 30px;
+
+                td {
+                    border: 1px solid #ddd;
+                    font-size: 12px;
+                }
+
+                th {
+                    border: 1px solid #ddd;
+                    white-space: nowrap;
+
+                }
+            }
+        }
+    }
+}
+
+.leave {
+    .content {}
+}
+
+
+
+
+
+
+
+
+
+
+// @import '~antd/dist/antd.css';

@@ -1,0 +1,50 @@
+@import url(~antd/dist/antd.css);
+.ant-layout-header {
+  padding: 0;
+}
+
+.dropdown {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+}
+
+.dropdown .ant-dropdown-link {
+  color: #fff;
+}
+
+.ant-layout-sider {
+  border-right: 1px solid #e8e8e8;
+}
+
+.complaint {
+  width: 95%;
+  margin: 0 auto;
+  border: 1px solid #c5d0dc;
+  padding: 16px 12px;
+  text-align: center;
+}
+
+.complaint .btn-Cp {
+  margin: 20px 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.problem {
+  width: 95%;
+  margin: 0 auto;
+  border: 1px solid #c5d0dc;
+  padding: 16px 12px;
+}
+
+.problem .content label {
+  width: 100px;
+  text-align-last: justify;
+  color: #f00;
+  vertical-align: top;
+}
+
+.problem .content textarea {
+  vertical-align: middle;
+}
