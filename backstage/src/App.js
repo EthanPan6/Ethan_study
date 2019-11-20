@@ -1,6 +1,5 @@
 import React from 'react';
-// 
-// import '../node_modules/antd/dist/antd.css'
+
 import './App.css';
 
 import { Layout, Menu, Breadcrumb, Icon, Dropdown } from 'antd';
@@ -25,9 +24,11 @@ import Evaluate from './component/Evaluate'
 import Inquiry from './component/Inquiry'
 import Leave from './component/Leave'
 import Discipline from './component/Discipline'
+import Editinfo from './component/Editinfo'
+import Test from './component/test'
 
 const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const Asider = () => {
   return (
@@ -129,8 +130,10 @@ const Asider = () => {
         </Menu.Item>
       </SubMenu>
       <Menu.Item key="9">
-        <Icon type="file" />
-        <span>File</span>
+        <Link to="/test">
+          <Icon type="tool" />
+          <span>Test</span>
+        </Link>
       </Menu.Item>
     </Menu>
 
@@ -162,7 +165,7 @@ export default class App extends React.Component {
                     <a href="###"><Icon type="poweroff" />退出</a>
                   </Menu.Item>
                 </Menu>} trigger={['click']}>
-                <a className="ant-dropdown-link" href="#">
+                <a className="ant-dropdown-link" href="###">
                   用户名 <Icon type="down" />
                 </a>
               </Dropdown>
@@ -192,7 +195,8 @@ export default class App extends React.Component {
                   <Route path="/inquiry"><Inquiry /></Route>
                   <Route path="/leave"><Leave /></Route>
                   <Route path="/discipline"><Discipline /></Route>
-
+                  <Route path="/editinfo"><Editinfo /></Route>
+                  <Route path="/test"><Test /></Route>
                 </Switch>
 
                 {/* <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer> */}
