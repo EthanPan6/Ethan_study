@@ -1,3 +1,7 @@
+#root {
+    background-color: #6fb3e0;
+}
+
 .ant-layout-header {
     padding: 0;
 }
@@ -15,7 +19,6 @@
 
 .ant-layout-sider {
     border-right: 1px solid #e8e8e8;
-
 }
 
 .complaint {
@@ -437,10 +440,28 @@
     }
 }
 
+.login {
+    background-color: #6fb3e0;
+    width: 400px;
+    height: 300px;
+    background-color: rgb(247, 247, 247);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 
+    .loginbox {
+        padding: 0 10px;
+    }
 
+    .summary {
+        background-color: #5090c1;
+        border-top: 2px solid #597597;
+        text-align: center;
+        line-height: 1;
+        color: #fff;
+    }
 
-
-
-
-// @import '~antd/dist/antd.css';
+}
