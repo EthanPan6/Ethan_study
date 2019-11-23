@@ -1,6 +1,5 @@
-import {
-    createStore
-} from 'redux';
+import { createStore } from 'redux';
+
 const counter = (state = {
     isLogin: false,
     token: ''
@@ -23,6 +22,33 @@ const counter = (state = {
             return state;
     }
 }
+// const counter = (state = {
+//     num: 0
+// }, action) => {
+//     switch (action.type) {
+//         // 修改的动作
+//         case "add":
+//             return {
+//                 return {
+//                     ...state,
+//                     num: ++num
+//                 }
+//             }
+//         case "cdd":
+//             return {
+//                 ...state,
+//                 num: --num
+//             }
+//         default:
+//             return state;
+//     }
+// }
+//action 操作
+//state  存储
+
+
+
+
 
 const store = createStore(counter);
 

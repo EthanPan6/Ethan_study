@@ -1,467 +1,484 @@
-#root {
-    background-color: #6fb3e0;
-}
+html {
+    height: 100%;
 
-.ant-layout-header {
-    padding: 0;
-}
+    body {
+        height: 100%;
+        background-color: #6fb3e0;
 
-.dropdown {
-    position: absolute;
-    right: 20px;
-    top: 0px;
+        #root {
+            height: 100px;
 
-    .ant-dropdown-link {
-        color: #fff;
-    }
-
-}
-
-.ant-layout-sider {
-    border-right: 1px solid #e8e8e8;
-}
-
-.complaint {
-    width: 95%;
-    margin: 20px auto;
-    border: 1px solid #c5d0dc;
-    padding: 16px 12px;
-    text-align: center;
-
-
-}
-
-.btn-Cp {
-    margin: 20px 50px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.problem {
-    width: 95%;
-    margin: 20px auto;
-    border: 1px solid #c5d0dc;
-    padding: 16px 12px;
-
-    .content {
-        margin-left: 100px;
-
-        label {
-            display: inline-block;
-            margin-bottom: 40px;
-            margin-right: 20px;
-            width: 100px;
-            text-align-last: justify;
-            color: #f00;
-            vertical-align: top;
-        }
-
-        input {
-            vertical-align: top;
-        }
-
-        textarea {
-            vertical-align: middle;
-        }
-
-    }
-
-}
-
-.itemupload {
-    width: 95%;
-    margin: 0px auto;
-
-    h2 {
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    .content {
-        border: 1px solid #c5d0dc;
-        padding: 16px 12px;
-        text-align: center;
-
-        label {
-            display: inline-block;
-            margin-bottom: 40px;
-            margin-right: 20px;
-            width: 100px;
-            text-align-last: justify;
-            color: #f00;
-        }
-
-        .ant-upload {
-            margin-right: 20px;
-
-            i {
-                font-style: normal;
-                font-size: 12px;
+            .ant-layout-header {
+                padding: 0;
             }
-        }
 
-    }
-}
+            .dropdown {
+                position: absolute;
+                right: 20px;
+                top: 0px;
 
-.stuvip {
-    width: 95%;
-    margin: 20px auto;
-    border: 1px solid #c5d0dc;
-    padding: 16px 12px;
-
-    h2 {
-        text-align: center;
-        color: #f00;
-    }
-
-    .content {
-        margin-left: 100px;
-
-        label {
-            display: inline-block;
-            margin-bottom: 40px;
-            margin-right: 20px;
-            width: 100px;
-            text-align-last: justify;
-            color: #f00;
-            vertical-align: top;
-        }
-
-        input {
-            vertical-align: top;
-        }
-
-        textarea {
-            vertical-align: middle;
-        }
-
-    }
-}
-
-.weekly {
-    width: 95%;
-    margin: 20px auto;
-    border: 1px solid #c5d0dc;
-    padding: 16px 12px;
-
-    .content {
-        margin-left: 100px;
-
-        label {
-            display: inline-block;
-            margin-bottom: 40px;
-            margin-right: 20px;
-            width: 100px;
-            text-align-last: justify;
-            color: #f00;
-            vertical-align: top;
-        }
-
-        input {
-            vertical-align: top;
-        }
-
-        textarea {
-            vertical-align: middle;
-        }
-
-    }
-}
-
-.moneyDetail {
-    h2 {
-        text-align: center;
-        width: 95%;
-        margin: 0 auto 20px;
-
-        border-bottom: 1px solid #e2e2e2;
-    }
-
-    .content {
-        margin: 0 50px;
-
-        table {
-            font-size: 14px;
-            border-collapse: collapse;
-            text-indent: 10px;
-            width: 100%;
-
-            tr {
-                height: 30px;
-                line-height: 30px;
-
-                td {
-                    border: 1px solid #ddd;
-                    font-size: 12px;
+                .ant-dropdown-link {
+                    color: #fff;
                 }
 
-                th {
-                    border: 1px solid #ddd;
-                    white-space: nowrap;
+            }
+
+            .ant-layout-sider {
+                border-right: 1px solid #e8e8e8;
+            }
+
+            .complaint {
+                width: 95%;
+                margin: 20px auto;
+                border: 1px solid #c5d0dc;
+                padding: 16px 12px;
+                text-align: center;
+            }
+
+            .btn-Cp {
+                margin: 20px 50px;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .problem {
+                width: 95%;
+                margin: 20px auto;
+                border: 1px solid #c5d0dc;
+                padding: 16px 12px;
+
+                .content {
+                    margin-left: 100px;
+
+                    label {
+                        display: inline-block;
+                        margin-bottom: 40px;
+                        margin-right: 20px;
+                        width: 100px;
+                        text-align-last: justify;
+                        color: #f00;
+                        vertical-align: top;
+                    }
+
+                    input {
+                        vertical-align: top;
+                    }
+
+                    textarea {
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            .itemupload {
+                width: 95%;
+                margin: 0px auto;
+
+                h2 {
+                    text-align: center;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+
+                .content {
+                    border: 1px solid #c5d0dc;
+                    padding: 16px 12px;
+                    text-align: center;
+
+                    label {
+                        display: inline-block;
+                        margin-bottom: 40px;
+                        margin-right: 20px;
+                        width: 100px;
+                        text-align-last: justify;
+                        color: #f00;
+                    }
+
+                    .ant-upload {
+                        margin-right: 20px;
+
+                        i {
+                            font-style: normal;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+
+            .stuvip {
+                width: 95%;
+                margin: 20px auto;
+                border: 1px solid #c5d0dc;
+                padding: 16px 12px;
+
+                h2 {
+                    text-align: center;
+                    color: #f00;
+                }
+
+                .content {
+                    margin-left: 100px;
+
+                    label {
+                        display: inline-block;
+                        margin-bottom: 40px;
+                        margin-right: 20px;
+                        width: 100px;
+                        text-align-last: justify;
+                        color: #f00;
+                        vertical-align: top;
+                    }
+
+                    input {
+                        vertical-align: top;
+                    }
+
+                    textarea {
+                        vertical-align: middle;
+                    }
 
                 }
             }
 
-            thead {
-                background-color: #eee;
-            }
+            .weekly {
+                width: 95%;
+                margin: 20px auto;
+                border: 1px solid #c5d0dc;
+                padding: 16px 12px;
 
-            tbody {
-                tr:nth-child(odd) {
-                    background-color: #fff;
-                }
+                .content {
+                    margin-left: 100px;
 
-                tr:nth-child(even) {
-                    background-color: #f9f9f9;
-                }
-            }
-        }
-    }
-}
+                    label {
+                        display: inline-block;
+                        margin-bottom: 40px;
+                        margin-right: 20px;
+                        width: 100px;
+                        text-align-last: justify;
+                        color: #f00;
+                        vertical-align: top;
+                    }
 
-.evaluate {
-    .alert {
-        width: 95%;
-        margin: 20px auto;
-        color: #468847;
-        font-size: 14px;
-        height: 50px;
-        padding: 15px;
-        border: 1px solid #d6e9c6;
-        margin-bottom: 20px;
-        background-color: #dff0d8;
-    }
+                    input {
+                        vertical-align: top;
+                    }
 
-    .content {
-        width: 95%;
-        margin: 20px auto;
-
-
-        table {
-            width: 100%;
-            font-size: 14px;
-            border-collapse: collapse;
-            text-indent: 10px;
-            width: 100%;
-            text-align: center;
-
-            thead {
-                background-color: #eee;
-            }
-
-            tr {
-                height: 30px;
-                line-height: 30px;
-
-                td {
-                    border: 1px solid #ddd;
-                    font-size: 12px;
-                }
-
-                th {
-                    border: 1px solid #ddd;
-                    white-space: nowrap;
-
+                    textarea {
+                        vertical-align: middle;
+                    }
                 }
             }
-        }
-    }
-}
 
-.inquiry {
-    .content {
-        width: 95%;
-        margin: 20px auto;
-
-
-        table {
-            width: 100%;
-            font-size: 14px;
-            border-collapse: collapse;
-            text-indent: 10px;
-            width: 100%;
-            text-align: center;
-
-            thead {
-                background-color: #eee;
-            }
-
-            tr {
-                height: 30px;
-                line-height: 30px;
-
-                td {
-                    border: 1px solid #ddd;
-                    font-size: 12px;
+            .moneyDetail {
+                h2 {
+                    text-align: center;
+                    width: 95%;
+                    margin: 0 auto 20px;
+                    border-bottom: 1px solid #e2e2e2;
                 }
 
-                th {
-                    border: 1px solid #ddd;
-                    white-space: nowrap;
+                .content {
+                    margin: 0 50px;
+
+                    table {
+                        font-size: 14px;
+                        border-collapse: collapse;
+                        text-indent: 10px;
+                        width: 100%;
+
+                        tr {
+                            height: 30px;
+                            line-height: 30px;
+
+                            td {
+                                border: 1px solid #ddd;
+                                font-size: 12px;
+                            }
+
+                            th {
+                                border: 1px solid #ddd;
+                                white-space: nowrap;
+                            }
+                        }
+
+                        thead {
+                            background-color: #eee;
+                        }
+
+                        tbody {
+                            tr:nth-child(odd) {
+                                background-color: #fff;
+                            }
+
+                            tr:nth-child(even) {
+                                background-color: #f9f9f9;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .evaluate {
+                .alert {
+                    width: 95%;
+                    margin: 20px auto;
+                    color: #468847;
+                    font-size: 14px;
+                    height: 50px;
+                    padding: 15px;
+                    border: 1px solid #d6e9c6;
+                    margin-bottom: 20px;
+                    background-color: #dff0d8;
+                }
+
+                .content {
+                    width: 95%;
+                    margin: 20px auto;
+
+                    table {
+                        width: 100%;
+                        font-size: 14px;
+                        border-collapse: collapse;
+                        text-indent: 10px;
+                        width: 100%;
+                        text-align: center;
+
+                        thead {
+                            background-color: #eee;
+                        }
+
+                        tr {
+                            height: 30px;
+                            line-height: 30px;
+
+                            td {
+                                border: 1px solid #ddd;
+                                font-size: 12px;
+                            }
+
+                            th {
+                                border: 1px solid #ddd;
+                                white-space: nowrap;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .inquiry {
+                .content {
+                    width: 95%;
+                    margin: 20px auto;
+
+                    table {
+                        width: 100%;
+                        font-size: 14px;
+                        border-collapse: collapse;
+                        text-indent: 10px;
+                        width: 100%;
+                        text-align: center;
+
+                        thead {
+                            background-color: #eee;
+                        }
+
+                        tr {
+                            height: 30px;
+                            line-height: 30px;
+
+                            td {
+                                border: 1px solid #ddd;
+                                font-size: 12px;
+                            }
+
+                            th {
+                                border: 1px solid #ddd;
+                                white-space: nowrap;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .leave {
+                width: 95%;
+                margin: 20px auto;
+                border: 1px solid #c5d0dc;
+                padding: 16px 12px;
+
+                .content {
+                    margin-left: 50px;
+
+                    label {
+                        display: inline-block;
+                        margin-bottom: 40px;
+                        margin-right: 20px;
+                        width: 100px;
+                        text-align-last: justify;
+                        color: #f00;
+                        vertical-align: top;
+                    }
+
+                    input {
+                        vertical-align: top;
+                    }
+
+                    textarea {
+                        vertical-align: middle;
+                    }
+
+                    .setTime {
+                        margin-top: 15px;
+                        display: flex;
+                        justify-content: center;
+                        margin-left: -150px;
+
+                        &:before {
+                            content: "请假时间:";
+                            color: red;
+                            margin-right: 20px;
+                            width: 100px;
+                            text-align-last: justify;
+                            color: #f00;
+                        }
+
+                        .ant-calendar-picker {
+                            width: 120px;
+                            margin-right: 5px;
+                        }
+
+                        .ant-select {
+                            margin-right: 5px;
+                            width: 56px;
+                        }
+                    }
+                }
+            }
+
+            .discipline {
+                .content {
+                    width: 95%;
+                    margin: 20px auto;
+
+                    table {
+                        width: 100%;
+                        font-size: 14px;
+                        border-collapse: collapse;
+                        text-indent: 10px;
+                        width: 100%;
+                        text-align: center;
+
+                        thead {
+                            background-color: #eee;
+                        }
+
+                        tr {
+                            height: 30px;
+                            line-height: 30px;
+
+                            td {
+                                border: 1px solid #ddd;
+                                font-size: 12px;
+                            }
+
+                            th {
+                                border: 1px solid #ddd;
+                                white-space: nowrap;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .index {
+                .detail {
+                    margin: 20px 10px;
+
+                    .ant-col-18 {
+                        padding-right: 10px;
+                        font-size: 14px;
+
+                        .ant-descriptions-item-label {
+                            padding: 5px 20px;
+                            background-color: rgb(237, 243, 244);
+                            color: #336199;
+                            border-right: 1px solid #dcebf7;
+                        }
+
+                        .ant-descriptions-item-content {
+                            padding: 5px 20px;
+                            border-right: 1px solid #dcebf7;
+                        }
+                    }
+
+                    .ant-col-6 {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        img {
+                            margin: 20px 0;
+                        }
+
+                        button {
+                            margin-top: 90px;
+                        }
+                    }
 
                 }
             }
-        }
-    }
-}
 
-.leave {
-    width: 95%;
-    margin: 20px auto;
-    border: 1px solid #c5d0dc;
-    padding: 16px 12px;
+            .login {
+                background-color: #6fb3e0;
+                width: 400px;
+                height: 268px;
+                background-color: rgb(247, 247, 247);
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
 
-    .content {
-        margin-left: 50px;
+                .loginbox {
+                    padding: 0 10px;
+                    text-align: center;
 
-        label {
-            display: inline-block;
-            margin-bottom: 40px;
-            margin-right: 20px;
-            width: 100px;
-            text-align-last: justify;
-            color: #f00;
-            vertical-align: top;
-        }
+                    h2 {
+                        color: #478fca;
+                        font-size: 24px;
+                        font-weight: 400;
+                        line-height: 40px;
+                        border-bottom: 1px solid #e8e8e8;
+                    }
 
-        input {
-            vertical-align: top;
-        }
+                    .ant-input {
+                        margin-bottom: 10px;
+                    }
 
-        textarea {
-            vertical-align: middle;
-        }
-
-        .setTime {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            margin-left: -150px;
-
-            &:before {
-                content: "请假时间:";
-                color: red;
-                margin-right: 20px;
-                width: 100px;
-                text-align-last: justify;
-                color: #f00;
-
-            }
-
-            .ant-calendar-picker {
-                width: 120px;
-                margin-right: 5px;
-            }
-
-            .ant-select {
-                margin-right: 5px;
-                width: 56px;
-            }
-        }
-    }
-}
-
-// @import '~antd/dist/antd.css';
-
-.discipline {
-    .content {
-        width: 95%;
-        margin: 20px auto;
-
-
-        table {
-            width: 100%;
-            font-size: 14px;
-            border-collapse: collapse;
-            text-indent: 10px;
-            width: 100%;
-            text-align: center;
-
-            thead {
-                background-color: #eee;
-            }
-
-            tr {
-                height: 30px;
-                line-height: 30px;
-
-                td {
-                    border: 1px solid #ddd;
-                    font-size: 12px;
+                    .ant-btn {
+                        width: 100%;
+                    }
                 }
 
-                th {
-                    border: 1px solid #ddd;
-                    white-space: nowrap;
+                .summary {
+                    height: 40px;
+                    background-color: #5090c1;
+                    border-top: 2px solid #597597;
+                    text-align: center;
 
+                    h3 {
+                        line-height: 40px;
+                        color: #fff;
+                        font-weight: 400;
+                    }
                 }
+
             }
         }
     }
-}
-
-.index {
-    .detail {
-        margin: 20px 10px;
-
-        .ant-col-18 {
-            padding-right: 10px;
-            font-size: 14px;
-
-            .ant-descriptions-item-label {
-                padding: 5px 20px;
-                background-color: rgb(237, 243, 244);
-                color: #336199;
-                border-right: 1px solid #dcebf7;
-            }
-
-            .ant-descriptions-item-content {
-                padding: 5px 20px;
-                border-right: 1px solid #dcebf7;
-            }
-        }
-
-        .ant-col-6 {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-
-            img {
-                margin: 20px 0;
-            }
-
-            button {
-                margin-top: 90px;
-            }
-        }
-
-    }
-}
-
-.login {
-    background-color: #6fb3e0;
-    width: 400px;
-    height: 300px;
-    background-color: rgb(247, 247, 247);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-
-    .loginbox {
-        padding: 0 10px;
-    }
-
-    .summary {
-        background-color: #5090c1;
-        border-top: 2px solid #597597;
-        text-align: center;
-        line-height: 1;
-        color: #fff;
-    }
-
 }

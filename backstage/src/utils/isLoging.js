@@ -1,7 +1,8 @@
+import store from '../store'
 const LOGIN_COOKIE_NAME = 'sessionId'
 
 export function isAuthenticated() {
-    //验证登录状态
+    //验证登录状态并输出username
     return _getCookie(LOGIN_COOKIE_NAME)
 }
 
@@ -25,8 +26,13 @@ function _getCookie(name) {
             if (end === -1) {
                 end = document.cookie.length
             }
-            console.log(document.cookie.substring(start, end))
-            return document.cookie.substring(start, end)
+
+            let token = document.cookie.substring(start, end)
+            // console.log(token)
+            store.dispatch({ type: 'LogIn', token })
+            console.log(store.getState())
+
+            return token
         }
     }
     return
@@ -35,6 +41,6 @@ function _getCookie(name) {
 function _setCookie(name, value, expire) {
     let date = new Date()
     date.setDate(date.getDate() + expire)
-    document.cookie = name + '=' + escape(value) + '; path=/' +
+    document.cookie = name + '=' + value + '; path=/' +
         (expire ? ';expires=' + date.toGMTString() : '')
 }

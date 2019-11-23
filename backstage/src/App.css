@@ -1,27 +1,36 @@
 @charset "UTF-8";
-#root {
+html {
+  height: 100%;
+}
+
+html body {
+  height: 100%;
   background-color: #6fb3e0;
 }
 
-.ant-layout-header {
+html body #root {
+  height: 100px;
+}
+
+html body #root .ant-layout-header {
   padding: 0;
 }
 
-.dropdown {
+html body #root .dropdown {
   position: absolute;
   right: 20px;
   top: 0px;
 }
 
-.dropdown .ant-dropdown-link {
+html body #root .dropdown .ant-dropdown-link {
   color: #fff;
 }
 
-.ant-layout-sider {
+html body #root .ant-layout-sider {
   border-right: 1px solid #e8e8e8;
 }
 
-.complaint {
+html body #root .complaint {
   width: 95%;
   margin: 20px auto;
   border: 1px solid #c5d0dc;
@@ -29,24 +38,24 @@
   text-align: center;
 }
 
-.btn-Cp {
+html body #root .btn-Cp {
   margin: 20px 50px;
   display: flex;
   justify-content: space-around;
 }
 
-.problem {
+html body #root .problem {
   width: 95%;
   margin: 20px auto;
   border: 1px solid #c5d0dc;
   padding: 16px 12px;
 }
 
-.problem .content {
+html body #root .problem .content {
   margin-left: 100px;
 }
 
-.problem .content label {
+html body #root .problem .content label {
   display: inline-block;
   margin-bottom: 40px;
   margin-right: 20px;
@@ -56,32 +65,32 @@
   vertical-align: top;
 }
 
-.problem .content input {
+html body #root .problem .content input {
   vertical-align: top;
 }
 
-.problem .content textarea {
+html body #root .problem .content textarea {
   vertical-align: middle;
 }
 
-.itemupload {
+html body #root .itemupload {
   width: 95%;
   margin: 0px auto;
 }
 
-.itemupload h2 {
+html body #root .itemupload h2 {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-.itemupload .content {
+html body #root .itemupload .content {
   border: 1px solid #c5d0dc;
   padding: 16px 12px;
   text-align: center;
 }
 
-.itemupload .content label {
+html body #root .itemupload .content label {
   display: inline-block;
   margin-bottom: 40px;
   margin-right: 20px;
@@ -90,32 +99,32 @@
   color: #f00;
 }
 
-.itemupload .content .ant-upload {
+html body #root .itemupload .content .ant-upload {
   margin-right: 20px;
 }
 
-.itemupload .content .ant-upload i {
+html body #root .itemupload .content .ant-upload i {
   font-style: normal;
   font-size: 12px;
 }
 
-.stuvip {
+html body #root .stuvip {
   width: 95%;
   margin: 20px auto;
   border: 1px solid #c5d0dc;
   padding: 16px 12px;
 }
 
-.stuvip h2 {
+html body #root .stuvip h2 {
   text-align: center;
   color: #f00;
 }
 
-.stuvip .content {
+html body #root .stuvip .content {
   margin-left: 100px;
 }
 
-.stuvip .content label {
+html body #root .stuvip .content label {
   display: inline-block;
   margin-bottom: 40px;
   margin-right: 20px;
@@ -125,26 +134,26 @@
   vertical-align: top;
 }
 
-.stuvip .content input {
+html body #root .stuvip .content input {
   vertical-align: top;
 }
 
-.stuvip .content textarea {
+html body #root .stuvip .content textarea {
   vertical-align: middle;
 }
 
-.weekly {
+html body #root .weekly {
   width: 95%;
   margin: 20px auto;
   border: 1px solid #c5d0dc;
   padding: 16px 12px;
 }
 
-.weekly .content {
+html body #root .weekly .content {
   margin-left: 100px;
 }
 
-.weekly .content label {
+html body #root .weekly .content label {
   display: inline-block;
   margin-bottom: 40px;
   margin-right: 20px;
@@ -154,60 +163,60 @@
   vertical-align: top;
 }
 
-.weekly .content input {
+html body #root .weekly .content input {
   vertical-align: top;
 }
 
-.weekly .content textarea {
+html body #root .weekly .content textarea {
   vertical-align: middle;
 }
 
-.moneyDetail h2 {
+html body #root .moneyDetail h2 {
   text-align: center;
   width: 95%;
   margin: 0 auto 20px;
   border-bottom: 1px solid #e2e2e2;
 }
 
-.moneyDetail .content {
+html body #root .moneyDetail .content {
   margin: 0 50px;
 }
 
-.moneyDetail .content table {
+html body #root .moneyDetail .content table {
   font-size: 14px;
   border-collapse: collapse;
   text-indent: 10px;
   width: 100%;
 }
 
-.moneyDetail .content table tr {
+html body #root .moneyDetail .content table tr {
   height: 30px;
   line-height: 30px;
 }
 
-.moneyDetail .content table tr td {
+html body #root .moneyDetail .content table tr td {
   border: 1px solid #ddd;
   font-size: 12px;
 }
 
-.moneyDetail .content table tr th {
+html body #root .moneyDetail .content table tr th {
   border: 1px solid #ddd;
   white-space: nowrap;
 }
 
-.moneyDetail .content table thead {
+html body #root .moneyDetail .content table thead {
   background-color: #eee;
 }
 
-.moneyDetail .content table tbody tr:nth-child(odd) {
+html body #root .moneyDetail .content table tbody tr:nth-child(odd) {
   background-color: #fff;
 }
 
-.moneyDetail .content table tbody tr:nth-child(even) {
+html body #root .moneyDetail .content table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-.evaluate .alert {
+html body #root .evaluate .alert {
   width: 95%;
   margin: 20px auto;
   color: #468847;
@@ -219,12 +228,12 @@
   background-color: #dff0d8;
 }
 
-.evaluate .content {
+html body #root .evaluate .content {
   width: 95%;
   margin: 20px auto;
 }
 
-.evaluate .content table {
+html body #root .evaluate .content table {
   width: 100%;
   font-size: 14px;
   border-collapse: collapse;
@@ -233,31 +242,31 @@
   text-align: center;
 }
 
-.evaluate .content table thead {
+html body #root .evaluate .content table thead {
   background-color: #eee;
 }
 
-.evaluate .content table tr {
+html body #root .evaluate .content table tr {
   height: 30px;
   line-height: 30px;
 }
 
-.evaluate .content table tr td {
+html body #root .evaluate .content table tr td {
   border: 1px solid #ddd;
   font-size: 12px;
 }
 
-.evaluate .content table tr th {
+html body #root .evaluate .content table tr th {
   border: 1px solid #ddd;
   white-space: nowrap;
 }
 
-.inquiry .content {
+html body #root .inquiry .content {
   width: 95%;
   margin: 20px auto;
 }
 
-.inquiry .content table {
+html body #root .inquiry .content table {
   width: 100%;
   font-size: 14px;
   border-collapse: collapse;
@@ -266,37 +275,37 @@
   text-align: center;
 }
 
-.inquiry .content table thead {
+html body #root .inquiry .content table thead {
   background-color: #eee;
 }
 
-.inquiry .content table tr {
+html body #root .inquiry .content table tr {
   height: 30px;
   line-height: 30px;
 }
 
-.inquiry .content table tr td {
+html body #root .inquiry .content table tr td {
   border: 1px solid #ddd;
   font-size: 12px;
 }
 
-.inquiry .content table tr th {
+html body #root .inquiry .content table tr th {
   border: 1px solid #ddd;
   white-space: nowrap;
 }
 
-.leave {
+html body #root .leave {
   width: 95%;
   margin: 20px auto;
   border: 1px solid #c5d0dc;
   padding: 16px 12px;
 }
 
-.leave .content {
+html body #root .leave .content {
   margin-left: 50px;
 }
 
-.leave .content label {
+html body #root .leave .content label {
   display: inline-block;
   margin-bottom: 40px;
   margin-right: 20px;
@@ -306,22 +315,22 @@
   vertical-align: top;
 }
 
-.leave .content input {
+html body #root .leave .content input {
   vertical-align: top;
 }
 
-.leave .content textarea {
+html body #root .leave .content textarea {
   vertical-align: middle;
 }
 
-.leave .content .setTime {
+html body #root .leave .content .setTime {
   margin-top: 15px;
   display: flex;
   justify-content: center;
   margin-left: -150px;
 }
 
-.leave .content .setTime:before {
+html body #root .leave .content .setTime:before {
   content: "请假时间:";
   color: red;
   margin-right: 20px;
@@ -330,22 +339,22 @@
   color: #f00;
 }
 
-.leave .content .setTime .ant-calendar-picker {
+html body #root .leave .content .setTime .ant-calendar-picker {
   width: 120px;
   margin-right: 5px;
 }
 
-.leave .content .setTime .ant-select {
+html body #root .leave .content .setTime .ant-select {
   margin-right: 5px;
   width: 56px;
 }
 
-.discipline .content {
+html body #root .discipline .content {
   width: 95%;
   margin: 20px auto;
 }
 
-.discipline .content table {
+html body #root .discipline .content table {
   width: 100%;
   font-size: 14px;
   border-collapse: collapse;
@@ -354,65 +363,65 @@
   text-align: center;
 }
 
-.discipline .content table thead {
+html body #root .discipline .content table thead {
   background-color: #eee;
 }
 
-.discipline .content table tr {
+html body #root .discipline .content table tr {
   height: 30px;
   line-height: 30px;
 }
 
-.discipline .content table tr td {
+html body #root .discipline .content table tr td {
   border: 1px solid #ddd;
   font-size: 12px;
 }
 
-.discipline .content table tr th {
+html body #root .discipline .content table tr th {
   border: 1px solid #ddd;
   white-space: nowrap;
 }
 
-.index .detail {
+html body #root .index .detail {
   margin: 20px 10px;
 }
 
-.index .detail .ant-col-18 {
+html body #root .index .detail .ant-col-18 {
   padding-right: 10px;
   font-size: 14px;
 }
 
-.index .detail .ant-col-18 .ant-descriptions-item-label {
+html body #root .index .detail .ant-col-18 .ant-descriptions-item-label {
   padding: 5px 20px;
   background-color: #edf3f4;
   color: #336199;
   border-right: 1px solid #dcebf7;
 }
 
-.index .detail .ant-col-18 .ant-descriptions-item-content {
+html body #root .index .detail .ant-col-18 .ant-descriptions-item-content {
   padding: 5px 20px;
   border-right: 1px solid #dcebf7;
 }
 
-.index .detail .ant-col-6 {
+html body #root .index .detail .ant-col-6 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.index .detail .ant-col-6 img {
+html body #root .index .detail .ant-col-6 img {
   margin: 20px 0;
 }
 
-.index .detail .ant-col-6 button {
+html body #root .index .detail .ant-col-6 button {
   margin-top: 90px;
 }
 
-.login {
+html body #root .login {
   background-color: #6fb3e0;
   width: 400px;
-  height: 300px;
+  height: 268px;
   background-color: #f7f7f7;
   position: absolute;
   left: 0;
@@ -422,14 +431,36 @@
   margin: auto;
 }
 
-.login .loginbox {
+html body #root .login .loginbox {
   padding: 0 10px;
+  text-align: center;
 }
 
-.login .summary {
+html body #root .login .loginbox h2 {
+  color: #478fca;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 40px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+html body #root .login .loginbox .ant-input {
+  margin-bottom: 10px;
+}
+
+html body #root .login .loginbox .ant-btn {
+  width: 100%;
+}
+
+html body #root .login .summary {
+  height: 40px;
   background-color: #5090c1;
   border-top: 2px solid #597597;
   text-align: center;
-  line-height: 1;
+}
+
+html body #root .login .summary h3 {
+  line-height: 40px;
   color: #fff;
+  font-weight: 400;
 }

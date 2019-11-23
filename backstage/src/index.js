@@ -3,19 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-import { Provider } from 'react-redux'
-import store from './store'
 import {
     BrowserRouter as Router,
     // HashRouter as Router,
-
 } from "react-router-dom";
 
-ReactDOM.render(<Router>
-    <Provider store={store}>
-        <App />
-    </Provider></Router>, document.getElementById('root'));
+
+function Root() {
+    return (
+        // <Provider store={store}>
+        <Router>
+            {/* <Provider {...store}> */}
+            <App />
+        </Router>
+        // </Provider >
+    )
+}
+
+
+ReactDOM.render(<Root />, document.getElementById('root'));
 
 
 serviceWorker.unregister();
