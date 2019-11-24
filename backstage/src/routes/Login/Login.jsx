@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Button, Icon, Divider } from 'antd';
+import { Input, Button, Icon, Divider, Modal } from 'antd';
 import { authenticateSuccess } from '../../utils/isLoging'
 import store from '../../store'
 export default class Login extends React.Component {
@@ -7,7 +7,7 @@ export default class Login extends React.Component {
         super(props)
         this.state = {
             user: '',
-            psw: ''
+            psw: '',
         }
     }
     getUser(e) {
@@ -22,16 +22,31 @@ export default class Login extends React.Component {
 
     }
     L() {
-        console.log(this.state)
-        // store.getState()//获取
-        // store.dispatch({ type: 'LogIn', token })
+        console.log(this)
         if (this.state.user === store.getState().username &&
             this.state.psw === store.getState().psw) {
             store.dispatch({ type: 'LogIn', token: store.getState().username })
             authenticateSuccess(store.getState().username)
             this.props.history.replace('/');
+        } else {
+            let _this = this
+            Modal.info({
+                title: '提醒',
+                content: (
+                    <div>
+                        <p>你的账户或者密码,请确认后重试</p>
+                    </div>
+                ),
+                onOk() {
+                    _this.setState({
+                        user: '',
+                        psw: ''
+                    })
+                }
+            });
         }
     }
+
     render() {
         return (
             <div className='login'>
@@ -42,11 +57,12 @@ export default class Login extends React.Component {
                         placeholder="账号"
                         onChange={this.getUser.bind(this)}
                         value={this.state.user}
+                        autoComplete="off"
                         suffix={
                             <Icon type="user" style={{ color: 'rgba(0,0,0,.45)' }} />
                         }
                     />
-                    <Input.Password placeholder="密码" onChange={this.getPsw.bind(this)} />
+                    <Input.Password placeholder="密码" onChange={this.getPsw.bind(this)} autoComplete="off" />
                     <Button type="primary" icon="key" onClick={this.L.bind(this)} >
                         登录
                     </Button>
@@ -57,7 +73,6 @@ export default class Login extends React.Component {
                 <div className="summary">
                     <h3>学习总结入口</h3>
                 </div>
-
             </div>
         )
 

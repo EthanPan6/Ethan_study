@@ -22,7 +22,7 @@ export default class Problem extends React.Component {
                     <div className="content">
 
                         <label>学员姓名:</label>
-                        <Input placeholder="Basic usage" style={{ width: 120 }} readOnly value="fskdnfkj" /><br />
+                        <Input placeholder="Basic usage" style={{ width: 120 }} readOnly value="张三" /><br />
                         <label>问题描述:</label>
                         <textarea style={{ width: 520, height: 90 }} placeholder="本投诉是匿名投诉，不会暴露您的信息" onChange={this.getInputValue} value={this.state.textAreaValue}></textarea>
                     </div>

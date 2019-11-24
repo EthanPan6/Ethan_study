@@ -27,8 +27,13 @@ export default class Evaluate extends React.Component {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td colSpan="7" >
-                                    </td>
+                                    <td > </td>
+                                    <td > </td>
+                                    <td > </td>
+                                    <td > </td>
+                                    <td > </td>
+                                    <td > </td>
+                                    <td > </td>
                                 </tr>
                             </tbody>
                         </table>

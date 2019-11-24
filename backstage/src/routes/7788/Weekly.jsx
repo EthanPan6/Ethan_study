@@ -21,7 +21,7 @@ export default class Weekly extends React.Component {
                     <div className="content">
 
                         <label>学员姓名:</label>
-                        <Input placeholder="Basic usage" style={{ width: 120 }} readOnly value="fskdnfkj" /><br />
+                        <Input placeholder="Basic usage" style={{ width: 120 }} readOnly value="张三" /><br />
                         <label>周报标题:</label>
                         <Input placeholder="请填写周报标题" style={{ width: 120 }} value="" /><br />
                         <label>周报内容:</label>

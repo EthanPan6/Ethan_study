@@ -311,38 +311,22 @@ html {
                 .content {
                     margin-left: 50px;
 
-                    label {
-                        display: inline-block;
+                    tr {
                         margin-bottom: 40px;
-                        margin-right: 20px;
-                        width: 100px;
-                        text-align-last: justify;
-                        color: #f00;
-                        vertical-align: top;
-                    }
 
-                    input {
-                        vertical-align: top;
-                    }
-
-                    textarea {
-                        vertical-align: middle;
+                        td {
+                            &:nth-child(1) {
+                                display: inline-block;
+                                text-align-last: justify;
+                                color: #f00;
+                            }
+                        }
                     }
 
                     .setTime {
                         margin-top: 15px;
                         display: flex;
                         justify-content: center;
-                        margin-left: -150px;
-
-                        &:before {
-                            content: "请假时间:";
-                            color: red;
-                            margin-right: 20px;
-                            width: 100px;
-                            text-align-last: justify;
-                            color: #f00;
-                        }
 
                         .ant-calendar-picker {
                             width: 120px;

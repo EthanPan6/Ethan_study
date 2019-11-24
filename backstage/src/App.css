@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   height: 100%;
 }
@@ -305,38 +304,20 @@ html body #root .leave .content {
   margin-left: 50px;
 }
 
-html body #root .leave .content label {
-  display: inline-block;
+html body #root .leave .content tr {
   margin-bottom: 40px;
-  margin-right: 20px;
-  width: 100px;
+}
+
+html body #root .leave .content tr td:nth-child(1) {
+  display: inline-block;
   text-align-last: justify;
   color: #f00;
-  vertical-align: top;
-}
-
-html body #root .leave .content input {
-  vertical-align: top;
-}
-
-html body #root .leave .content textarea {
-  vertical-align: middle;
 }
 
 html body #root .leave .content .setTime {
   margin-top: 15px;
   display: flex;
   justify-content: center;
-  margin-left: -150px;
-}
-
-html body #root .leave .content .setTime:before {
-  content: "请假时间:";
-  color: red;
-  margin-right: 20px;
-  width: 100px;
-  text-align-last: justify;
-  color: #f00;
 }
 
 html body #root .leave .content .setTime .ant-calendar-picker {

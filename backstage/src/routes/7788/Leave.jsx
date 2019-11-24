@@ -11,9 +11,9 @@ export default class Leave extends React.Component {
         this.state = {
             textAreaValue: '',
             startData: {
-                year: '2019',
-                month: '11',
-                date: '18',
+                year: '',
+                month: '',
+                date: '',
                 hour: '',
                 min: ''
             },
@@ -26,6 +26,13 @@ export default class Leave extends React.Component {
             }
         }
     }
+    getNow() {
+        let timeObj = new Date()
+        let year = timeObj.getFullYear();
+        let month = timeObj.getMonth() + 1;
+        let day = timeObj.getDate();
+        return `${year}-${month}-${day}`
+    }
     getInputValue = event => {
         this.setState({
             textAreaValue: event.target.value,
@@ -33,7 +40,6 @@ export default class Leave extends React.Component {
     };
     setStartData = ev => {
         this.setState({
-
         })
         //https://momentjs.com/
     }
@@ -48,60 +54,66 @@ export default class Leave extends React.Component {
             <> <CustomBreadcrumb arr={['学员考勤', '请假']} />
                 <div className="leave">
                     <div className="content">
-                        <label>学员姓名:</label>
-                        <Input placeholder="Basic usage" style={{ width: 120 }} readOnly value="fskdnfkj" /><br />
-                        <label>请假理由:</label>
-                        <textarea style={{ width: 520, height: 90 }} placeholder="请输入请假理由" onChange={this.getInputValue} value={this.state.textAreaValue}></textarea><br />
+                        <table>
+                            <tbody>
+                                <tr><td>学员姓名:</td><td><Input placeholder="Basic usage" readOnly value="张三" /></td></tr>
+                                <tr><td>请假理由:</td><td> <textarea style={{ width: 520, height: 90 }}
+                                    placeholder="请输入请假理由" onChange={this.getInputValue}
+                                    value={this.state.textAreaValue}>
+                                </textarea></td></tr>
+                                <tr><td>请假时间：</td><td>
+                                    <div className="setTime" >
+                                        <DatePicker defaultValue={moment(this.getNow(), 'YYYY-MM-DD')} allowClear='false' />
+                                        <Select defaultValue="8" onChange={this.setStartData}>
+                                            <Option value="8"> 8 </Option>
+                                            <Option value="9"> 9 </Option>
+                                            <Option value="10">10</Option>
+                                            <Option value="11">11</Option>
+                                            <Option value="12">12</Option>
+                                            <Option value="13">13</Option>
+                                            <Option value="14">14</Option>
+                                            <Option value="15">15</Option>
+                                            <Option value="16">16</Option>
+                                            <Option value="17">17</Option>
+                                            <Option value="18">18</Option>
+                                            <Option value="19">19</Option>
+                                            <Option value="20">20</Option>
+                                            <Option value="21">21</Option>
+                                            <Option value="22">22</Option>
+                                        </Select>
+                                        <Select defaultValue="00" onChange={this.setStartData}>
+                                            <Option value="00">00</Option>
+                                            <Option value="30">30</Option>
+                                        </Select>
+                                        --
+                    <DatePicker defaultValue={moment(this.getNow(), 'YYYY-MM-DD')} allowClear='false' />
+                                        <Select defaultValue="13" onChange={this.setStartData}>
+                                            <Option value="8"> 8 </Option>
+                                            <Option value="9"> 9 </Option>
+                                            <Option value="10">10</Option>
+                                            <Option value="11">11</Option>
+                                            <Option value="12">12</Option>
+                                            <Option value="13">13</Option>
+                                            <Option value="14">14</Option>
+                                            <Option value="15">15</Option>
+                                            <Option value="16">16</Option>
+                                            <Option value="17">17</Option>
+                                            <Option value="18">18</Option>
+                                            <Option value="19">19</Option>
+                                            <Option value="20">20</Option>
+                                            <Option value="21">21</Option>
+                                            <Option value="22">22</Option>
+                                        </Select>
+                                        <Select defaultValue="00" onChange={this.setStartData}>
+                                            <Option value="00">00</Option>
+                                            <Option value="30">30</Option>
+                                        </Select>
+                                    </div>
+                                </td></tr></tbody>
+                        </table>
 
 
-                        <div className="setTime" >
-                            <DatePicker defaultValue={moment('2015-01-01', 'YYYY-MM-DD')} allowClear='false' />
-                            <Select defaultValue="8" onChange={this.setStartData}>
-                                <Option value="8"> 8 </Option>
-                                <Option value="9"> 9 </Option>
-                                <Option value="10">10</Option>
-                                <Option value="11">11</Option>
-                                <Option value="12">12</Option>
-                                <Option value="13">13</Option>
-                                <Option value="14">14</Option>
-                                <Option value="15">15</Option>
-                                <Option value="16">16</Option>
-                                <Option value="17">17</Option>
-                                <Option value="18">18</Option>
-                                <Option value="19">19</Option>
-                                <Option value="20">20</Option>
-                                <Option value="21">21</Option>
-                                <Option value="22">22</Option>
-                            </Select>
 
-                            <Select defaultValue="00" onChange={this.setStartData}>
-                                <Option value="00">00</Option>
-                                <Option value="30">30</Option>
-                            </Select>
-                            --
-                    <DatePicker defaultValue={moment('2015-01-01', 'YYYY-MM-DD')} allowClear='false' />
-                            <Select defaultValue="8" onChange={this.setStartData}>
-                                <Option value="8"> 8 </Option>
-                                <Option value="9"> 9 </Option>
-                                <Option value="10">10</Option>
-                                <Option value="11">11</Option>
-                                <Option value="12">12</Option>
-                                <Option value="13">13</Option>
-                                <Option value="14">14</Option>
-                                <Option value="15">15</Option>
-                                <Option value="16">16</Option>
-                                <Option value="17">17</Option>
-                                <Option value="18">18</Option>
-                                <Option value="19">19</Option>
-                                <Option value="20">20</Option>
-                                <Option value="21">21</Option>
-                                <Option value="22">22</Option>
-                            </Select>
-                            <Select defaultValue="00" onChange={this.setStartData}>
-                                <Option value="00">00</Option>
-                                <Option value="30">30</Option>
-                            </Select>
-                        </div>
                     </div>
                     <div className='btn-Cp'>
                         <Button type="primary" size='large' icon='check'>提问</Button>
