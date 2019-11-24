@@ -1,13 +1,13 @@
 import React from 'react';
 import { Input, Button, Icon, Divider } from 'antd';
-
+import { authenticateSuccess } from '../../utils/isLoging'
+import store from '../../store'
 export default class Login extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             user: '',
             psw: ''
-
         }
     }
     getUser(e) {
@@ -18,12 +18,19 @@ export default class Login extends React.Component {
     getPsw(e) {
         this.setState({
             psw: e.target.value
-
         })
-        console.log(this.state.psw)
+
     }
-    L(){
-        
+    L() {
+        console.log(this.state)
+        // store.getState()//获取
+        // store.dispatch({ type: 'LogIn', token })
+        if (this.state.user === store.getState().username &&
+            this.state.psw === store.getState().psw) {
+            store.dispatch({ type: 'LogIn', token: store.getState().username })
+            authenticateSuccess(store.getState().username)
+            this.props.history.replace('/');
+        }
     }
     render() {
         return (

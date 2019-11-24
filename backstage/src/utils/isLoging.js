@@ -28,10 +28,7 @@ function _getCookie(name) {
             }
 
             let token = document.cookie.substring(start, end)
-            // console.log(token)
             store.dispatch({ type: 'LogIn', token })
-            console.log(store.getState())
-
             return token
         }
     }

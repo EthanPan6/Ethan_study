@@ -2,7 +2,9 @@ import { createStore } from 'redux';
 
 const counter = (state = {
     isLogin: false,
-    token: ''
+    token: '',
+    username: 'admin',
+    psw: 'admin'
 }, action) => {
     switch (action.type) {
         // 修改的动作
