@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="file1" type="file" name="file1" multiple="multiple" accept=".png">
+    <img src="" id="img" style="display: none;">
+    <button id="btn">值</button>
+</body>
+<script>
+
+    let tt = document.getElementById('file1')
+    let btn = document.getElementById('btn')
+    let img = document.getElementById('img')
+
+    btn.onclick = () => {
+        console.log(tt.files)
+        var oFReader = new FileReader();
+        var file = tt.files[0];
+        oFReader.readAsDataURL(file);
+        console.log(oFReader)
+        oFReader.onloadend = function (oFRevent) {
+            var src = oFRevent.target.result;
+            img.style.display = "block"
+            img.src = src
+        }
+    }
+
+
+
+
+
+
+
+    let arr = [2, 3, 6, 7, 9]
+    //任意大于3的自然数都可以拆分为2*m+3*n
+    /*
+    6=2+2+2=3+3
+    7=2+2+3
+    9=2+2+2+3=3+3+3
+    
+    所以任意target=2*p+3*q
+    
+    8=2*4=3*2+2
+    所以p<=4
+    q<=2
+    然后二次遍历
+    */
+
+    function fn(target) {
+        let p = Math.floor(target / 2)
+        let q = Math.floor(target / 3)
+        let newArr = []
+
+        for (let i = 0; i < p; i++) {
+            for (let j = 0; j < q; j++) {
+                // console.log(i + j)
+                newArr.push(2 * i + 3 * j)
+            }
+        }
+        return newArr.sort((a, b) => a - b)
+    }
+
+    // console.log(fn(11))
+    let arr2 = fn(8)
+    let arr3 = []
+    // for (let item in arr2) {
+    //     arr.includes(item) && arr3.push(item)
+    //     console.log(item)
+    // }
+    arr2.forEach(item => arr.includes(item) && arr3.push(item))
+    console.log(arr3)
+
+    f = (a) => {
+        return (b) => {
+            return (c) => {
+                return a + b + c
+            }
+        }
+    }
+    console.log(f(1))
+</script>
+
+</html>
