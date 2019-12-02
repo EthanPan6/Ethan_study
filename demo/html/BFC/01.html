@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .father {
+            display: flex;
+            /* 
+            flex-direction属性决定主轴的方向（即项目的排列方向）
+                row（默认值）：主轴为水平方向，起点在左端。
+                column：主轴为垂直方向，起点在上沿。
+            */
+            flex-direction: row;
+            /* 
+            flex-wrap属性,主轴方向是否换行
+                flex-wrap: nowrap | wrap | wrap-reverse;
+            */
+            flex-wrap: nowrap;
+
+
+            
+        }
+
+        .son1 {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            float: left;
+        }
+
+        .son2 {
+            width: 100px;
+            height: 100px;
+            background-color: #58bc58;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+    </div>
+</body>
+
+</html>
