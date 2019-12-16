@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var aaa = (() => {
+            var a = 1;
+            function bbb() {
+                a++;
+                alert(a);
+            }
+            function ccc() {
+                a++;
+                alert(a);
+            }
+            return {
+                b: bbb,
+                c: ccc
+            }
+        })();
+        alert(aaa.a)//undefined
+        aaa.b()//2
+        aaa.c()//3
+
+    </script>
+</body>
+
+</html>

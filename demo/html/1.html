@@ -11,10 +11,45 @@
 <body>
     <script>
 
-        if (typeof name === "undefined") {
-            var name = "aaa";
-            console.log(aaa)
+        var a = [{
+            id: 1,
+            name: 'g1'
+        }, {
+            id: 2,
+            name: 'g2'
+        }, {
+            id: 3,
+            name: 'g3'
+        }]
+        var b = [
+            {
+                id: 3,
+                price: 'g3'
+            }, {
+                id: 1,
+                price: 'g1'
+            }
+        ]
+        // a.map(val => {
+        //     b.map(val1 => {
+        //         if (val.id === val1.id) {
+        //             return Object.assign(val, val1);
+        //         }
+        //     })
+        // })
+        // console.log(a)
+
+
+
+        var arrId = Array.from(new Set(a.concat(b)))
+        console.log(arrId, a, b)
+        for (let item in arrId) {
+            
         }
+
+
+
+
     </script>
 </body>
 
