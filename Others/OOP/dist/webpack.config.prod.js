@@ -1,0 +1,1 @@
+"use strict";var path=require("path"),HtmlWebPackPlugin=require("html-webpack-plugin");module.exports={mode:"development",entry:{entry:"./src/index.js"},output:{path:path.resolve(__dirname,"dist"),filename:"bundle.js"},module:{},plugins:[new HtmlWebpackPlugin({})],devServer:{contentBase:path.join(__dirname,"dist"),compress:!0,port:9e3}};

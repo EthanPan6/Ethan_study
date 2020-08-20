@@ -1,0 +1,1 @@
+"use strict";var testObj={12:"Namath",16:"Montana",19:"Unitas"},playerNumber=16,player=testObj[playerNumber];

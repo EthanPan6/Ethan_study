@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Contacts Example</title>
+		<script type="text/javascript">
+			// 监听plusready事件  
+			document.addEventListener("plusready", function() {}, false);
+			
+			// 从相册中选择图片 
+			function galleryImg() {
+				// 从相册中选择图片
+				console.log("从相册中选择图片:");
+			    plus.gallery.pick( function(path){
+			    	console.log(path);//显示选择图片的路径
+			    }, function ( e ) {
+			    	console.log( "取消选择图片" );
+			    }, {filter:"image"} );
+			}
+			// 从相册中选择多张图片 
+			function galleryImgs(){
+				// 从相册中选择图片
+				console.log("从相册中选择多张图片:");
+			    plus.gallery.pick( function(e){
+			    	for(var i in e.files){
+				    	console.log(e.files[i]);
+			    	}
+			    }, function ( e ) {
+			    	console.log( "取消选择图片" );
+			    },{filter:"image",multiple:true});
+			}
+			function getContact() {//获取通讯簿信息
+				plus.contacts.getAddressBook(plus.contacts.ADDRESSBOOK_PHONE, function(addressbook) {
+					addressbook.find(null, function(contacts) {
+						// alert(contacts.length);
+						// document.write(contacts)
+						console.log(JSON.stringify(contacts))
+					}, function() {
+						alert("error");
+					}, {
+						multiple: true,
+						//multiple: (Boolean 类型 )是否查找多个联系人，默认值为true
+					});
+				}, function(e) {
+					alert("Get address book failed: " + e.message);
+				});
+			}
+			const getLocation=()=>{//获取设备当前位置信息
+				// plus.geolocation.getCurrentPosition(successCB, errorCB, option);
+				plus.geolocation.getCurrentPosition(p=>{
+					console.log(p)
+					console.log(JSON.stringify(p))
+				}, e=>{
+					alert('Geolocation error: ' + e.message);
+				});
+			}
+			// 拍照
+			function captureImage(){
+				var cmr = plus.camera.getCamera();
+				var res = cmr.supportedImageResolutions[0];
+				var fmt = cmr.supportedImageFormats[0];
+				console.log("Resolution: "+res+", Format: "+fmt);
+				cmr.captureImage( function( path ){
+						alert( "Capture image success: " + path );  
+					},
+					function( error ) {
+						alert( "Capture image failed: " + error.message );
+					},
+					{resolution:res,format:fmt}
+				);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="galleryImg()">相册</button>
+		<button onclick="getContact()">获取手机联系人</button>
+		<button onclick="getLocation()">获取手机当前位置</button>
+		<button onclick="captureImage()">拍照</button>
+		<a href="http://mcar.co/plugin.php?id=dsu_paulsign:sign&operation=qiandao&infloat=1">签到</a>
+	</body>
+</html>

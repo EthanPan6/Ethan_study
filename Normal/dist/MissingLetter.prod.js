@@ -1,0 +1,1 @@
+"use strict";function fearNotLetter(t){for(var e=t.length,r=t[0].charCodeAt(),a=t[e-1].charCodeAt(),o=r;o<a;o++)if(o)return;return t}fearNotLetter("abce"),fearNotLetter("ghijlm");

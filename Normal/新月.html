@@ -1,0 +1,32 @@
+<p>
+    术语表：blur-radius => 模糊半径，spread-radius => 辐射半径，transparent => 透明的，border-radius => 圆角边框。
+
+    通过使用选择器选择不同的元素并改变其属性，你可以创造一些有趣的形状。比如新月。你可以使用box-shadow属性来设置元素的阴影，border-radius属性控制元素的圆角边框。
+
+    首先你将会创建一个圆的、透明的对象，它具有模糊阴影并略微向两边递减。如你所见，这个阴影其实就是新月形狀。
+
+    为了创建一个圆形的对象，border-radius应该被设置成 50%。
+
+    你应该还记得之前关卡的box-shadow属性以及它的依次取值offset-x、offset-y、blur-radius、spread-radius和颜色值。其中blur-radius和spread-radius是可选的。
+</p>
+<p>
+    把编辑器里的正方形元素变成新月形状。首先，把background-color改为 transparent，接着把border-radius属性设置成 50%，以创建一个圆形。最后，更改box-shadow属性，使其offset-x为
+    25px，offset-y为 10px，blur-radius为 0，spread-radius为 0，color为 blue。
+</p>
+<style>
+    .center {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+
+        background-color: transparent;
+        border-radius: 50%;
+        box-shadow: 25px 10px 0 0 blue;
+    }
+</style>
+<div class="center"></div>

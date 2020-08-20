@@ -1,0 +1,10 @@
+.result {
+  background-color: #fee;
+  width: 200px;
+  height: 120px;
+}
+
+.keyboard {
+  display: flex;
+  width: 200px;
+}

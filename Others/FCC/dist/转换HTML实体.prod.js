@@ -1,0 +1,1 @@
+"use strict";function convertHTML(o){var r={"&":"$amp","<":"$lt",">":"$gt",'"':"$quot","'":"$apos"},t="",n=!0,l=!1,a=void 0;try{for(var e,c=o[Symbol.iterator]();!(n=(e=c.next()).done);n=!0){var u=e.value;console.log(t),t+=r[u]||u,console.log(t)}}catch(o){l=!0,a=o}finally{try{n||null==c.return||c.return()}finally{if(l)throw a}}return t}convertHTML("Dolce & Gabbana");

@@ -1,0 +1,1 @@
+"use strict";function destroyer(){var e=Array.prototype.slice.call(arguments),r=e[0],o=e.slice(1);return console.log(r,o),r.filter(function(e){return!o.includes(e)})}console.log(destroyer([1,2,3,1,2,3],2,3));

@@ -1,0 +1,1 @@
+"use strict";function fibonacci(n){for(var o=1,i=1,f=[1,1],r=2;r<n;r++){var c=[i,o+i],o=c[0],i=c[1];f.push(i)}return f}function finb2(n){return 2<n?finb2(n-1)+finb2(n-2):1}function fib3(n){for(var o=[1,1];n>o.length;)o.push(o[o.length-1]+o[o.length-2]);return o}console.log(fibonacci(5)),console.log(finb2(5)),console.log(fib3(5));
