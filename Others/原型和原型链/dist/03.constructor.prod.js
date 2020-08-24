@@ -1,0 +1,1 @@
+"use strict";function Father(){}console.log(Father==Father.prototype.constructor);var father=new Father;console.log(father.constructor===Father),console.log(father.constructor===Father.prototype.constructor);

@@ -1,0 +1,1 @@
+"use strict";function Father(){}var father=new Father;console.log(father.__proto__===Father.prototype),console.log(Object.getPrototypeOf(father)===Father.prototype);

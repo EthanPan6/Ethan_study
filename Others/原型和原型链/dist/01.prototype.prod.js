@@ -1,0 +1,1 @@
+"use strict";function Father(e){this.age=e}console.log(Father.prototype),Father.prototype.name="Dad";var father1=new Father(12),father2=new Father;console.log(father1.name,father1.age),console.log(father2.name,father2.age);
