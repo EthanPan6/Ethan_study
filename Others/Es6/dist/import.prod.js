@@ -1,0 +1,1 @@
+"use strict";function handleFileSelect(e){var l=e.target.files,n=new FileReader;n.readAsText(new Blob(l)),n.onload=function(){console.log(this.result)},readTextFile("../Data/a.json",function(e){var l=JSON.parse(e);console.log(l)})}
