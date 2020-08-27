@@ -1,0 +1,1 @@
+"use strict";function User(n){this.name=n,this.sayHi=function(){console.log("My name is: "+this.name)}}var john=new User("John");john.sayHi();

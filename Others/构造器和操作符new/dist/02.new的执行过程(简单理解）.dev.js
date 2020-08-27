@@ -1,7 +1,7 @@
 "use strict";
 
 /*
-
+简单理解：
 当一个函数被使用 new 操作符执行时，它按照以下步骤：
 
 1. 一个新的空对象被创建并分配给 this。
@@ -15,3 +15,9 @@ function User(name) {
   this.name = name;
   this.isAdmin = false; // return this;隐式返回
 }
+/*
+进阶理解：
+
+见  08.实现new.js  
+
+*/

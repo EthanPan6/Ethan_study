@@ -1,0 +1,1 @@
+"use strict";function User(r){if(!(this instanceof User&&this.constructor))return new User(r);this.name=r}var mark=new User("mark"),marry=User("marry");console.log(mark,marry);

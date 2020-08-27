@@ -1,0 +1,1 @@
+"use strict";function newNew(e){var n={};n.__proto__=e.prototype;for(var o=arguments.length,r=new Array(1<o?o-1:0),t=1;t<o;t++)r[t-1]=arguments[t];var s=e.apply(n,r);return s instanceof Object?s:n}function Person(e,n){this.name=e,this.age=n}var person1=newNew(Person,"Tom",20);console.log(person1);

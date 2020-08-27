@@ -1,0 +1,1 @@
+"use strict";function BigUser(){return this.name="John",{name:"Godzilla"}}function O(){return this.num=7,{}}function N(){return this.num=7,77}console.log((new BigUser).name),console.log(new O),console.log(new N);
