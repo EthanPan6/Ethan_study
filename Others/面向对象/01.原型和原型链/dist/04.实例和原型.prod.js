@@ -1,0 +1,1 @@
+"use strict";function Father(){}Father.prototype.name="Dad";var father1=new Father;console.log(father1,father1.name),father1.name="Papa",console.log(father1,father1.name),delete father1.name,console.log(father1,father1.name);

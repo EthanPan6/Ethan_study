@@ -1,0 +1,1 @@
+"use strict";console.log(null===Object.prototype.__proto__);
