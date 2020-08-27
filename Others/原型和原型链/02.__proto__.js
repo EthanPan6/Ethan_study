@@ -4,6 +4,9 @@ let father = new Father();
 console.log(father.__proto__ === Father.prototype);//true
 //ES5
 console.log(Object.getPrototypeOf(father) === Father.prototype) // true
+// Object.getPrototype(obj)是ES5中用来获取obj对象的原型对象的标准方法。
+// obj.__proto__是获取obj对象的原型对象的非标准方法。
+
 /*
 
 Father（构造函数）------------------------>father(实例对象)

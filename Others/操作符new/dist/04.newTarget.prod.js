@@ -1,0 +1,1 @@
+"use strict";function User(){console.log(this instanceof User?this.constructor:void 0)}User(),new User;

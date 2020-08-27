@@ -1,0 +1,1 @@
+"use strict";function User(s){this.name=s,this.isAdmin=!1}var user1=new User("jack");console.log(user1);
