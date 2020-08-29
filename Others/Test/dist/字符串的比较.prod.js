@@ -1,1 +1,1 @@
-"use strict";function bj(o,c){return o==c?"".concat(o,"=").concat(c):c<o}console.log(bj("a","A")),console.log(bj("a","B")),console.log(bj("ab","aa")),console.log(bj("aa","ab")),console.log("Zzdd4515".codePointAt(5));
+"use strict";function bj(r,n){return r==n?"".concat(r,"=").concat(n):n<r}var fruits=["Apple","Orange"],numArr=[1,2,3,4,5,6,7,8,9],arr1=[1,1],arr2=[2,2],arr3=[3,3];console.log(numArr.slice(5),numArr);
