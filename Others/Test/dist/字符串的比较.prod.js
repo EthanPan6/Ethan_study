@@ -1,0 +1,1 @@
+"use strict";function bj(o,c){return o==c?"".concat(o,"=").concat(c):c<o}console.log(bj("a","A")),console.log(bj("a","B")),console.log(bj("ab","aa")),console.log(bj("aa","ab")),console.log("Zzdd4515".codePointAt(5));
