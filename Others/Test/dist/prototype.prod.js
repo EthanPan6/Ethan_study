@@ -1,0 +1,1 @@
+"use strict";function Person(o,n,e){this.name=o,this.age=n,this.like=e}Person.prototype.eat=function(){console.log("My name is ".concat(this.name,",I like ").concat(this.like))};var Xiaoming=new Person("Xiaoming",12,"apple");console.log(Xiaoming),console.log(Person.prototype),console.log(Xiaoming.__proto__);

@@ -1,0 +1,1 @@
+"use strict";var person={firstName:"Bill",lastName:"Gates",age:62,eyeColor:"blue",sayThis:function(){console.log(this)}};person.sayThis();
