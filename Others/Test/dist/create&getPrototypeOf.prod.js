@@ -1,0 +1,1 @@
+"use strict";var a={name:"father"},b=Object.create(a,{foo:{writable:!0,configurable:!0,value:"hello"},bar:{configurable:!1,get:function(){return 10},set:function(e){console.log("Setting `o.bar` to",e)}}});console.log(b),console.log(Object.getPrototypeOf(b)),console.log(Object.getPrototypeOf(b)===a);
