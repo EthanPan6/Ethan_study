@@ -10,3 +10,4 @@ arguments
 Generator
 高阶函数
 函数式编程
+function.length
