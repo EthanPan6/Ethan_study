@@ -12,3 +12,6 @@ add(1, 12)
 
 let un: undefined = undefined;//将undefined赋给了un,un无法再赋除null和undefined的其他值
 let nu: null = null;//将null赋给了un,un无法再赋除null和undefined的其他值
+
+
+
