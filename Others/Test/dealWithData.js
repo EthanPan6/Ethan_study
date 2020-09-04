@@ -3,9 +3,11 @@ let apiObj = {};
 data.forEach(item => {
     let itemArr = item.split("：");
     // console.log(itemArr)
-    // Object.defineProperty(apiObj, itemArr[0], {
-    //     value: itemArr[1]
-    // })
-    apiObj[itemArr[0]] = itemArr[1]
+    Object.defineProperty(apiObj, itemArr[0], {
+        value: itemArr[1],
+        writable: true
+    })
+    console.log(apiObj)
+    // apiObj[itemArr[0]] = itemArr[1]
 })
-console.log(apiObj)
+console.log(apiObj['基⾦财务数据接⼝'])
