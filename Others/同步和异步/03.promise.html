@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function test(succese) {
+            var promise = new Promise((resolve, reject) => {
+                // succese ? resolve("请求数据成功") : reject("请求数据失败");
+
+                resolve("请求数据成功");
+                reject("请求数据失败");
+            });
+            console.log(promise)
+
+            promise.then((res) => {
+                console.log(res)
+            }, (err) => {
+                console.log(err)
+            })
+
+
+        }
+    </script>
+</body>
+
+</html>

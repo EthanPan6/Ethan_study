@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #58bc58;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // function add(a, b) {
+        //     return a + b;
+        // }
+
+        const add = (a, b) => a + b;
+        console.log(add(2, 5));
+        const createElements = () => {
+            let body = document.querySelector("body");
+            let div = document.createElement("div");
+            div.innerHTML = "Hello World!";
+            body.appendChild(div);
+
+        }
+        createElements()
+
+        let div = document.querySelector("div");
+
+
+
+        // div.onclick = function () {
+        //     let timer1 = setInterval(() => {
+        //         this.style.backgroundColor =
+        //             `rgb(${parseInt(Math.random()*256)},${parseInt(Math.random()*256)},${parseInt(Math.random()*256)})`;
+
+        //     }, 1000)
+        // }
+
+        // div.onclick = function () {
+        //     let timer1 = setInterval(function () {
+        //         this.style.backgroundColor =
+        //             `rgb(${parseInt(Math.random()*256)},${parseInt(Math.random()*256)},${parseInt(Math.random()*256)})`;
+        //     }.bind(this), 1000)
+        // }
+
+     
+    </script>
+</body>
+
+</html>

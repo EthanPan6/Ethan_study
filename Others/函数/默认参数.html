@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function a(a = 0) {
+            return a;
+        }
+
+
+        var x = 3;
+
+        function b(x = 4, y = x) {
+            console.log(x);
+            console.log(y);
+        }
+        b() // 4 4
+        //未传入参数,所以都调用默认参数
+
+        function c(a = 4, b = x) {
+            console.log(a);
+            console.log(b);
+        }
+        c() // 4  3
+        //未传入参数,所以都调用默认参数,默认参数没有则向外寻找,外部没有则返回`x is not defined`
+       
+    </script>
+</body>
+
+</html>
