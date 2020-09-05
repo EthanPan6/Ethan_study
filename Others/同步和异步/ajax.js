@@ -14,17 +14,18 @@ xhr.send()
 
 
 function Ajax(opt) {
-    this.data = "" || opt.data;
+    this.data = "";
     this.asyn = true,
-    this.error = null,
-    this.type = "get"
+        this.error = null,
+        this.type = "get",
+        this
 
 }
 Ajax.prototype = {
-    get() {
+        get() {
 
-    },
-    post() {
+        },
+        post() {
 
+        }
     }
-}
