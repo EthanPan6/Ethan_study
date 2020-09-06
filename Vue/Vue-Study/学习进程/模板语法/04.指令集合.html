@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>v-text和{{}}、v-html</h2>
+        <p v-text="textContent"></p>
+        <p>{{bracketsContent}}</p>
+        <p v-html="htmlContent"></p>
+        <h3>三者区别</h3>
+        <p>
+            <li><b>v-text指令将会设置,甚至覆盖这个节点的所有内容,而{{}}指令只会更新括号中的内容</b></li>
+            <li><b>v-text渲染的都是文本内容,而v-html可以携带节点并渲染</b></li>
+        </p>
+        <br />
+        <h2>v-show、v-if</h2>
+        <p v-show="visible">这句话使用了v-show指令</p>
+        <button @click="showButton">v-show</button>
+        <p v-if="rendered==0">这句话使用了v-if指令</p>
+        <p v-else-if="rendered>0&&rendered<=10">这句话使用了v-else-if指令</p>
+        <p v-else>这句话使用了v-else指令</p>
+        <label for="rendered">输入数字控制v-if:</label>
+        <input min="0" max="20" id="rendered" type="number" v-model="rendered" />
+
+    </div>
+    <script src="../vue.js">
+
+    </script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                textContent: "这句话使用了v-text指令",
+                bracketsContent: "这句话使用了{{}}指令",
+                htmlContent: "<span style=\"color: red\">这句话使用了v-html指令</span>",
+                visible: true,
+                rendered: 0
+            },
+            methods: {
+                showButton() {
+                    this.visible = !this.visible;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

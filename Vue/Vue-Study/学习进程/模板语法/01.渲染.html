@@ -17,7 +17,7 @@
 
 
 
-<p>双大括号会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，你需要使用 v-html 指令</p>
+        <p>双大括号会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，你需要使用 v-html 指令</p>
 
 
 
@@ -32,7 +32,7 @@
         <p v-else>被你发现了</p>
         <p v-show="isVip">我是VIP</p>
         <ul>
-            <li v-for="item in bookArr">item</li>
+            <li v-for="item in bookArr">{{item}}</li>
         </ul>
 
     </div>
