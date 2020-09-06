@@ -71,6 +71,8 @@
             <li v-for="(item,index) in stars" v-text="item" :key="index" v-if='!!item'></li>
         </ul>
 
+
+        <button v-bind:[key]="value"></button>
     </div>
     <script src="../vue.js">
 
@@ -79,6 +81,7 @@
         const vm = new Vue({
             el: "#app",
             data: {
+                value: "",
                 textContent: "这句话使用了v-text指令",
                 bracketsContent: "这句话使用了{{}}指令",
                 htmlContent: "<span style=\"color: red\">这句话使用了v-html指令</span>",
@@ -105,6 +108,7 @@
                 }
             }
         })
+        
     </script>
 </body>
 
