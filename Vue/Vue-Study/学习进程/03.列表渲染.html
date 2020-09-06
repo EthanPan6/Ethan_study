@@ -1,23 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <div id="app"></div>
-    <script src="./vue.js"></script>
-    <script>
-        const vm=new Vue({
-            el:"app",
-            data:{
 
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in stars">{{item}}</li>
+        </ul>
+        
+    </div>
+    <script src="./vue.js">
+
+    </script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                stars: ["胡歌", "鞠婧祎", "傅谨", "潘金虎", "诺兰"],
+                students: [{
+                        name: "a",
+                        age: 12,
+                        school: "a"
+                    }, {
+                        name: "b",
+                        age: 12,
+                        school: "b"
+                    }, {
+                        name: "c",
+                        age: 12,
+                        school: "c"
+                    }, {
+                        name: "d",
+                        age: 12,
+                        school: "d"
+                    }, {
+                        name: "e",
+                        age: 12,
+                        school: "e"
+                    },
+
+
+
+                ]
             },
-            methods:{
-                
+            methods: {
+
             }
         })
     </script>
 </body>
+
 </html>
