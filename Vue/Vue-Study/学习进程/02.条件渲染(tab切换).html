@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2 v-show="tabNo==0">首页</h2>
+        <h2 v-show="tabNo==1">新闻</h2>
+        <h2 v-show="tabNo==2">我的</h2>
+        <button @click="tabChange" data-id="0">首页</button>
+        <button @click="tabChange" data-id="1">新闻</button>
+        <button @click="tabChange" data-id="2">我的</button>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                tabNo: 0
+            },
+            methods: {
+                tabChange(e) {
+                    this.tabNo = e.target.dataset.id
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

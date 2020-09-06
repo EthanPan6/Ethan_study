@@ -1,5 +1,5 @@
 let a: string;
-a = "String";
+
 
 let num: number = 12;
 let isOk: boolean = true;

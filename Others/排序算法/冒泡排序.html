@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+        //传统冒泡
+        function bubbleSort(arr) {
+            let len = arr.length;
+
+            for (let i = 0; i < len - 1; i++) {
+                for (let j = 0; j < len - 1 - i; j++) {
+                    // if (arr[j + 1] < arr[j]) {
+                    // } else {
+                    //     [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]]
+                    // }
+                    arr[j + 1] < arr[j] && ([arr[j + 1], arr[j]] = [arr[j], arr[j + 1]])
+                }
+            }
+            return arr
+        }
+
+        console.log(bubbleSort(arr));
+        console.log(bubbleSort2(arr));
+        //位置冒泡:记录最后一次交换的位置
+        function bubbleSort2(arr) {
+            let i = arr.length - 1; //结束位置
+            while (i) {
+                let pos = 0; //重置pos
+                for (let j = 0; j < i; j++) { //在i处结束
+                    (arr[j] > arr[j + 1]) && (pos = j, [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]])
+                    //每次排序最终会记录此次排序最后一个pos
+                }
+                i = pos; //记录结束位置
+                console.log(i);
+            }
+            return arr;
+        }
+
+        //双向冒泡
+        function bubbleSort3(arr) {
+            let low = 0;
+            let high = arr.length - 1; //设置变量的初始值
+            let tmp, j;
+
+            while (low < high) {
+                for (j = low; j < high; ++j) //正向冒泡,找到最大者
+                    if (arr[j] > arr[j + 1]) {
+                        tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                    }
+                    -- high; //修改high值, 前移一位
+                for (j = high; j > low; --j) //反向冒泡,找到最小者
+                    if (arr[j] < arr[j - 1]) {
+                        tmp = arr[j];
+                        arr[j] = arr[j - 1];
+                        arr[j - 1] = tmp;
+                    }
+                    ++ low; //修改low值,后移一位
+            }
+
+            return arr;
+        }
+
+        function bubbleSort4(arr) {
+            let low = 0;
+            let high = arr.length - 1; //设置变量的初始值
+            let tmp, j;
+
+            while (low < high) {
+                for (j = low; j < high; ++j) //正向冒泡,找到最大者
+                    if (arr[j] > arr[j + 1]) {
+                        tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                    }
+                    -- high; //修改high值, 前移一位
+                for (j = high; j > low; --j) //反向冒泡,找到最小者
+                    if (arr[j] < arr[j - 1]) {
+                        tmp = arr[j];
+                        arr[j] = arr[j - 1];
+                        arr[j - 1] = tmp;
+                    }
+                    ++ low; //修改low值,后移一位
+            }
+
+            return arr;
+        }
+
+    </script>
+</body>
+
+</html>
