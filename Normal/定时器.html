@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo() {
+            console.log("Hello, syl!");
+        }
+        // 三秒后执行以上函数
+        var t1 = setTimeout(foo, 3000);
+        // 清除定时器
+        clearTimeout(t1);
+
+
+        var t2 = setInterval(foo, 3000);
+        // 清除定时器
+        clearInterval(t2);
+    </script>
+</body>
+
+</html>
