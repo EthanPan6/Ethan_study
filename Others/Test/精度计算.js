@@ -20,7 +20,8 @@ function calculator(a, b, fn) {
     let aObj = s(a);
     let bObj = s(b);
     console.log('原值:', a + b);
-    return fn.call(null, aObj, bObj)
+    // return fn.call(null, aObj, bObj)
+    return fn.apply(fn, [aObj, bObj])
 
 }
 

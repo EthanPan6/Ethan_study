@@ -5,7 +5,9 @@ const fs = require('fs');
 
 
 //同步
-let data1 = fs.open("./doc/a.txt", "r+");
+let data1 = fs.open("./doc/a.txt", "r");
 // console.log(data1);报错,实际上在内存上打开
 
+// let file = fs.readSync(data1);
 
+// console.log(file);
