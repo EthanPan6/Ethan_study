@@ -71,8 +71,39 @@
             <li v-for="(item,index) in stars" v-text="item" :key="index" v-if='!!item'></li>
         </ul>
 
-
+        <div class="vbind" :class="{active:isActive,}">
+            这里使用了v-bind语法
+        </div>
     </div>
+    <style>
+        .vbind {
+            width: 200px;
+            /* height: 100px; */
+            background-color: #58bc58;
+        }
+
+        .active {
+            /* animation: heightUp 2s;
+            animation-fill-mode：forwards */
+            animation-name: heightUp;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes heightUp {
+            0% {
+                height: 00px;
+            }
+
+            50% {
+                height: 100px;
+            }
+
+            100% {
+                height: 200px;
+            }
+        }
+    </style>
     <script src="../vue.js">
 
     </script>
@@ -80,6 +111,7 @@
         const vm = new Vue({
             el: "#app",
             data: {
+                isActive: 1,
                 value: "",
                 textContent: "这句话使用了v-text指令",
                 bracketsContent: "这句话使用了{{}}指令",
