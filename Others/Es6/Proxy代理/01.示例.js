@@ -20,3 +20,4 @@ test.eat = () => {
     console.log("eat");
 }
 a.eat()
+a.job = "tester"
