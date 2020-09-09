@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --div-color: red;
+        }
+
+        div {
+            background: var(--div-color);
+            width: 100px;
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <button>按钮</button>
+    <script>
+        let btn = document.querySelector("button");
+        btn.onclick = () => {
+            const rootColor = getComputedStyle(document.documentElement);
+            const value = rootColor.getPropertyValue('--div-color');
+            console.log(value);
+            if (value == "red") {
+                document.documentElement.style.setProperty("--div-color", "green");
+            } else {
+                console.log(111);
+                document.documentElement.style.setProperty("--div-color", "red");
+            }
+        }
+    </script>
+</body>
+
+</html>
