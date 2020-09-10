@@ -27,4 +27,4 @@ function Person(name, age) {
 }
 
 const person1 = newNew(Person, 'Tom', 20)
-console.log(person1)
+console.log(person1, person1.__proto__)

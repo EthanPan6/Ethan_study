@@ -1,1 +1,0 @@
-"use strict";function User(i){this.name=i,this.isAdmin=!1}
