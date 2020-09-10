@@ -1,1 +1,0 @@
-"use strict";var map=new Map;map.set("1","str1"),map.set(1,"num1"),map.set(!0,"bool1"),map.set("2","str2").set(2,"num2").set(!1,"bool2");var map2=new Map([["1","str1"],[1,"num1"],[!0,"bool1"]]);alert(map.get(1)),alert(map.get("1")),alert(map.size);var set=new Set,john={name:"John"};set.add(john);var set2=new Set(["oranges","apples","bananas"]);
