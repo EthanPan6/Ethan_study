@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h3>关键</h3>
+
+<li>把子类的原型指向父类的实例，从而继承父类的私有属性和原型属性</li>
+<h3>优点</h3>
+
+
+<li>父类新增原型属性和方法，子类实例都能访问到</li>
+
+<li>简单、易用</li>
+<h3>缺点</h3>
+
+
+<li>无法实现多继承（一个子类继承成多个父类）</li>
+
+<li>创建子类实例的时候，无法向父类构造函数传参</li>
+<li>有子类实例共享父类引用属性的问题（因为子类的原型指向的是父类的一个实例，假如父类的私有属性有一个是数组(引用类型)，那么任一子类都可以操作这个数组，从而导致其他子类使用的这个数组也会发生变化）
+</li>
+
+<body>
+    <script>
+        function Parent(name) {
+            this.name = name;
+        };
+        Parent.prototype.setName = function () {};
+
+        function Son(age) {
+            this.age = age;
+        };
+        Son.prototype = new Parent();
+        var s1 = new Son(18);
+
+        console.log(s1);
+        console.log(s1.__proto__);
+    </script>
+</body>
+
+</html>
