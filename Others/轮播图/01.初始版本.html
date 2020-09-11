@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .swiper {
+            width: 800px;
+            height: 400px;
+            position: relative;
+        }
+
+        .list {
+            width: 800px;
+            height: 400px;
+            position: relative;
+        }
+
+        .item {
+            width: 100%;
+            height: 100%;
+            font-size: 50px;
+            color: white;
+            position: absolute;
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        .item:nth-child(1) {
+            background-color: red;
+        }
+
+        .item:nth-child(2) {
+            background-color: orange;
+        }
+
+        .item:nth-child(3) {
+            background-color: yellow;
+        }
+
+        .item:nth-child(4) {
+            background-color: green;
+        }
+
+        .item:nth-child(5) {
+            background-color: blue;
+        }
+
+        .btn {
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            top: 150px;
+            z-index: 1000;
+        }
+
+        #pre {
+            left: 0;
+        }
+
+        #next {
+            right: 0;
+        }
+
+        .active {
+            z-index: 999;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper">
+        <ul class="list">
+            <li class="item active">0</li>
+            <li class="item">1</li>
+            <li class="item">2</li>
+            <li class="item">3</li>
+            <li class="item">4</li>
+
+        </ul>
+        <button class="btn" id="pre">&lt;</button>
+        <button class="btn" id="next">&gt;</button>
+    </div>
+    <script>
+        let items = document.querySelectorAll(".item");
+        let pre = document.getElementById("pre");
+        let next = document.getElementById("next");
+
+        let itemsLen = items.length
+        let index = 0;
+
+        const clearActive = () => {
+            for (let i = 0; i < itemsLen; i++) {
+                items[i].className = "item";
+            }
+        }
+        const goIndex = () => {
+            clearActive();
+            items[index].className = " item  active"
+        }
+        const goNext = () => {
+            index = index == itemsLen - 1 ? 0 : index + 1;
+            // if (index < itemsLen - 1) {
+            //     index++
+            // } else {
+            //     index = 0
+            // }
+            console.log(index, "next");
+            goIndex()
+        }
+        const goPre = () => {
+            index = index == 0 ? itemsLen - 1 : index - 1;
+            // if (index == 0) {
+            //     index = itemsLen - 1;
+            // } else {
+            //     index--;
+            // }
+            console.log(index, "pre");
+
+            goIndex()
+        }
+        next.addEventListener("click", goNext);
+        pre.addEventListener("click", goPre);
+    </script>
+</body>
+
+</html>
