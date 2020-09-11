@@ -74,6 +74,28 @@
             z-index: 999;
             opacity: 1;
         }
+
+        .pointList {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .point {
+            width: 10px;
+            height: 10px;
+            border: 3px solid orangered;
+            border-radius: 50%;
+            background: #58bc58;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .pointActive {
+            border: 3px solid #58bc58;
+            background: orangered;
+        }
     </style>
 </head>
 
@@ -85,13 +107,22 @@
             <li class="item">2</li>
             <li class="item">3</li>
             <li class="item">4</li>
-
+        </ul>
+        <ul class="pointList">
+            <li class="point pointActive" data-id="0"></li>
+            <li class="point" data-id="1"></li>
+            <li class="point" data-id="2"></li>
+            <li class="point" data-id="3"></li>
+            <li class="point" data-id="4"></li>
         </ul>
         <button class="btn" id="pre">&lt;</button>
         <button class="btn" id="next">&gt;</button>
     </div>
     <script>
         let items = document.querySelectorAll(".item");
+        let points = document.querySelectorAll(".point");
+        let pointList = document.querySelector(".pointList");
+        let list = document.querySelector(".list");
         let pre = document.getElementById("pre");
         let next = document.getElementById("next");
 
@@ -101,11 +132,14 @@
         const clearActive = () => {
             for (let i = 0; i < itemsLen; i++) {
                 items[i].className = "item";
+                points[i].className = "point";
             }
         }
         const goIndex = () => {
             clearActive();
-            items[index].className = " item  active"
+            items[index].className = " item  active";
+            points[index].className = " point  pointActive";
+
         }
         const goNext = () => {
             index = index == itemsLen - 1 ? 0 : index + 1;
@@ -114,7 +148,7 @@
             // } else {
             //     index = 0
             // }
-            console.log(index, "next");
+            // console.log(index);
             goIndex()
         }
         const goPre = () => {
@@ -124,12 +158,53 @@
             // } else {
             //     index--;
             // }
-            console.log(index, "pre");
+            // console.log(index, "pre");
 
             goIndex()
         }
         next.addEventListener("click", goNext);
         pre.addEventListener("click", goPre);
+        pointList.addEventListener("click", (e) => {
+
+            console.log(e.target.nodeName);
+            if (e.target.nodeName === "LI") {
+                // console.log(e.target.getAttribute("data-id"));
+                index = parseInt(e.target.getAttribute("data-id"));
+                // index = parseInt({
+                //     ...e.target.dataset
+                // } ['id']); //字符串=>数字
+                goIndex();
+            }
+
+        })
+        // pointList.onclick = (e) => {
+        //     console.log(e.target);
+        //     // if(e.target)
+        //     index = parseInt({
+        //         ...e.target.dataset
+        //     } ['id']); //字符串=>数字
+
+        //     goIndex();
+        // }
+
+
+        let timer = setInterval(goNext, 1500);
+
+        // setTimeout(() => {
+        //     clearInterval(timer);
+        //     console.log(index);
+        // }, 20000)
+        // list.onmouseover = (e) => {
+        //     console.log(e);
+        //     if (e.target.nodeName === "LI"){
+
+        //     }
+        //     // clearInterval(timer);
+        // }
+        // list.onmouseout = () => {
+        //     console.log(2);
+        //     let timer = setInterval(goNext, 1500);
+        // }
     </script>
 </body>
 
