@@ -1,0 +1,4 @@
+{
+    "name": "Jack",
+    "mingling": "webpack ./src/index.js -o ./dist/bundle.js --mode=development"
+}
