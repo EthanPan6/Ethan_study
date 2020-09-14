@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="color: rgb(red, green, blue);">醒醒吧,孩子!</h1>
+</body>
+<script>
+    var html = '';
+    // var str = '<h1>醒醒吧,孩子!</h1>';
+    var str =
+        `<h1 >醒醒吧,孩子!</h1>`;
+    var body = document.querySelector("body");
+    setInterval(() => {
+        var len = document.querySelectorAll("h1").length;
+        if (len > 10) {
+
+        } else {
+            html += str;
+
+        }
+        // html = len > 10 ? '' : html + str
+        body.innerHTML = html;
+        body.style.color =
+            `rgb(${parseInt(Math.random() * 256)}, ${parseInt(Math.random() * 256)}, ${parseInt(Math.random() * 256)})`;
+        // console.log(body);
+    }, 2000);
+</script>
+
+</html>

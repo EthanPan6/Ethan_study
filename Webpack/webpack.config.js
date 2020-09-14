@@ -14,7 +14,9 @@ module.exports = {
         rules:[
             {
               test:/\.css$/, 
-              use:[]
+              use:[
+                  
+              ]
             }
         ]
     }
