@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // async 搭配await使用,不搭配则报错
+        // await fetch("xxx")//报错
+
+        (async()=>{
+            await fetch("xxx");//这样才不报错
+        })();
+
+    </script>
+</body>
+
+</html>

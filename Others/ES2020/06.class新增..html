@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Foo有一个功能,想要被Poo使用
+        //let foo=new Foo();
+        //Poo.prototype.xxx=function(){foo.xxx()};
+        class Foo {
+            static a = 12;
+
+
+        }
+        class Poo {
+            init() {
+                console.log(Foo.a);
+            }
+        }
+        let poo = new Poo()
+        poo.init()
+    </script>
+</body>
+
+</html>
