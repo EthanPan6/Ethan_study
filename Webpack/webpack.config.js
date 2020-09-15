@@ -44,6 +44,11 @@ module.exports = {
         compress: true, //自动gzip压缩
         port: 3000, //端口
         open: true, //自动打开浏览器
+        proxy: {
+            '/api/*': {
+                target: "http//:localhost:3001"
+            }
+        }
 
     }
 }
