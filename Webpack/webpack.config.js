@@ -10,12 +10,14 @@ module.exports = {
     plugins: [],
     mode: 'development', //开发模式
     //production 生产模式
-    module: {
-        rules:[
+    module: {//引入某种格式的文件转化的模块
+        rules:[//规则
             {
-              test:/\.css$/, 
+              test:/\.css$/, //使用正则
               use:[
-                  
+                  {
+
+                  }
               ]
             }
         ]
