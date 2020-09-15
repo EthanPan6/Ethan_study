@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{num}}</p>
+        <button v-on:click='add'>+</button>
+        <button @click='num++'>+</button>
+        <button @click='add'>+</button>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                num: 0
+            },
+            methods: {
+                add() {
+                    this.num++
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

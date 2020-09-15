@@ -9,31 +9,24 @@
 
 <body>
     <div id="app">
+        <h2>v-text和{{}}、v-html</h2>
+        <p v-text="textContent"></p>
+        <p>{{bracketsContent}}</p>
+        <p v-html="htmlContent"></p>
+        <p v-pre="htmlContent">原始内容--跳过了编译{{preContent}}</p>
+        <h3>三者区别</h3>
+        <p>
+        <ol>
+            <li><b>v-text指令将会设置,甚至覆盖这个节点的所有内容,而{{}}指令只会更新括号中的内容</b></li>
+            <li><b>v-text渲染的都是文本内容,而v-html可以携带节点并渲染</b></li>
+        </ol>
+        </p>
+
         <p> {{message}}</p>
 
         <p v-once> 通过使用 v-once 指令，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。但请留心这会影响到该节点上的其它数据绑定:<br /><b>{{message}}</b> </p>
 
         <input v-model="message">
-
-
-
-        <p>双大括号会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，你需要使用 v-html 指令</p>
-
-
-
-
-
-
-
-
-
-        <p :title="message">test</p>
-        <p v-if="isShow">看不见我看不见我</p>
-        <p v-else>被你发现了</p>
-        <p v-show="isVip">我是VIP</p>
-        <ul>
-            <li v-for="item in bookArr">{{item}}</li>
-        </ul>
 
     </div>
     <script src="../vue.js">
@@ -44,9 +37,10 @@
             el: "#app",
             data: {
                 message: "hello Vue ",
-                isShow: false,
-                isVip: true,
-                bookArr: ['Vue', 'React', 'Javascript', 'Css', 'Html']
+                textContent: "这句话使用了v-text指令",
+                bracketsContent: "这句话使用了{{}}指令",
+                htmlContent: "<span style=\"color: red\">这句话使用了v-html指令</span>",
+                preContent: "原始内容"
             },
             methods: {
                 changMsg() {

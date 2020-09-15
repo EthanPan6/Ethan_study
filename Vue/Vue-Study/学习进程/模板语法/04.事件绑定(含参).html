@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <button @click='handle'>事件1</button>
+        <button @click='handle1(5,6,$event)'>事件2</button>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        /*
+ 1.   如果事件直接绑定函数名称,默认会传递 事件对象(event) 作为事件函数的第一个参数
+ 2.   如果事件绑定函数调用,那么事件对象必须作为最后一个参数传递,并且事件对象名称必须为$event
+    
+    
+    
+    */
+        const vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+                handle(e) {
+                    console.log(e.target.innerHTML);
+                },
+                handle1(v, v2, e) {
+                    console.log(e.target.innerHTML);
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
