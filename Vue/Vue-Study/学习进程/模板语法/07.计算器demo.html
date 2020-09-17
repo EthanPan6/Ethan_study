@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>ValueA <input type="text" v-model="valueA"></p>
+        <p>ValueB <input type="text" v-model="valueB"></p>
+        <p><button @click="handle">计算</button></p>
+        <p>计算结果</p>
+        <p v-text="result"></p>
+
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                valueA: '',
+                valueB: '',
+                result: '',
+            },
+            methods: {
+                handle() {
+                    this.result = this.valueA / 1 + this.valueB / 1;
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

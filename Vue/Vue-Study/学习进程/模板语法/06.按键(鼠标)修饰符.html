@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h3>Enter和Delete修饰符</h3>
+        <label>用户名:</label><input type="text" v-model="uname" @keyup.enter="submit" @keyup.delete="clearAll"><br>
+        <label>密码</label><input type="password" v-model="psw" @keyup.enter="submit"><br>
+        <button @click="submit">提交</button><br>
+
+        <input type="text" @keyup.65="handel" v-model="info" /><br />
+        <input type="text" @keyup.aaa="handel2" v-model="info" /><br />
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        Vue.config.keyCodes.aaa = 66; //自定义键码名称
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                uname: "",
+                psw: "",
+                info: "自定也按键修饰符"
+            },
+            methods: {
+                submit() {
+                    console.log(this.uname, this.psw);
+
+                },
+                clearAll() {
+                    this.uname = "";
+                },
+                handel() {
+                    // 使用原来的键码
+                    alert(this.info)
+                },
+                handel2() {
+                    alert(this.info)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
