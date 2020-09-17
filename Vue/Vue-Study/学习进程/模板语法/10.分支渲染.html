@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <label>请输入分数</label> <input type="text" v-model="score">
+            <div v-if="score>=90">优秀</div>
+            <div v-else-if="score<90&&score>=80">良好</div>
+            <div v-else-if="score<80&&score>=70">一般</div>
+            <div v-else-if="score<70&&score>=60">及格</div>
+            <div v-else>较差</div>
+        </div>
+
+        <div>
+            <p v-show="flag">这里使用了v-show,原理是控制节点的display属性</p>
+            <p v-if="!flag">这里使用了v-if,原理是控制节点是否渲染到页面---性能消耗较大</p>
+            <button @click="handle">切换</button>
+        </div>
+
+
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                score: 99,
+                flag: !0
+            },
+            methods: {
+                handle() {
+                    this.flag = !this.flag;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

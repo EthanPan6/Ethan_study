@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            border: 5px solid #111;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .classA {
+            border-top: 1px solid yellow;
+        }
+
+        .classB {
+            border-bottom: 2px solid green;
+        }
+
+        .classC {
+            border-left: 3px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <h3>样式绑定</h3>
+        <div :class="{active:isActive}" id="box">内容</div>
+        <button @click="change"> 切换</button>
+
+        <div :class="{ red: isRed }"></div>
+        <div :class="[classA, classB]"></div>
+        <div :class="[classA, { classB: isB, classC: isC }]"></div>
+
+        
+        <div :style="{ fontSize: size + 'px' }">字体</div>
+        <!-- <div :style="[styleObjectA, styleObjectB]"></div> -->
+
+
+
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                isActive: !0,
+                isRed: !0,
+                size: 18,
+                classA: "classA",
+                classB: "classB",
+                isB: !0,
+                isC: !0,
+            },
+            methods: {
+                change() {
+                    this.isActive = !this.isActive;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-focus>
+        <div style="width: 100px;height: 100px;" v-colored="color">dhufbsdf</div>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        //全局指令
+        Vue.directive('focus', { //配置focus指令
+            inserted(el) { //插入自定义指令作用的元素
+                el.focus();
+            }
+        });
+        Vue.directive('colored', { //配置colored指令
+            inserted(el, binding) { //插入自定义指令作用的元素
+                el.style.color = binding.value; //将带参数的...
+                console.log(binding);
+            }
+        });
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                color: 'red'
+            },
+            methods: {},
+            directives: { //局部指令
+                focus: {
+                    inserted(el) {
+                        el.focus();
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

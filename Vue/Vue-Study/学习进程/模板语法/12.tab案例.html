@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .tab {
+            width: 800px;
+            margin: 100px auto;
+        }
+
+        li {
+            display: block;
+            float: left;
+            width: 200px;
+            height: 60px;
+            font-size: 24px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="tab">
+            <ul>
+                <li v-for="item in list" @click="xuanze(item)">{{item.name}}</li>
+            </ul>
+            <img :src="first.path" alt="">
+        </div>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                list: [{
+                    name: '图1',
+                    path: './doc/01.jpg',
+                    imgId: 1
+                }, {
+                    name: '图2',
+                    path: './doc/02.jpg',
+                    imgId: 2
+                }, {
+                    name: '图3',
+                    path: './doc/03.jpg',
+                    imgId: 3
+                }, ],
+                first: {
+                    name: '图1',
+                    path: './doc/01.jpg',
+                    imgId: 1
+                }
+            },
+            methods: {
+                xuanze(n) {
+                    this.first = n
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

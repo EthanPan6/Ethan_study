@@ -6,20 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
+        }
+
+        .active {
+            background: #000;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
+        <div>
+            <h3>v-bind</h3>
+            <a href="http://www.baidu.com">百度--原生写法</a><br>
+            <a v-bind:href="url">百度--v-bind写法</a><br>
+            <a :href="url">百度--v-bind简写</a><br>
+            <button @click="handle"> 切换</button>
+
+            <img :src="'/path/to/images/' + fileName">
+        </div>
+        <div>
+            <h3>双向数据绑定{{msg}}</h3>
+
+            <input type="text" :value="msg" @input="getValue"><br>
+            <input type="text" :value="msg" @input="msg=$event.target.value">
+        </div>
+
         
-    </div>
-    <script src=""></script>
-    <script>
-        const vm = new Vue({
-            el: "#app",
-            data: {},
-            methods: {}
-        })
-    </script>
+        <script src="../vue.js"></script>
+        <script>
+            const vm = new Vue({
+                el: "#app",
+                data: {
+                    url: 'http://www.baidu.com',
+                    msg: "hello",
+                    isActive: !0,
+                },
+                methods: {
+                    handle() {
+                        this.url = 'http://www.qq.com'
+                    },
+                    getValue(e) {
+                        this.msg = e.target.value
+                    },
+                   
+                }
+            })
+        </script>
 </body>
 
 </html>

@@ -10,9 +10,15 @@
 <body>
     <div id="app">
         <p> {{message}}</p>
-        <input v-model="message">
+        <h4>默认情况</h4>
+        <p><input v-model="message"></p>
+        <h4>带修饰符</h4>
+        <p>lazy:<input v-model.lazy="message"></p>
 
-        
+        <p>trim:<input v-model.trim="message"></p>
+        <p>{{age}}</p>
+        <p>number:<input v-model.number="age" type="number"></p>
+
     </div>
     <script src="../vue.js">
 
@@ -21,7 +27,9 @@
         const vm = new Vue({
             el: "#app",
             data: {
-                message: "hello Vue "
+                message: "hello Vue ",
+                age: 12
+
             }
         })
     </script>
