@@ -9,7 +9,7 @@
 
 <body>
     <div id="app"></div>
-    <script src="./vue.js"></script>
+    <script src="../vue.js"></script>
     <script>
         const vm = new Vue({
             el: "#app",
@@ -25,26 +25,27 @@
                 }
             },
             beforeCreate() {
-                console.log("beforeCreate", this.message, this.test, this.$el);
+                console.log("beforeCreate", '数据:' + this.message, '方法:' + this.test, '元素' + this.$el);
             },
             created: function () {
                 // 在实例创建完成后被立即调用
                 // 在这一步，实例已完成以下的配置：数据观测 (data observer)，属性和方法的运算，watch/event 事件回调
                 // 挂载阶段还没开始，$el 属性目前不可见
-                console.log("created", this.message, this.test, this.$el);
+                console.log("created", '数据:' + this.message, '方法:' + this.test, '元素' + this.$el);
             },
             beforeMount: function () {
                 // 在挂载开始之前被调用：相关的 render 函数首次被调用
-                console.log("beforeMount", this.message, this.test, this.$el);
+                console.log("beforeMount", '数据:' + this.message, '方法:' + this.test, '元素' + this.$el);
             },
             mounted: function () {
                 // el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子
                 // 如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.$el 也在文档内
                 // mounted 不会承诺所有的子组件也都一起被挂载
                 // 如果希望等到整个视图都渲染完毕，可以用 vm.$nextTick 替换掉 mounted
-                console.log("mounted", this.message, this.test, this.$el);
+                console.log("mounted", '数据:' + this.message, '方法:' + this.test, '元素' + this.$el);
                 this.$nextTick(function () {
                     // 此处整个视图已渲染完毕
+                    console.log('$nextTick');
                 });
             },
             beforeUpdate: function () {

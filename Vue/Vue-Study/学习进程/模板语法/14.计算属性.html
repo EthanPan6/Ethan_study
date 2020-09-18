@@ -10,16 +10,29 @@
 
 <body>
     <div id="app">
-
+        <p>{{reverseString}}</p>
+        <p>{{msg.split('').reverse().join('')}}</p>
+        <p><input type="text" v-model="msg"></p>
     </div>
     <script src="../vue.js"></script>
     <script>
         const vm = new Vue({
             el: "#app",
-            data: {},
+            data: {
+                msg: "ss"
+            },
             methods: {},
-            computed: {},
-     
+            computed: {
+                reverseString() {
+                    console.log("computed");
+                    return this.msg.split('').reverse().join('');
+                    //基于data中的数据
+                    //表达式的计算逻辑可能较为复杂,使用计算属性可以使模板上较为简洁
+                    //带有缓存机制,节省性能
+                    //
+                }
+            },
+
         })
     </script>
 </body>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>姓: <input type="text" v-model="lastName" /></p>
+        <p>名: <input type="text" v-model="firstName" /></p>
+
+        <p>{{fullName}}</p>
+        <!-- <p>{{FName}}</p> -->
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                firstName: "张",
+                lastName: '三',
+                fullName: '张三'
+            },
+            methods: {},
+            computed: {
+                // FName() {
+                //     return this.firstName + ' ' + this.lastName
+                // }
+            },
+            watch: {
+                //处理异步或者开销较大的操作
+                firstName: function (v) { //被监听的数据
+                    console.log('firstName');
+                    this.fullName = v + ' ' + this.lastName
+                },
+                lastName: function (v) {
+                    console.log('lasttName');
+                    this.fullName = this.firstName + ' ' + v
+                }
+            },
+            directives: {},
+        })
+    </script>
+</body>
+
+</html>

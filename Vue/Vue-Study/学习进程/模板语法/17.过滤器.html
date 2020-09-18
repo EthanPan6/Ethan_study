@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <h4>大小写</h4>
+            <p><input type="text" v-model='msg'></p>
+            <p>{{msg|upperCase}}</p>
+            <p>{{msg|upperCase|lowerCase}}</p>
+        </div>
+
+        <div>
+            <h4>格式化日期</h4>
+            {{date}}
+            <p>
+                {{date|format("yyyy-MM-dd")}}
+            </p>
+        </div>
+
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        Vue.filter('upperCase', val => { //第一个参数为过滤器名称,第二个为一个函数
+            return val.charAt(0).toUpperCase() + val.slice(1);
+        })
+        Vue.filter('lowerCase', val => { //第一个参数为过滤器名称,第二个为一个函数
+            return val.charAt(0) + val.slice(1).toLowerCase();
+            // return val.charAt(0).toLowerCase() + val.slice(1);
+        })
+
+        Vue.filter('format', (val, args) => {
+            if (args === "yyyy-MM-dd") {
+                var ret = '',
+                    ret = val.getFullYear() + '-' + (val.getMonth() + 1) + '-' + val.getDate()
+            }
+
+
+            return ret
+        })
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                msg: '',
+                date: new Date()
+            },
+            methods: {},
+            computed: {},
+            watch: {},
+            directives: {},
+        })
+    </script>
+</body>
+
+</html>
