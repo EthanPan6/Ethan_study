@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <grandcomponent name="张三"></grandcomponent>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        Vue.component('grandcomponent', {
+            data() {
+                return {}
+            },
+            props: [],
+            template: `<div>{{name}}</div>`
+        })
+        Vue.component('parentcomponent', {
+            data() {
+                return {}
+            },
+            props: [],
+            template: `<div>{{name}}</div>`
+        })
+        Vue.component('soncomponent', {
+            data() {
+                return {}
+            },
+            props: ['name'],//接收父组件的数据
+            template: `<div>{{name}}</div>`
+        })
+        const vm = new Vue({
+            el: "#app",
+            data: {},
+            methods: {},
+            computed: {},
+            watch: {},
+        })
+    </script>
+</body>
+
+</html>

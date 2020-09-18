@@ -46,8 +46,9 @@
         <p>
         <p>
             书名:<input type="text" v-model='newbook' />
-            b编号:<input type="text" v-model='newbookid' />
-            <button @click="add">添加</button>
+            b编号:<input type="text" v-model='newbookid' :disabled="flag" />
+            <!-- <button @click="handle" :disable='false'>提交</button> -->
+            <input type="button" value="提交" @click="handle" :disabled="submitFlag">
         </p>
         <table>
             <thead>
@@ -62,7 +63,7 @@
                 <tr v-for="item in booklist" :key='item.bookid'>
                     <td>{{item.bookid}}</td>
                     <td>{{item.bookname}}</td>
-                    <td>{{item.createDate}}</td>
+                    <td>{{item.createDate|formatDate('yyyy-MM-dd hh:mm:ss')}}</td>
                     <td>
                         <button @click="del(item.bookid)">删除</button>
                         <button @click="change(item.bookid)">修改</button>
@@ -70,13 +71,91 @@
                 </tr>
             </tbody>
         </table>
+        <div>{{total}}</div>
     </div>
     <script src="../vue.js"></script>
+    <script src="../../../../utils.js"></script>
     <script>
         const vm = new Vue({
             el: "#app",
             data: {
-                booklist: [{
+                flag: !!0,
+                booklist: [],
+                newbook: '',
+                newbookid: '',
+                submitFlag: !!0
+            },
+            methods: {
+                del(id) {
+                    console.log('del');
+                    ////方法一
+                    // 通过id查找数组中的索引
+                    // var index = this.booklist.findIndex(item => {
+                    //     return item.bookid == id
+                    // })
+                    // this.booklist.splice(index, 1) 
+
+                    //方法二:过滤掉id==bookid
+                    this.booklist = this.booklist.filter(item => {
+                        return item.bookid != id
+                    })
+                },
+                change(id) {
+                    //通过id查询到book
+                    var book = this.booklist.filter(function (item) {
+                        return item.bookid == id;
+                    });
+                    //将要修改的数据填充到表单
+                    this.newbook = book[0].bookname;
+                    this.newbookid = book[0].bookid;
+                    this.flag = !0;
+                    console.log(this.flag);
+
+                },
+                handle() {
+                    if (this.flag) { //禁用时为数据修改状态
+                        this.booklist.some(item => {
+                            if (item.bookid == this.newbookid) {
+                                item.bookname = this.newbook;
+                                return !0;
+                            }
+                        })
+                        this.flag = !!0;
+                    } else { //添加状态
+                        var book = {};
+                        book.bookid = this.newbookid;
+                        book.bookname = this.newbook;
+                        book.createDate = new Date()
+                        this.booklist.push(book);
+                    }
+                    this.newbook = '';
+                    this.newbookid = '';
+                }
+            },
+            computed: {
+                total() {
+                    return this.booklist.length; //统计书量
+                }
+            },
+            watch: {
+                newbook(value) {
+                    var res = this.booklist.some(item => {
+                        return item.bookname == value
+                    })
+                    console.log(res);
+                    if (res) {
+                        this.submitFlag = !0
+                    } else {
+                        this.submitFlag = !!0
+                    }
+                }
+            },
+            filters: {
+                formatDate //格式化日期
+            },
+            mounted() {
+                //模拟后台获取数据
+                var books = [{
                     bookid: 1,
                     bookname: '三国演义',
                     createDate: '2008-01-01'
@@ -96,41 +175,8 @@
                     bookid: 5,
                     bookname: '悲惨世界',
                     createDate: '2008-01-01'
-                }],
-                newbook: '',
-                newbookid: ''
-            },
-            methods: {
-                del(id) {
-                    console.log('del');
-                },
-                change(id) {
-                    console.log('change', id);
-                    //通过id查询到book
-                    var book = this.booklist.filter(function (item) {
-                        return item.bookid == id;
-                    });
-                    console.log(this.booklist.indexOf(book[0]));
-                    //将要修改的数据填充到表单
-                    this.newbook = book[0].bookname;
-                    this.newbookid = book[0].bookid;
-
-                },
-                add() {
-                    var book = {};
-                    book.bookid = this.newbookid;
-                    book.bookname = this.newbook;
-                    book.createDate = new Date()
-                    this.booklist.push(book);
-                    this.newbook = '';
-                    this.newbookid = ''
-                }
-            },
-            computed: {
-
-            },
-            watch: {
-
+                }]
+                this.booklist = books;
             }
 
 

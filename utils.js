@@ -1,20 +1,19 @@
+//判断value是否为非null的对象
 function isObject(value) {
-    //判断value是否为非null的对象
     return typeof value === "object" && value !== null;
 }
 
+//判断target对象中是否有key键值
 function hasOwnProperty(target, key) {
-    //判断target对象中是否有key键值
     return Object.hasOwnProperty.call(target, key)
 }
 
+//判断新旧值是否相等
 function isEqual(newValue, oldValue) {
-    //判断新旧值是否相等
     return newValue === oldValue
 }
-
+//根据format格式化日期
 function formatDate(date, format) {
-    //根据format格式化日期
     if (typeof date === "string") {
         var mts = date.match(/(\/Date\((\d+)\)\/)/);
         // console.log(mts);
@@ -68,11 +67,21 @@ function dateFormat(date, format) {
         if (new RegExp("(" + k + ")").test(format)) format = format.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return format;
 }
-let res = formatDate(new Date(), "yyyy-MM-dd")
-let res2 = dateFormat(new Date(), "yyyy-MM-dd")
-console.log(res, res2);
+// console.log(dateFormat(new Date(), 'yyyy-MM-dd'));
+
+//补零操作
+function zeroize(value) {
+    value = String(value);
+    return value.length == 1 ? '0' + value : value;
+}
+// console.log(zeroize(8));
+
+
+
 // export {
 //     isObject,
 //     hasOwnProperty,
-//     isEqual
+//     isEqual,
+//     formatDate,
+//     dateFormat
 // }

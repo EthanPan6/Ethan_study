@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <componentname></componentname>
+        <componentname></componentname>
+        <componentname></componentname>
+        <componentname></componentname>
+        <componenta></componenta>
+        <componenta></componenta>
+        <componenta></componenta>
+
+    </div>
+    <script src="../vue.js"></script>
+    <script src="./01.模板语法.js"></script>
+    <script>
+        //全局组件
+        Vue.component('componentname', { //只支持全小写,不允许驼峰
+            data() { //componentData
+                return { //componentData
+                    name: 'componentData',
+                    count: 0
+                }
+            },
+            template: "<div><button @click='count++'>添加{{count}}</button></div>"
+        })
+        const vm = new Vue({
+            el: "#app",
+            data: {},
+            methods: {},
+            computed: {},
+            watch: {},
+            directives: {},
+            components: { //局部组件,只能在父组件中使用
+                'componenta': {
+                    data() {
+                        return {
+                            hi: 'hello vue'
+                        }
+                    },
+                    template: '<h3>{{hi}}</h3>'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
