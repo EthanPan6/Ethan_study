@@ -6,22 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #app {
+            margin: 100px auto;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid orange;
+            text-align: center;
+        }
+
+        table {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        th {
+            background: orange;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
         <h1>图书管理</h1>
-        
+        <p>
+        <p>
+            书名:<input type="text" v-model='newbook' />
+            b编号:<input type="text" v-model='newbookid' />
+            <button @click="add">添加</button>
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>名称</th>
+                    <th>时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in booklist" :key='item.bookid'>
+                    <td>{{item.bookid}}</td>
+                    <td>{{item.bookname}}</td>
+                    <td>{{item.createDate}}</td>
+                    <td>
+                        <button @click="del(item.bookid)">删除</button>
+                        <button @click="change(item.bookid)">修改</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <script src="../vue.js"></script>
     <script>
         const vm = new Vue({
             el: "#app",
             data: {
-
+                booklist: [{
+                    bookid: 1,
+                    bookname: '三国演义',
+                    createDate: '2008-01-01'
+                }, {
+                    bookid: 2,
+                    bookname: '水浒传',
+                    createDate: '2008-01-01'
+                }, {
+                    bookid: 3,
+                    bookname: '西游记',
+                    createDate: '2008-01-01'
+                }, {
+                    bookid: 4,
+                    bookname: '红楼梦',
+                    createDate: '2008-01-01'
+                }, {
+                    bookid: 5,
+                    bookname: '悲惨世界',
+                    createDate: '2008-01-01'
+                }],
+                newbook: '',
+                newbookid: ''
             },
             methods: {
+                del(id) {
+                    console.log('del');
+                },
+                change(id) {
+                    console.log('change', id);
+                    //通过id查询到book
+                    var book = this.booklist.filter(function (item) {
+                        return item.bookid == id;
+                    });
+                    console.log(this.booklist.indexOf(book[0]));
+                    //将要修改的数据填充到表单
+                    this.newbook = book[0].bookname;
+                    this.newbookid = book[0].bookid;
 
+                },
+                add() {
+                    var book = {};
+                    book.bookid = this.newbookid;
+                    book.bookname = this.newbook;
+                    book.createDate = new Date()
+                    this.booklist.push(book);
+                    this.newbook = '';
+                    this.newbookid = ''
+                }
             },
             computed: {
 

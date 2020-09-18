@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            <input type="text" v-model='fruit'>
+            <button @click='add'>添加</button>
+            <button @click='del'>删除</button>
+        </p>
+        <ul>
+            <li v-for="item in fruits">{{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="item in info">{{item}}</li>
+        </ul>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                fruits: ['apple', 'orange', 'banana'],
+                fruit: '',
+                info: {
+                    name: 'jack',
+                    age: 18,
+                    gender: 'male'
+                }
+            },
+            methods: {
+                add() {
+                    console.log('add');
+                    if (!!this.fruit) {
+                        this.fruits.push(this.fruit)
+                    }
+                },
+                del() {
+                    this.fruits.pop()
+
+                }
+            }
+        })
+
+        vm.fruits[0] = 'lemon'; //不会被渲染到页面
+        //修改响应式数据
+
+        // Vue.set(vm.fruits, 1, 'lemon');
+        vm.$set(vm.fruits, 2, 'peach');
+
+        vm.$set(vm.info, 'age', 25)
+    </script>
+</body>
+
+</html>
