@@ -1,9 +1,20 @@
+import {
+    isObject,
+    hasOwnProperty
+} from "../share/utils";
+import {
+    reactive
+} from "./reactive";
+
 function createGetter() {
 
     return function get(target, key, receiver) {
         console.log('响应式获取', target[key]);
-        return Reflect.get(target, key, receiver)
-
+        var res = Reflect.get(target, key, receiver)
+        if (isObject(res)) {
+            return reactive(res)
+        }
+        return res
     }
 }
 
