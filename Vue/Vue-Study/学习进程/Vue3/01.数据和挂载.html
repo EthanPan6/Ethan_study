@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p> Counter:{{counter}}</p>
+        <button @click="counterFb">自增</button>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const Counter = {
+            data() {
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+                counterFb() {
+                    this.counter *= 2
+                }
+            },
+            mounted() {
+                setInterval(() => {
+                    this.counter++
+                }, 1000);
+            }
+
+        }
+        Vue.createApp(Counter).mount('#app')
+    </script>
+</body>
+
+</html>

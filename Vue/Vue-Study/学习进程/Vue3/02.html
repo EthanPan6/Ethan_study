@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button><br>
+        <span v-bind:title="message2">
+            Hover your mouse over me for a few seconds to see my dynamically bound
+            title!
+        </span>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            data() {
+                return {
+                    message: 'Hello Vue.js!',
+                    message2: 'You loaded this page on ' + new Date().toLocaleString()
+
+                }
+            },
+            methods: {
+                reverseMessage() {
+                    this.message = this.message
+                        .split('')
+                        .reverse()
+                        .join('')
+                }
+            },
+            mounted() {
+
+            }
+
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>
