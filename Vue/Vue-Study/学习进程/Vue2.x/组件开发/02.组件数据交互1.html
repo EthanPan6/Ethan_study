@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <soncomponent :name="pmsg"></soncomponent>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        { // Vue.component('grandcomponent', {
+            //     data() {
+            //         return {}
+            //     },
+            //     props: ['name'],
+            //     template: `<div>{{name}}</div>`
+            // })
+            // Vue.component('parentcomponent', {
+            //     data() {
+            //         return {}
+            //     },
+            //     props: ['name'],
+            //     template: `<div>{{name}}</div>`
+            // })
+        }
+
+        //父组件==>子组件
+        Vue.component('soncomponent', {
+            data() {
+                return {
+                    msg: '子组件的数据'
+                }
+            },
+            props: ['name'], //接收父组件的数据
+            template: `<div>{{name}}-----------{{msg}}</div>`
+        })
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                pmsg: "来自父组件的信息"
+            },
+            methods: {},
+            computed: {},
+            watch: {},
+        })
+    </script>
+</body>
+
+</html>
