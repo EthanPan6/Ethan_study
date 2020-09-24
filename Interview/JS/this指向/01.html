@@ -14,6 +14,7 @@
             hi() {
                 // alert(this.name);
                 console.log(this);
+                return this
             },
             bye() {
                 alert("Bye");
@@ -22,7 +23,19 @@
 
         user.hi(); //user
         (user.name == "John" ? user.hi : user.bye)(); //window|global
+        /*
+        不等价于 (user.hi)() //user
+        而是等价于
+        */
+        let hii = user.name == "John" ? user.hi : user.bye
+        hii() //window|global
 
+        let fn = (function () {
+            if (user.name == "John") return user.hi
+        })()
+        fn()
+
+        console.log(user.hi === fn); //true
         console.log(user.hi === (user.name == "John" ? user.hi : user.bye)); //true
     </script>
 </body>
