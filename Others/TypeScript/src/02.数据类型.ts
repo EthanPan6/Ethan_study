@@ -12,7 +12,7 @@ let arrayList: any[] = [1, false, 'fine'];
 arrayList[1] = 100;
 
 //null 和 undefine
-
+// 在tsconfig中启用 --strictNullChecks:true
 let num: number;
 num = 1; // 运行正确
 num = undefined;    // 运行错误
