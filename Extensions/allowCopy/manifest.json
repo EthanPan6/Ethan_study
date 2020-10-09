@@ -1,0 +1,9 @@
+{
+    "name": "copy extension",
+    "description": "an extension for coping enable-coping html content",
+    "version": "1.0",
+    "manifest_vision": 2,
+    "browser_action":[
+        "default":""
+    ]
+}
