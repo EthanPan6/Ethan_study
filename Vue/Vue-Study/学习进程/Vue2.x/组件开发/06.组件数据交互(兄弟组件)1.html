@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" :style="{fontSize:fontSize+'px'}">
+        <h5>字体大小{{fontSize}}</h5>
+        <soncomponent :name="rootmsg" @enlarge-text="handle($event)">
+
+        </soncomponent>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        Vue.component('component01', {
+            data() {
+                return {
+                    num:0
+                }
+            },
+            props: ['name'], //接收父组件的数据
+            template: `
+            <div>
+                <input v-model="num" type="text" />
+                <button @click='$emit("enlarge-text",temp)'>扩大字体</button>
+            </div>`
+        })
+        Vue.component('component012', {
+            data() {
+                return {
+                    msg: '子组件的数据',
+                    temp: 0
+                }
+            },
+            props: ['name'], //接收父组件的数据
+            template: `
+            <div>
+                <input v-model="temp" type="text" />
+                <button @click='$emit("enlarge-text",temp)'>扩大字体</button>
+            </div>`
+        })
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                rootmsg: "来自根组件的信息",
+                fontSize: 10
+            },
+            methods: {
+                handle(val) {
+                    this.fontSize += val | 0;
+                }
+            },
+            computed: {},
+            watch: {},
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <grandcomponent :name="rootmsg">
+            
+        </grandcomponent>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        /*
+        1.   单向数据传递
+        2.   单层传递
+        */
+            Vue.component('grandcomponent', {
+                data() {
+                    return {
+                        identification:" I am grandcomponent",
+                        grandmsg:"来自爷爷组件的信息"
+                    }
+                },
+                props: ['name'],
+                template: `
+                <div>
+                    <h2>   {{name}}---{{identification}}</h2>
+                    <parentcomponent :name="grandmsg">
+                    </parentcomponent>
+                </div>`
+            })
+            Vue.component('parentcomponent', {
+                data() {
+                    return {
+                        identification:" I am parentcomponent",
+                        parentmsg:"来自爸爸组件的信息"
+                    }
+                },
+                props: ['name'],
+                template: `
+                <div>
+                    <h3> {{name}}---{{identification}}</h3>
+                    <soncomponent :name="parentmsg"></soncomponent>
+                </div>`
+                   
+            })
+        //父组件==>子组件
+        Vue.component('soncomponent', {
+            data() {
+                return {
+                    msg: '子组件的数据'
+                }
+            },
+            props: ['name'], //接收父组件的数据
+            template: `<div>{{name}}-------------{{msg}}</div>`
+        })
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                rootmsg: "来自根组件的信息"
+            },
+            methods: {},
+            computed: {},
+            watch: {},
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" :style="{fontSize:fontSize+'px'}">
+        <soncomponent :name="rootmsg" @enlarge-text="handle">
+
+        </soncomponent>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        Vue.component('soncomponent', {
+            data() {
+                return {
+                    msg: '子组件的数据'
+                }
+            },
+            props: ['name'], //接收父组件的数据
+            template: `
+            <div>
+                <h4>{{name}}-------------{{msg}}</h4>
+                <button @click='$emit("enlarge-text")'>扩大字体</button>
+            </div>`
+        })
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                rootmsg: "来自根组件的信息",
+                fontSize: 10
+            },
+            methods: {
+                handle() {
+                    this.fontSize++
+                }
+            },
+            computed: {},
+            watch: {},
+        })
+    </script>
+</body>
+
+</html>
