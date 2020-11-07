@@ -13,3 +13,7 @@ btn.onclick = () => {
         url: "http://localhost:3000/api/aa"
     })
 }
+function add(x,y){
+    return x+y
+}
+console.log(add(2,3));
