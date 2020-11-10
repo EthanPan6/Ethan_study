@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div></div> -->
+    <script>
+        // var x = document.getElementsByTagName("div")
+        var x = document.createElement('div');
+        // var isOpening = false;
+        Object.defineProperty(x, 'id', {
+            get: function () {
+                // 在这里放入你的代码
+                document.write('Console is opened');
+            }
+        });
+        console.info(x);
+
+        console.log(`---------------------------------------------------------------`);
+
+        var ConsoleManager = {
+            onOpen() {
+                alert("Console is opened")
+            },
+            onClose() {
+                alert("Console is closed")
+            },
+            init() {
+                var self = this;
+                var x = document.createElement('div');
+                var isOpening = false,
+                    isOpened = false;
+                Object.defineProperty(x, 'id', {
+                    get() {
+                        if (!isOpening) {
+                            self.onOpen();
+                            isOpening = true;
+                        }
+                        isOpened = true;
+                    }
+                });
+                setInterval(function () {
+                    isOpened = false;
+                    console.info(x);
+                    console.clear();
+                    if (!isOpened && isOpening) {
+                        self.onClose();
+                        isOpening = false;
+                    }
+                }, 200)
+            }
+        }
+
+        // ConsoleManager.onOpen = function () {
+        //     alert("Console is opened!!!!!")
+        // }
+        // ConsoleManager.onClose = function () {
+        //     alert("Console is closed!!!!!")
+        // }
+        ConsoleManager.init();
+    </script>
+</body>
+
+</html>
