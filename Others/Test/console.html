@@ -8,61 +8,39 @@
 </head>
 
 <body>
-    <!-- <div></div> -->
+
     <script>
-        // var x = document.getElementsByTagName("div")
-        var x = document.createElement('div');
-        // var isOpening = false;
-        Object.defineProperty(x, 'id', {
-            get: function () {
-                // 在这里放入你的代码
-                document.write('Console is opened');
-            }
-        });
-        console.info(x);
-
-        console.log(`---------------------------------------------------------------`);
-
-        var ConsoleManager = {
-            onOpen() {
-                alert("Console is opened")
-            },
-            onClose() {
-                alert("Console is closed")
-            },
-            init() {
-                var self = this;
-                var x = document.createElement('div');
-                var isOpening = false,
-                    isOpened = false;
-                Object.defineProperty(x, 'id', {
-                    get() {
-                        if (!isOpening) {
-                            self.onOpen();
-                            isOpening = true;
-                        }
-                        isOpened = true;
-                    }
-                });
-                setInterval(function () {
-                    isOpened = false;
-                    console.info(x);
-                    console.clear();
-                    if (!isOpened && isOpening) {
-                        self.onClose();
-                        isOpening = false;
-                    }
-                }, 200)
-            }
+        //     setInterval(function () {
+        //     check()
+        // }, 4000);
+        // var check = function () {
+        //     function doCheck(a) {
+        //         if (("" + a / a)["length"] !== 1 || a % 20 === 0) {
+        //             (function () { }
+        //             ["constructor"]("debugger")())
+        //         } else {
+        //             (function () { }
+        //             ["constructor"]("debugger")())
+        //         }
+        //         doCheck(++a)
+        //     }
+        //     try {
+        //         doCheck(0)
+        //     } catch (err) { }
+        // };
+        // check();
+        // (() => {
+        //     setInterval(() => {
+        //         debugger
+        //     })
+        // })()
+        let a = 3
+        var g = true
+        const o = {
+            a,
+            g
         }
-
-        // ConsoleManager.onOpen = function () {
-        //     alert("Console is opened!!!!!")
-        // }
-        // ConsoleManager.onClose = function () {
-        //     alert("Console is closed!!!!!")
-        // }
-        ConsoleManager.init();
+        debugger
     </script>
 </body>
 
