@@ -13,3 +13,16 @@ console.log(number.num);
 number.num = 9
 console.log(number.num);
 console.log(`-----------------------------------`);
+
+var value = 0;
+// Object.defineProperty(window, 'a', {
+//     get: function () {
+//          return  ++value
+//     }
+// })
+window.__defineGetter__('a', () => ++value)
+console.log(a, value);
+console.log(a, value);
+console.log(a, value);
+console.log(a, value);
+console.log(a, value);
