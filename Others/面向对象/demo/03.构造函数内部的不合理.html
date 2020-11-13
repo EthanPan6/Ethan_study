@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        构造函数是否合理?
+            + 构造函数在书写方法(public)时:
+                - 创建多少个实例化对象就有多少个方法需要占用内存空间()
+                =>因为会有多余的函数内存空间占用
+        */
+
+
+        function Person1(name) {
+            this.name = name;
+            this.sayHi = function a() {
+                console.log(`Hello ,${this.name}`);
+            }
+            this.sayHello = function b() {
+                console.log(`Hello ,${this.name}`);
+            }
+        }
+        var p1 = new Person1('张三')
+        var p2 = new Person1('李四')
+        p1.sayHi()
+        p2.sayHi()
+
+        //优化1.0
+        //将部分私有的方便包装起来,需要的时候再调用
+        //
+        let methods = {
+            a() {
+                console.log(`this is methods A`);
+            },
+            b() {
+                console.log(`this is methods B`);
+            }
+        }
+
+        function Person2(name) {
+            this.name = name;
+            this.sayHi = methods.a
+            this.sayHello = methods.b
+        }
+
+        // 优化2.0     prototype
+        //每个函数自构建出来自带一个属性(对象)---prototype
+        //构造函数也有这个属性
+        //构造函数的prototype里面有一个属性constructor=>表示构造函数伴生的原型对象
+        //我们可以在这个属性上添加这个构造函数的属性和方法
+        function Person3(name) {
+            this.name = name
+        }
+        Person3.prototype.sayHi = function () {
+            console.log(`Hello ,${this.name}`);
+        }
+        let p3 = new Person3('jack')
+        p3.sayHi()
+
+        //拓展   __proto__
+        /*
+        每一个对象都有一个属性__proto__,指向所属构造函数的prototype
+        实例化对象也含有这个属性
+        */
+        console.log(Person3.prototype);
+        console.log(p3.__proto__ === Person3.prototype);
+    </script>
+</body>
+
+</html>

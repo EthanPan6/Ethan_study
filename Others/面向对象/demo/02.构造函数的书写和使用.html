@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        1. 调用时需要和new关键字连用(可以使用new.target判断是否使用了new关键字)
+        =>如果没有new,那么没有创建对象的能力
+        =>反之,可以创建一个对象
+
+        2.构造函数内部不用写return
+        =>return的类型为基本类型则没有任何影响
+        =>return的类型为引用类型,返回值为返回的值
+        =>未使用new关键字时,被当成了普通函数,返回值为返回的值
+
+        3.无传参时,创建时可以不用写 ()
+        =>推荐写
+
+        4.构造函数首字母大写
+        =>直观的区分普通函数和构造函数
+
+        5.当函数和new连用
+        =>会创建一个对象=>实例对象
+        =>创建的过程=>实例化
+        =>this的指向=>当前的实例对象
+        */
+
+        function Foo() {
+            // console.log(new.target);//打印出这个构造函数
+            if (!new.target) throw "Foo() must be called with new";
+            console.log("Foo instantiated with new");
+        }
+        // Foo(); // throws "Foo() must be called with new"
+        new Foo(); // logs "Foo instantiated with new"
+
+        function Fn1(a, b) {
+            this.a = a
+            this.b = b
+            return "String"
+        }
+
+        function Fn2(a, b) {
+            this.a = a
+            this.b = b
+            return [a, b]
+        }
+        console.log(new Fn1(1, 2)); //{a:1,b:2}
+        console.log(new Fn2(1, 2)); //[1,2]
+    </script>
+</body>
+
+</html>
