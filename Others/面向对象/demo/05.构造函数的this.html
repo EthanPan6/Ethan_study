@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name) {
+            this.name = name;
+            console.log(`构造函数中的this`);
+            console.log(this);
+        }
+        Person.prototype.fn = function () {
+            console.log(`prototype上的this`);
+            console.log(this);
+        }
+        let p1 = new Person('jack')
+        p1.fn()
+    </script>
+</body>
+
+</html>

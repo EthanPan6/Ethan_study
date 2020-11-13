@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        对象的访问机制:
+            + 当你访问一个对象p1的某个属性(方法)时
+            + 当p1自身有则直返回被查询(调用)的属性(方法)
+            + 当p1自身没有则在这个对象的__proto__属性上查找这个属性(方法),有则返回被查询(调用)的属性(方法)
+                => 实质是在Person的prototype上查询
+            + 上面两种都未查询到则继续无限制地在__proto__的__proto__属性上查找,直至到null(顶层对象)然后返回undefined
+        */
+        function Person(name) {
+            this.name = name
+
+        }
+        Person.prototype.sayHi = function () {
+            console.log(`Hello ${this.name}`);
+        }
+    </script>
+</body>
+
+</html>
