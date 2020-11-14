@@ -82,9 +82,7 @@
         }
         Tabs.prototype.change = function () {
             this.btns.forEach((item, index) => {
-
                 item.addEventListener('click', () => {
-
                     this.btns.forEach((t, i) => {
                         t.className = '';
                         this.pages[i].className = '';

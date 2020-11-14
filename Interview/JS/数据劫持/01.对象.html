@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        + 对象:数据类型的一种
+        + 以键值对(key:value)的形式存储数据
+        + 因为__proto__和prototype可以访问自己没有的属性和方法   
+        
+        for in 循环
+        */
+        function Person() {
+            this.name = "Jack"
+            this.age = 18
+            this.gender = 'male'
+        }
+        Person.prototype.sayHi = function () {
+            console.log("Hello World");
+        }
+        let p1 = new Person()
+
+        for (let key in p1) {
+            console.log(key);
+        }
+    </script>
+</body>
+
+</html>
