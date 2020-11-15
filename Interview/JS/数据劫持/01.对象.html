@@ -15,6 +15,7 @@
         + 因为__proto__和prototype可以访问自己没有的属性和方法   
         
         for in 循环
+
         */
         function Person() {
             this.name = "Jack"
@@ -25,7 +26,9 @@
             console.log("Hello World");
         }
         let p1 = new Person()
-
+        console.log(p1);
+        console.log(p1.hasOwnProperty("name"));
+        console.log(p1.hasOwnProperty("sayHi"));
         for (let key in p1) {
             console.log(key);
         }

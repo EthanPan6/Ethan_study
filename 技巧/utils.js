@@ -76,28 +76,21 @@ function zeroize(value) {
 }
 // console.log(zeroize(8));
 
-//控制台防调试
-var noDebug = (() => {
-    setInterval(function () {
-        check()
-    }, 4000);
-    var check = function () {
-        function doCheck(a) {
-            if (("" + a / a)["length"] !== 1 || a % 20 === 0) {
-                (function () { }
-                ["constructor"]("debugger")())
-            } else {
-                (function () { }
-                ["constructor"]("debugger")())
-            }
-            doCheck(++a)
-        }
-        try {
-            doCheck(0)
-        } catch (err) { }
-    };
-    check();
-})()
+//判断是否是数字
+function isNumber(val) {
+    // isFinite(Infinity);  // false
+    // isFinite(NaN);       // false
+    // isFinite(-Infinity); // false
+    // isFinite(0);         // true
+    // isFinite(2e64);      // true, 在更强壮的Number.isFinite(null)中将会得到false
+    // isFinite("0");       // true, 在更强壮的Number.isFinite('0')中将会得到false
+
+    // 不加Number时,'123'判断为true
+
+    //无法测试 bigInt类型的数字
+    
+    return Number.isFinite(val)
+}
 
 
 // export {
