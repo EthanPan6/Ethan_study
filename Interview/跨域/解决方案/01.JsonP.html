@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="output">输出</div>
+    <script>
+        let box = document.getElementById("output");
+        jsonpCallBack = (res) => {
+            console.log(res);
+            box.innerHTML = res
+        }
+        // jsonpCallBack()
+    </script>
+    <script src="http://localhost:8080/api/jsonp?id=1&cb=jsonpCallBack"></script>
+
+    <script>
+        // function JSONP(url,params,callBackKey,callback){
+        //     this.url=url;
+        //     this.params=params;
+        //     this.callBackKey=callBackKey||"cb";
+        //     this
+        // }
+        const JSONP = ({
+            url,
+            params = {},
+            callBackKey = "cb",
+            callback
+        }) => {
+            params[callBackKey] = callBackKey
+            window[callBackKey] = callback
+            const newParams = Object.keys(params).map(itwm => `${itwm}=${params[itwm]}`).join('&');
+            const script = document.createElement('script');
+            script.setAttribute('src', `${url}?${newParams}`);
+            document.body.appendChild(script)
+        }
+        JSONP({
+            url: 'http://www.baidu.com/s',
+            params: {
+                wd: 'flash'
+            },
+            callback(res) {
+                console.log(res);
+            }
+        })
+    </script>
+</body>
+
+</html>
