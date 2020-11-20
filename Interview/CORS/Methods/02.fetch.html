@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var url = 'http://localhost:8080/api/fetch?id=1';
+    var data = {
+      username: 'example'
+    };
+
+    fetch(url, {
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
+  </script>
+</body>
+
+</html>

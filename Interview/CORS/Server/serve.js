@@ -11,7 +11,7 @@ const items = [
     }
 ]
 app.use(async (ctx, next) => {
-
+    console.log(ctx);
     if (ctx.path === '/api/jsonp') {
         console.log("收到前端信息");
         const { cb, id } = ctx.query;
@@ -19,6 +19,15 @@ app.use(async (ctx, next) => {
         const msg = `${cb}(${JSON.stringify(title)})`
         console.log(msg);
         ctx.body = msg
+        return
+    }
+    if (ctx.path === '/api/fetch') {
+        console.log("收到前端信息");
+        // const { cb, id } = ctx.query;
+        // const title = items.find(items => items.id == id)['title']
+        // const msg = `${cb}(${JSON.stringify(title)})`
+        // console.log(msg);
+        ctx.body = ctx.query
         return
     }
 })

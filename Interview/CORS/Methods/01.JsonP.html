@@ -26,6 +26,8 @@
         //     this.callBackKey=callBackKey||"cb";
         //     this
         // }
+
+
         const JSONP = ({
             url,
             params = {},
@@ -40,14 +42,25 @@
             document.body.appendChild(script)
         }
         JSONP({
-            url: 'http://www.baidu.com/s',
+            url: "http://localhost:8080/api/jsonp",
             params: {
-                wd: 'flash'
+                id: 1
             },
+            callbackKey: "cb",
             callback(res) {
                 console.log(res);
-            }
-        })
+            },
+        });
+        JSONP({
+            url: "http://localhost:8080/api/jsonp",
+            params: {
+                id: 2
+            },
+            callbackKey: "cb",
+            callback(res) {
+                console.log(res);
+            },
+        });
     </script>
 </body>
 
