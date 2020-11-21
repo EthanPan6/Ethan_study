@@ -1,5 +1,6 @@
 const Koa = require('koa');
 const app = new Koa();
+const fs = require('fs')
 const items = [
     {
         id: 1,
@@ -10,8 +11,8 @@ const items = [
         title: 'title2'
     }
 ]
+
 app.use(async (ctx, next) => {
-    console.log(ctx);
     if (ctx.path === '/api/jsonp') {
         console.log("收到前端信息");
         const { cb, id } = ctx.query;
@@ -22,12 +23,17 @@ app.use(async (ctx, next) => {
         return
     }
     if (ctx.path === '/api/fetch') {
-        console.log("收到前端信息");
-        // const { cb, id } = ctx.query;
-        // const title = items.find(items => items.id == id)['title']
-        // const msg = `${cb}(${JSON.stringify(title)})`
-        // console.log(msg);
-        ctx.body = ctx.query
+        console.log("收到前端信息fetch");
+        // fs.readFile('./data/1.json', 'utf8', function (err, data) {
+        //     if (err) console.log(err);
+        //     var test1 = JSON.parse(data);
+        //     console.log(test1);
+        //     ctx.body = JSON.stringify(test1)
+        //     //
+
+        // });
+        console.log(ctx.query);
+        ctx.body = 'Hello World';
         return
     }
 })

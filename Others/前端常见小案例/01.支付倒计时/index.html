@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid black;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>商品:心心相印纸巾</p>
+        <p>原件:500元</p>
+        <p>现价:1.98元</p>
+        <p>130抽*3层/无香</p>
+        <p>地址:北京市朝阳区</p>
+        <p>
+            <i>-</i>
+            <input type="number" name="" id="" min="0" value="1">
+            <i>+</i>
+        </p>
+        <p>
+            <button>取消</button><button>支付</button>
+        </p>
+    </div>
+    <script>
+        var count = document.querySelector('input')
+        // console.log(count);
+        // var number = {
+        //     value: count.value | 0,
+        //     get _number() {
+        //         return this.value
+        //     },
+        //     set _number(val) {
+        //         console.log(this.value);
+        //         this.value = val
+        //         count.value = this.value
+        //     }
+        // }
+        var val=1,valObj={}
+        Object.defineProperty(valObj,ori,{
+            get(){
+                return val
+            },
+            set(value){
+                
+            }
+        })
+        count.onblur = function () {
+            // console.log(this.value);
+            number.value = this.value | 0
+        }
+
+
+        // var
+    </script>
+</body>
+
+</html>
