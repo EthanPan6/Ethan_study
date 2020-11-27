@@ -1,0 +1,89 @@
+{
+    "adList": {
+        "ret": 0,
+        "index": [
+            {
+                "channel": "yaowen",
+                "channel_id": 6476,
+                "stream_top": {
+                    "loc": "Wap_News_Stream",
+                    "rot": "320423023",
+                    "seq": "1",
+                    "subtype": "",
+                    "replace_type": "0",
+                    "server_data": "c29pZD03NUE1RUVFQ0U0RjE1RkMwQjdFMzA0N0JFRTAxJmluZGV4PTEmY21wX3ZlcnNpb249JmlzX2xvY2FsPTAmY2hhbm5lbF9pZD02NDc2JnVwX3ZlcnNpb249IDEuMC4yNDUmc3ViX3R5cGU9MTA = ",
+                    "order_source": "110",
+                    "empty_ad_report_url": [
+                        ""
+                    ]
+                }
+            }
+        ],
+        "order": [
+            {
+                "sub_type": 10,
+                "act_type": 2,
+                "oid": "320423023",
+                "cid": "392921489",
+                "soid": "75A5EEECE4F15FC0B7E3047BEE01",
+                "loc": "Wap_News_Stream",
+                "navTitle": "京东热卖",
+                "resource_url0": "http://canvas.gdt.qq.com/canvas/1?viewid=%12%0C%08%D8%B8%BA%8D%BD%94%B4%F9%23%20%01%18%81%90J&ckn=2590362137707584600",
+                "title": "南极人袜子赶紧抢！这个价太划算了！",
+                "longTitle": "南极人袜子赶紧抢！这个价太划算了！",
+                "shareTitle": "南极人袜子赶紧抢！这个价太划算了！",
+                "abstract": "",
+                "url": "https://cbk.gdt.qq.com/gdt_click.fcg?viewid=V!45JMQ!ueG1varhnlOmgEW3fdjJoc3n6Ljbb7!WjrEkd1kg2C7JRmYUjLa2yw_tav9rRwPAjn7UzgXR6YyeDPRSi1Cd5i3r41AQqVoe3wHxJNH1JsEYJIFopc2rv5GRZYV1mwT4OStXE7XTJUp8J3LjIYmGnuaxRWzifRqquWCPbBK2SJUU5K2b8tZENjp1YlNqPiUHdAnl9kmbn0DcMJfW4p9dOSC18NlieUzaECdCIy96j0k_cl6aQ8D5Uz0J95IKbcYs_ng&jtype=0&i=1&os=1&s_lp=101&acttype=__ACT_TYPE__&ch=__CHANNEL_ID__&seq=__SEQ__&aseq=__ABS_SEQ__&rt=__RETURN_TYPE__&s=%7B%22da%22%3A%22__WIDTH__%22%2C%22db%22%3A%22__HEIGHT__%22%2C%22down_x%22%3A%22__DOWN_X__%22%2C%22down_y%22%3A%22__DOWN_Y__%22%2C%22up_x%22%3A%22__UP_X__%22%2C%22up_y%22%3A%22__UP_Y__%22%7D&cpcpa=1024&clklpp=__CLICK_LPP__&xp=1&ack=3&skuid=100011064984&jd_cookie_mapping_id=&product_id_list=&mtrid=2590362137707584600&vto=__VIDEO_PLAY_TIME__",
+                "url_type": 0,
+                "icon": "",
+                "reportUrlSdk": [],
+                "reportUrlOther": [],
+                "clickReportUrlOther": [],
+                "webp": 0,
+                "order_prio": 0,
+                "creative_plugin": 0,
+                "comment": 0,
+                "newsId": "",
+                "pvLimit": 0,
+                "pvFcs": 0,
+                "shareable": 1,
+                "viewReportUrl": "https://v.gdt.qq.com/gdt_stats.fcg?viewid=V!45JMQ!ueG1varhnlOmgEW3fdjJoc3n6Ljbb7!WjrEkd1kg2C7JRmYUjLa2yw_tav9rRwPAjn7UzgXR6YyeDPRSi1Cd5i3r41AQqVoe3wHxJNH1JsEYJIFopc2rv5GRZYV1mwT4OStXE7XTJUp8J3LjIYmGnuaxRWzifRqquWCPbBK2SJUU5K2b8tZENjp1YlNqPiUHdAnl9kmbn0DcMJfW4p9dOSC18NlieUzaECdCIy96j0k_cl6aQ8D5Uz0J95IKbcYs_ng&i=1&os=1&datatype=jsonp&etype=__EXPOSURE_TYPE__&ch=__CHANNEL_ID__&seq=__SEQ__&aseq=__ABS_SEQ__&xp=1",
+                "feedbackReportUrl": "https://nc.gdt.qq.com/gdt_report.fcg?viewid=V!45JMQ!ueG1varhnlOmgEW3fdjJoc3n6Ljbb7!WjrEkd1kg2C7JRmYUjLa2yw_tav9rRwPAjn7UzgXR6YyeDPRSi1Cd5i3r41AQqVoe3wHxJNH1JsEYJIFopc2rv5GRZYV1mwT4OStXE7XTJUp8J3LjIYmGnuaxRWzifRqquWCPbBK2SJUU5K2b8tZENjp1YlNqPiUHdAnl9kmbn0DcMJfW4p9dOSC18NlieUzaECdCIy96j0k_cl6aQ8D5Uz0J95IKbcYs_ng&acttype=__ACT_TYPE__&s=27",
+                "downloadReportUrl": "https://t.gdt.qq.com/conv/src/61/conv?client=61&product_id=&cuser=src&click_id=__CLICK_ID__&actionid=__ACTION_ID__",
+                "download": 0,
+                "advertiser_id": 4512435,
+                "product_id": 2991272415,
+                "product_type": 1000,
+                "industry_id": 109,
+                "thumbnails": "",
+                "local_ad": {
+                    "store_name": "",
+                    "pop_sheet": ""
+                },
+                "icon_url": "http://pgdt.gtimg.cn/gdt/0/DAARNqzAIAAIAAAjBbDlrCCJeNbz1A.jpg/0?ck=f7947d59150a1203be58b002c28b96f4",
+                "form_component_info": {},
+                "dest_type": 0,
+                "unlike_btn": "1",
+                "open_mini_program": {
+                    "user_name": "",
+                    "path": "",
+                    "token": "",
+                    "wx_appid": "",
+                    "ad_trace_data": ""
+                },
+                "avoidDialog": 0,
+                "brandIcon": "",
+                "trace_id": "tg7iz326onfow01",
+                "open_scheme": "",
+                "ping_data": "b21naWQ9JnFxPTk3MzQ0NzM3NiZ3eGlkPSZxcW9wZW5pZD0maXA9MTE3LjE2NS4yMzguMjM2JmlwdjY9JnNvaWQ9NzVBNUVFRUNFNEYxNUZDMEI3RTMwNDdCRUUwMSZkaXNwbGF5X2lkPTkwMDAxJmZlYXR1cmVfdHlwZT0xJnVzZXJfaW5mbz10QnI5bURvX0Z4RzdBUDZCUGlVVUM3MEFfb0UtSlJRTHZRRC1nU009JmdhbWVfaWQ9MCZ3eF93ZWlzaGk9MCZlY3BtPVZ4Z3BWMHZybDNucFJqSHFtMzVNZGp0VkRNSTZpYWRsJmNwYz1mUTRGeitWTkxBb0tMd2crc29WOERFQjZRNEN4NEdEQSZpbmR1c3RyeV9pZD0xMDkmYWR2ZXJ0aXNlcl9pZD00NTEyNDM1JnByb2R1Y3RfaWQ9Mjk5MTI3MjQxNSZwcm9kdWN0X3R5cGU9MTAwMCZzdGF0dXNfY29kZT0xMDEmZHNwX2lwPTkuNDEuMTQwLjQ1Jm9yZGVyX3R5cGU9MiZzcGxhc2hfb3B0aW1hbD0wJmdlbmRlcj0wJmFnZT0wJm1vYmlsZV90YWc9MA==",
+                "click_data": "b21naWQ9JnFxPTk3MzQ0NzM3NiZ3eGlkPSZxcW9wZW5pZD0maXA9MTE3LjE2NS4yMzguMjM2JmlwdjY9JnNvaWQ9NzVBNUVFRUNFNEYxNUZDMEI3RTMwNDdCRUUwMSZkaXNwbGF5X2lkPTkwMDAxJmZlYXR1cmVfdHlwZT0xJnVzZXJfaW5mbz10QnI5bURvX0Z4RzdBUDZCUGlVVUM3MEFfb0UtSlJRTHZRRC1nU009JmdhbWVfaWQ9MCZ3eF93ZWlzaGk9MCZlY3BtPXJCMVd4RTlLYjJzNWUxblpuODhMZy9USUo3U1BqZEg3JmNwYz14aHRzY0h2bVdYRWVMakoxcnRiaTh0NHVRd25pZmhhciZpbmR1c3RyeV9pZD0xMDkmYWR2ZXJ0aXNlcl9pZD00NTEyNDM1JnByb2R1Y3RfaWQ9Mjk5MTI3MjQxNSZwcm9kdWN0X3R5cGU9MTAwMCZzdGF0dXNfY29kZT0xMDEmZHNwX2lwPTkuNDEuMTQwLjQ1Jm9yZGVyX3R5cGU9MiZzcGxhc2hfb3B0aW1hbD0wJmdlbmRlcj0wJmFnZT0wJm1vYmlsZV90YWc9MA==",
+                "extraReportUrl": "http://rpt.gdt.qq.com/landing_page?click_id=__CLICK_ID__&trace_id=tg7iz326onfow01&pa=__PAGE_ACTION_ID__&pat=__PAGE_TIME__&lec=__LANDING_ERROR_CODE__&ot=__OS_TYPE__&ver=__VERSION__",
+                "ams_traceid": "tg7iz326onfow",
+                "ad_context": "CNcDMM6k0ewHOJq24enAnJ+ObFC7/+f3B2Cc9KGa1NfSrMwBcgwIARDlseqaqJS7l1RyBAgCEAA=",
+                "complaintUrl": "https://i.gtimg.cn/qzone/biz/gdt/ams_ad_audit/h5/feedback?rsApiUrl=https%3A%2F%2Fnc.gdt.qq.com%2Fgdt_report.fcg%3Fviewid%3DqavExR9QFRBJNJBChtVtuOSG0Sgqov0V!mYYD9s6alN3jtXv_rc7TO3jXUeA1Mix_HAKIQ4tCJCuNTAWxSoyNVFkR8X7Y2aE%26acttype%3D5009%26s%3D27",
+                "splash_optimal": 0,
+                "marketing_scene": 0
+            }
+        ]
+    }
+}
