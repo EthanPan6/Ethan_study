@@ -83,6 +83,45 @@ fs.stat('./html', (err, data) => {
 
 + 若要只检查文件是否存在，但没有更多的操作，则建议使用 fs.access()。
 
+### 读取目录fs.readdir
+
+`fs.readdir(path[, options], callback)`
+```js
+fs.readdir('./html', (err, data) => {
+    if (err) {
+        console.log(err);
+        return
+    }
+    console.log(data);//展示为一个数组
+})
+```
+
+### 读取文件fs.readFile
+
+异步地读取文件的全部内容。
+`fs.readFile(path[, options], callback)`
+读出的是二进制文件,可以通过toString方法变成字符串
+
+```js
+fs.readFile('文件名', (err, data) => {
+  if (err) throw err;
+  console.log(data.toString());
+});
+```
+
+### 创建目录
+
+`fs.mkdir(path[, options], callback)`
++ 当`recursive: true`可以创建多级目录
++ 当`recursive: false`只可以创建一级目录
+
+```js
+// 创建 `./目录1/目录2/目录3`，不管 `/目录1` 和 `/目录1/目录2` 是否存在。
+fs.mkdir('./目录1/目录2/目录3', { recursive: true }, (err) => {
+  if (err) throw err;
+});
+```
+
 ### fs.writeFile写入文件
 + 当 file 是文件名时，则异步地写入数据到文件（如果文件已存在，则覆盖文件）。 data 可以是字符串或 buffer。
 + 如果 data 是普通的对象，则它必须具有自身的 toString 函数属性
@@ -95,6 +134,30 @@ fs.writeFile('./html/text', 'Hello World', err => {
 })
 ```
 不等待回调就对同一个文件多次使用 fs.writeFile() 是不安全的。 对于这种情况，建议使用 fs.createWriteStream()。
+
+### 追加内容fs.appendFile
+
+`fs.appendFile(path, data[, options], callback)`
+异步地追加数据到文件，如果文件尚不存在则创建文件。 data 可以是字符串或 Buffer。
+
+```js
+fs.appendFile('文件.txt', '追加的数据', (err) => {
+  if (err) throw err;
+  console.log('数据已被追加到文件');
+});
+```
+
+### 移动和重命名文件fs.rename
+
+`fs.rename(oldPath, newPath, callback)`
+
+```js
+fs.rename('./html/text', './css/style.css', err => {
+    if (err) throw err;
+        console.log('成功');
+})
+```
+
 ### 删除文件
 
 语法`fs.unlink(path, callback)`
@@ -106,3 +169,14 @@ fs.unlink('文件', (err) => {
 });
 ```
 
+### 删除目录
+
++ 如果目标路径下还有文件则无法删除
++ 如果目标路径是文件,也无法删除
+`fs.rmdir(path[, options], callback)`
+```js
+fs.rmdir('./html', err => {
+  if (err) throw err;
+    console.log('删除成功');
+})
+```
