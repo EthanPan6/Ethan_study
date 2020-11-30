@@ -122,6 +122,8 @@ fs.mkdir('./目录1/目录2/目录3', { recursive: true }, (err) => {
 });
 ```
 
++ 可以使用`npm i mkdirp --S`可以更方便的创建
+
 ### fs.writeFile写入文件
 + 当 file 是文件名时，则异步地写入数据到文件（如果文件已存在，则覆盖文件）。 data 可以是字符串或 buffer。
 + 如果 data 是普通的对象，则它必须具有自身的 toString 函数属性
