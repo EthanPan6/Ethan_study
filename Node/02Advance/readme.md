@@ -182,3 +182,82 @@ fs.rmdir('./html', err => {
     console.log('删除成功');
 })
 ```
+## 异步
+
+### promise的使用
+
+```js
+var p=new Promise((res,rej)=>{
+    setTimeout(()=>{
+        var num=18
+        res(num)
+    },1000)
+})
+p.then(data=>{
+    console.log(data);
+})
+```
+
+### async和await的使用
+
++ async可以将一个普通方法变成异步方法
++ await是等待异步方法执行完成,必须在异步方法中使用
+
+#### async函数的基本形式
+
+```js
+async function foo() {}//函数声明
+
+const foo = async function () {};//函数表达式
+
+let obj = { async foo() {} };//对象的方法
+obj.foo().then(...)
+
+class Storage {//Class 的方法
+constructor() {
+    this.cachePromise = caches.open('avatars');
+}
+async getAvatar(name) {
+    const cache = await this.cachePromise;
+    return cache.match(`/avatars/${name}.jpg`);
+}
+}
+
+const storage = new Storage();
+storage.getAvatar('jake').then(…);
+
+const foo = async () => {};//箭头函数
+```
+
+#### async函数的返回值总是一个Promise
+
+无论async函数有无await操作，其总是返回一个Promise。
+
+1. 没有显式return，相当于return Promise.resolve(undefined);
+2. return非Promise的数据data，相当于return Promise.resolve(data);
+3. return Promise, 会得到Promise对象本身
+
+async总是返回Promise，因此，其后面可以直接调用then方法，
+函数内部return返回的值，会成为then回调函数的参数
+函数内部抛出的错误，会被then的第二个函数或catch方法捕获到
+
+```js
+//正常返回值
+async function f0(){
+    retrun 'hello world';
+}
+
+f0().then(v => console.log(v));//hello world
+
+//抛出错误
+async function f1(){
+    throw new Error('出错了');
+}
+
+f1().then(
+    v => console.log(v),
+    e => console.log(e) //Error: 出错了
+)
+```
+
+参考:[async的基本用法](https://www.cnblogs.com/mengff/p/9651502.html)
