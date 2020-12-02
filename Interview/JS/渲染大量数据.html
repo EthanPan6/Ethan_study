@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>插入十万数据</h1>
+    <p>
+        
+    </p>
+    <ul>
+
+    </ul>
+    <script>
+        //设置100000数据量
+        const total = 100000
+        //每次插入30条数据
+        const once = 30;
+        //计算需要插入的次数
+        const loopCount = Math.ceil(total / once);
+        //现在在渲染的次数
+        let renderCount = 0
+
+        const ul = document.querySelector('ul')
+
+        function add() {
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < once; i++) {
+                const li = document.createElement('li')
+                li.innerHTML = Math.random() * 1000 | 0
+                fragment.appendChild(li)
+            }
+            ul.appendChild(fragment)
+            renderCount++
+            loop()
+        }
+
+        function loop() {
+            if (renderCount < loopCount) {
+                window.requestAnimationFrame(add)
+            }
+        }
+        loop()
+    </script>
+</body>
+
+</html>
