@@ -1,17 +1,7 @@
-### 2020/12/03
-
-#### Cannot access XXX before initialization的报错
-
-`Cannot access watchSize before initialization`的报错
-
-```js
 window.onload = () => {
     console.log('页面加载完毕')
     watchChangeSize();
 }
-// window.addEventListener('resize', watchSize())
-window.onresize = watchSize()
-
 const watchSize = function () {
     let prev = Date.now();
     return function () {
@@ -22,7 +12,11 @@ const watchSize = function () {
             prev = now
         }
     }
+
 }
+// window.addEventListener('resize', watchSize())
+window.onresize = watchSize()
+
 const watchChangeSize = function () {
     const { clientWidth: width, clientHeight: height } = document.documentElement
     console.log(width, height);
@@ -30,6 +24,4 @@ const watchChangeSize = function () {
         width, height
     }
 }
-```
 
-**const/let**没有声明提前,需要将函数表达式改为函数声明式或者将该函数放在监听窗口变化前之前
