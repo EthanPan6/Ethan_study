@@ -6,7 +6,7 @@ const watchSize = function () {
     let prev = Date.now();
     return function () {
         let now = Date.now();
-        if (now - prev >= 3100) {
+        if (now - prev >= 300) {
             console.log('页面大小改变')
             watchChangeSize();
             prev = now
