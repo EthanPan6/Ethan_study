@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>禁用调试功能</h1>
+    <a href="https://www.cnblogs.com/lxwphp/p/9548823.html">键码表</a>
+    <script>
+        document.onkeydown = function (e) {
+            var currKey = 0,
+                evt = e || window.event;
+            currKey = evt.keyCode || evt.which || evt.charCode;
+            if (currKey == 123 || currKey == 18) { //禁用F12,Alt键
+                window.event.cancelBubble = true;
+                window.event.returnValue = false;
+            }
+            if (e.ctrlKey &&
+                (e.keyCode === 65 ||
+                    e.keyCode === 67 ||
+                    e.keyCode === 73 ||
+                    e.keyCode === 74 ||
+                    e.keyCode === 80 ||
+                    e.keyCode === 83 ||
+                    e.keyCode === 85 ||
+                    e.keyCode === 86 ||
+                    e.keyCode === 117
+                )) { //禁用ctrl组合功能键
+                return false;
+            }
+        }
+        setInterval(() => { //禁用控制台
+            debugger
+        })
+        document.oncontextmenu = function (e) { //禁用右键
+            return false
+        };
+        document.onselectstart = function () { //禁用选中
+            return false;
+        };
+    </script>
+</body>
+
+</html>

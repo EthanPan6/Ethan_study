@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 120px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <button>发送</button>
+    <div></div>
+    <script>
+        let text = document.querySelector('input');
+        let btn = document.querySelector('button')
+        let box = document.querySelector('div')
+
+        // let ws = new WebSocket('ws://echo,websocket.org')
+        let ws = new WebSocket('ws://localhost:5678')
+
+        ws.onopen = function () {
+            box.innerHTML = "服务器连接成功<br/>"
+        }
+        btn.onclick = function () {
+            // box.innerHTML += text.value + '<br/>'
+            ws.send(text.value)
+        }
+        ws.onmessage = function (e) {
+            box.innerHTML += e.data + '<br/>'
+        }
+        ws.onclose = function () {
+            console.log('服务器关闭');
+        }
+    </script>
+</body>
+
+</html>
