@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div {
+        /* div {
             width: 200px;
             height: 120px;
             border: 1px solid black;
-        }
+        } */
     </style>
 </head>
 
@@ -24,7 +24,7 @@
         let box = document.querySelector('div')
 
         // let ws = new WebSocket('ws://echo,websocket.org')
-        let ws = new WebSocket('ws://localhost:5678')
+        let ws = new WebSocket('ws://localhost:6789')
 
         ws.onopen = function () {
             box.innerHTML = "服务器连接成功<br/>"
@@ -32,6 +32,7 @@
         btn.onclick = function () {
             // box.innerHTML += text.value + '<br/>'
             ws.send(text.value)
+            text.value = ''
         }
         ws.onmessage = function (e) {
             box.innerHTML += e.data + '<br/>'
@@ -39,6 +40,12 @@
         ws.onclose = function () {
             console.log('服务器关闭');
         }
+        // document.onkeydown = function (e) {
+        //     console.log(555);
+        //     if (e.keyCode == 108) {
+        //         ws.send(text.value)
+        //     }
+        // }
     </script>
 </body>
 
