@@ -54,7 +54,7 @@
 + bubbles (Boolean) — 代表事件是否应该冒泡. 
 + cancelable (Boolean) — 代表事件是否可以被取消. 
 + view (AbstractView) — 被授予事件的是图. 通常值为：document.defaultView. 
-+ key (string) — 按下的键对应的code. 
++ key (string) — 按下的键对应的code. ** 这里有问题 **
 + location (integer) — 按下键所在的位置. 0 ：默认键盘, 1 左侧位置, 2 右侧位置, 3 数字键盘区, 4 虚拟键盘区, or 5 游戏手柄. 
 + modifiers (string) — 一个有空格分开的修饰符列表. 
 + repeat (integer) — 一行中某个键被按下的次数.
@@ -71,7 +71,7 @@ var textbox = document.getElementById("myTextbox"),event;
 　　　　textbox.dispatchEvent(event);
 ```
 
-　　在FF下，允许你通过使用document.createEvent('KeyEvents'),这种方式来创建键盘事件，初始化的方法为initKeyEvent()，这个方法接受10个参数， 
+　　在Firefox下，允许你通过使用document.createEvent('KeyEvents'),这种方式来创建键盘事件，初始化的方法为initKeyEvent()，这个方法接受10个参数， 
 　
 + type (string) — 要触发的事件类型,例如"keydown". 
 + bubbles (Boolean) — 代表事件是否应该冒泡. 
@@ -134,3 +134,7 @@ newValue, attrName, 和attrChange.可以采用下面的方式来模拟一个突�
 　　注意，在Dom的键盘事件模拟中，对于一个keypress模拟事件的结果不会作为字符出现在textbox中，即使对应的事件处理函数已经触发。
 
 　　与DOM事件模拟相比，个人觉得IE的事件模拟更容易让人记忆和接受，统一的事件模型可以带来一些便捷。
+
+
+
+[模拟](https://blog.csdn.net/gold0523/article/details/41064449?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control)
