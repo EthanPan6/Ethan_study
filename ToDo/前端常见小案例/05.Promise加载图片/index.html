@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const url =
+            'https://www.baidu.com/link?url=c-sm9EU7_JGPOJj5wDZuhhOPd2KTgE0JYdpSx1jlS3hE1hrA5B8_VcIVvFlnNc8az212aJ4Ol3oLMqrqBRJuVPRvppqouZKAA5kXpwwSHnLMHh6JCndUkcws7hRmMSVvv9TEsHfGbjEInA5F1iKH5nx29K2LKf0j0jNgd4KkPwOEx9oJKC29a4bu9pJi-PjRTot3z9QUuvRFfRE4pARSGBBoXQCEO4BtlHUXVE1bPr20AU-xrjlJxGPTa6rUXJCXiX3OR9ukX21wH4C1k1ud-728IZPp_IjEwW8ZpyJ4BGaMcyczjHO0vT1a-ZRMXtgSeEC-XavugwVinW_1M_T-vSc0kts05uM5MOGzZ6YebFgKg57wXYq6ZHvQFSiZBw9h4aM2i52v_zP1TGnkKL35iWyuxYKFIgw77xtOT8btkz70hxw8MVErjM_GVQbMgouZQvbLKtkhhrMcFkVHt20ghl0GjYRt7lKKnfCxSXUB0-XzXWfBYlfrIfWcAyi8fYuBt46KpwM9BAsQCywvSQrRqUkHKvXB9Pa6BkR5QVL50xAccE68HkvWf2Bv4v-tSuSFo8w7ChBnmEhqWRN3qKfiQRAjJTViVNp5AeWFlUtAcIubW1K-h1zmGzoQDCx9ZJP8hZX_IqDNXmIqCSAEDbhQTa&timg=https%3A%2F%2Fss0.bdstatic.com%2F94oJfD_bAAcT8t7mm9GUKT-xh_%2Ftimg%3Fimage%26quality%3D100%26size%3Db4000_4000%26sec%3D1607928454%26di%3D22d57491eec5cb15c88381bb3eed17f6%26src%3Dhttp%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201902%2F03%2F20190203161419_yerng.jpg&click_t=1607928457115&s_info=1519_754&wd=&eqid=ae4b3ede000b95e8000000045fd70a86'
+
+        const loadImage = (src) => new Promise((res, rej) => {
+            let img = new Image();
+            img.src = src
+            img.onload = () => res(img)
+            img.onerror = () => rej(new Error('图片加载失败'))
+        })
+
+        loadImage(url).then(img => console.log(img))
+
+        
+    </script>
+</body>
+
+</html>
