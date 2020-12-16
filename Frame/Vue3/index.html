@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">{{count}}</div>
+    <script>
+        const createAppAPI = render => {
+            return function createApp(rootComponent) {
+                //创建一个app,定义mount
+                //mount将来调用render,将vnode转换为真是dom
+                const app = {
+                    //rootContainer宿主元素
+                    mount(rootContainer) {
+                        const vnode = {
+                            tag: 'h2',
+                            props: null,
+                            children: rootComponent.data().count+''
+                        }
+                        render(vnode, document.querySelector(rootContainer))
+                    }
+                }
+                return app
+            }
+        }
+
+        const createRenderer = options => {
+            const render = (vnode, container) => {
+                //解析vnode=>dom
+                //创建vnode对应dom
+                const child = createElement(vnode.tag)
+                if (typeof vnode.children === 'string') {
+                    children.textContent = vnode.children
+                }
+                insert(child, container)
+
+            }
+
+            return {
+                render,
+                createAppAPI(render)
+            }
+        }
+
+        const renderer = createRenderer({
+            createElement(tag) {
+                return document.createElement(tag)
+            },
+            insert(child, parent) {
+
+            }
+        })
+        const Vue = {
+            createApp(options) { //创建app实例
+                return renderer.createApp(options)
+            }
+        }
+
+        //创建app实例
+        Vue.createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
