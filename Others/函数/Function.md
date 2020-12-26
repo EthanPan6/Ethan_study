@@ -99,6 +99,114 @@ function fib(num) {
 fib(6) // 8
 ```
 
+###  函数的调用
+
+函数调用的4种模式:
+
++ 作为普通函数调用
++ 作为对象的方法调用
++ 构造函数调用
++ call与apply方法的间接调用
+
+#### 作为普通函数调用
+
+```
+function add(x, y) {
+	return x + y;
+}
+var sum = add(1, 2);// 这就是普通的函数调用
+console.log(sum);
+```
+
+使用普通函数的调用时，在非严格模式下，this被绑定到全局对象
+在严格模式下，this是undefined。
+
+```
+function add(x, y) {
+	console.log(this);
+}
+add();//window
+function add(x, y) {
+	'use strict';
+	console.log(this);// undefined
+}
+```
+
+##### 重写
+
+普通函数的调用this会绑定到全局对象window，所以全局变量可以被重写
+
+```
+var a = 0;
+function fn() {
+	this.a = 2;
+}
+fn();
+console.log(this, this.a, a);// window 2 2
+```
+
+####  作为对象的方法调用 
+
+当一个函数作为一个对象的属性时，可以称为这个函数是对象的方法。当方法被调用时this被绑定到该对象上。 
+
+```js
+var obj = {
+	fn: function() {
+		console.log(this);//  {fn:f}
+    }
+}; 
+obj.fn();// 这就是作为一个对象的方法调用,此时this指向的就是obj这个对象
+```
+
+作为对象的方法调用，此时通过this可获取或改变对象的属性值 
+
+```js
+var obj = {
+	a : 1,
+	m: function() {
+		return this;
+	},
+	n: function() {
+		this.a = 2;
+	}
+}
+console.log(obj.m().a);// 1
+obj.n();
+console.log(obj.m().a);// 2
+```
+
+注意:与变量不同是this没有作用域的限制，嵌套函数不会从调用它的函数中继承this. 如果嵌套函数作为对象的方法调用，那么其this指向调用该方法的对象； 如果嵌套函数作为普通函数调用，那么在非严格模式下，指向`window`，在严格模式是`undefined `
+
+```js
+var obj = {
+	m: function() {
+		function n () {
+			return this;
+		}
+		return n();// 作为普通函数调用
+	}
+}
+console.log(obj.m());// window
+```
+
+如果想访问外层的this可以将其保存起来 
+
+```js
+ var obj = {
+     m: function() {
+         var that = this;
+         function n() {
+             return that;
+         }
+         return n();
+     }
+ }
+ console.log(obj.m() === obj);// true
+
+```
+
+
+
 ### 第一等公民
 
 JavaScript 语言将函数看作一种值，与其它值（数值、字符串、布尔值等等）地位相同。凡是可以使用值的地方，就能使用函数。比如，可以把函数赋值给变量和对象的属性，也可以当作参数传入其他函数，或者作为函数的结果返回。**函数只是一个可以执行的值，此外并无特殊之处。**
@@ -770,3 +878,189 @@ var p1 = Person('张三');
 p1.setAge(25);
 p1.getAge() // 25
 ```
+
+上面代码中，函数`Person`的内部变量`_age`，通过闭包`getAge`和`setAge`，变成了返回对象`p1`的私有变量。
+
+注意，外层函数每次运行，都会生成一个新的闭包，而这个闭包又会保留外层函数的内部变量，所以内存消耗很大。因此不能滥用闭包，否则会造成网页的性能问题。
+
+###  立即执行函数(IIFE,自调用函数)
+
+在 Javascript 中，圆括号`()`是一种运算符，跟在函数名之后，表示调用该函数。比如，`print()`就表示调用`print`函数。
+
+有时，我们需要在定义函数之后，立即调用该函数。这时，你不能在函数的定义之后加上圆括号，这会产生语法错误。
+
+```
+function(){ /* code */ }();
+// SyntaxError: Unexpected token (
+```
+
+产生这个错误的原因是，`function`这个关键字即可以当作语句，也可以当作表达式。 
+
+```
+// 语句
+function f() {}
+
+// 表达式
+var f = function f() {}
+```
+
+为了避免解析上的歧义，JavaScript 引擎规定，如果`function`关键字出现在行首，一律解释成语句。因此，JavaScript引擎看到行首是`function`关键字之后，认为这一段都是函数的定义，不应该以圆括号结尾，所以就报错了。
+
+解决方法就是**不要让`function`出现在行首**，让引擎将其理解成一个表达式。最简单的处理，就是将其放在一个圆括号里面。
+
+```
+(function(){ /* code */ }());
+// 或者
+(function(){ /* code */ })();
+```
+
+上面两种写法都是以圆括号开头，引擎就会认为后面跟的是一个表示式，而不是函数定义语句，所以就避免了错误。这就叫做“立即调用的函数表达式”（Immediately-Invoked Function Expression），简称 IIFE。
+
+注意，**上面两种写法最后的分号都是必须的**。如果省略分号，遇到连着两个 IIFE，可能就会报错。
+
+```
+// 报错
+(function(){ /* code */ }())
+(function(){ /* code */ }())
+```
+
+上面代码的两行之间没有分号，JavaScript 会将它们连在一起解释，将第二行解释为第一行的参数。
+
+推而广之，任何让解释器以表达式来处理函数定义的方法，都能产生同样的效果，比如下面三种写法。
+
+```
+var i = function(){ return 10; }();
+true && function(){ /* code */ }();
+0, function(){ /* code */ }();
+```
+
+甚至像下面这样写，也是可以的。
+
+```
+!function () { /* code */ }();
+~function () { /* code */ }();
+-function () { /* code */ }();
++function () { /* code */ }();
+```
+
+通常情况下，只对匿名函数使用这种“立即执行的函数表达式”。它的目的有两个：一是不必为函数命名，避免了污染全局变量；二是 IIFE 内部形成了一个单独的作用域，可以封装一些外部无法读取的私有变量。
+
+```
+// 写法一
+var tmp = newData;
+processData(tmp);
+storeData(tmp);
+
+// 写法二
+(function () {
+  var tmp = newData;
+  processData(tmp);
+  storeData(tmp);
+}()); 
+```
+
+上面代码中，写法二比写法一更好，因为完全避免了污染全局变量。 
+
+##  eval命令
+
+`eval`命令的作用是，将字符串当作语句执行。
+
+```
+eval('var a = 1;');
+a // 1
+```
+
+上面代码将字符串当作语句运行，生成了变量`a`。
+
+放在`eval`中的字符串，应该有独自存在的意义，不能用来与`eval`以外的命令配合使用。举例来说，下面的代码将会报错。
+
+```
+eval('return;');
+```
+
+`eval`没有自己的作用域，都在当前作用域内执行，因此可能会修改当前作用域的变量的值，造成安全问题。
+
+```
+var a = 1;
+eval('a = 2');
+
+a // 2
+```
+
+上面代码中，`eval`命令修改了外部变量`a`的值。由于这个原因，`eval`有安全风险。
+
+为了防止这种风险，JavaScript 规定，如果使用严格模式，`eval`内部声明的变量，不会影响到外部作用域。
+
+```
+(function f() {
+  'use strict';
+  eval('var foo = 123');
+  console.log(foo);  // ReferenceError: foo is not defined
+})()
+```
+
+上面代码中，函数`f`内部是严格模式，这时`eval`内部声明的`foo`变量，就不会影响到外部。
+
+不过，即使在严格模式下，`eval`依然可以读写当前作用域的变量。
+
+```
+(function f() {
+  'use strict';
+  var foo = 1;
+  eval('foo = 2');
+  console.log(foo);  // 2
+})()
+```
+
+上面代码中，严格模式下，`eval`内部还是改写了外部变量，可见安全风险依然存在。
+
+此外，`eval`的命令字符串不会得到 JavaScript 引擎的优化，运行速度较慢。这也是一个不应该使用它的理由。
+
+通常情况下，`eval`最常见的场合是解析 JSON 数据字符串，不过正确的做法应该是使用浏览器提供的`JSON.parse`方法。
+
+JavaScript 引擎内部，`eval`实际上是一个引用，默认调用一个内部方法。这使得`eval`的使用分成两种情况，一种是像上面这样的调用`eval(expression)`，这叫做“直接使用”，这种情况下`eval`的作用域就是当前作用域。除此之外的调用方法，都叫“间接调用”，**此时`eval`的作用域总是全局作用域**。
+
+```
+var a = 1;
+
+function f() {
+  var a = 2;
+  var e = eval;
+  e('console.log(a)');
+}
+
+f() // 1
+```
+
+上面代码中，`eval`是间接调用，所以即使它是在函数中，它的作用域还是全局作用域，因此输出的`a`为全局变量。
+
+`eval`的间接调用的形式五花八门，只要不是直接调用，都属于间接调用。
+
+```
+eval.call(null, '...')
+window.eval('...')
+(1, eval)('...')
+(eval, eval)('...')
+```
+
+上面这些形式都是`eval`的间接调用，因此它们的作用域都是全局作用域。
+
+与`eval`作用类似的还有`Function`构造函数。利用它生成一个函数，然后调用该函数，也能将字符串当作命令执行。
+
+```
+var jsonp = 'foo({"id": 42})';
+
+var f = new Function( 'foo', jsonp );
+// 相当于定义了如下函数
+// function f(foo) {
+//   foo({"id":42});
+// }
+
+f(function (json) {
+  console.log( json.id ); // 42
+})
+```
+
+上面代码中，`jsonp`是一个字符串，`Function`构造函数将这个字符串，变成了函数体。调用该函数的时候，`jsonp`就会执行。这种写法的实质是将代码放到函数作用域执行，避免对全局作用域造成影响。
+
+不过，`new Function()`的写法也可以读写全局作用域，所以也是应该避免使用它。

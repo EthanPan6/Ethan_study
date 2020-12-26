@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 5000px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="input">
+    <textarea name="" id="textBox" cols="30" rows="10"></textarea>
+    <script src="./Throttle.js"></script>
+    <script src="./Debounce.js"></script>
+    <script>
+        let input = document.querySelector('#input');
+        let textBox = document.querySelector('#textBox');
+        input.addEventListener('input', throttle(() => {
+            console.log(555);
+        }, 3000))
+
+        document.body.onscroll = debounce(() => {
+            console.log('滚滚滚');
+        }, 350)
+    </script>
+</body>
+
+</html>
