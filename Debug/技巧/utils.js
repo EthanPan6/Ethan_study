@@ -88,11 +88,13 @@ function isNumber(val) {
     // 不加Number时,'123'判断为true
 
     //无法测试 bigInt类型的数字
-    
+
     return Number.isFinite(val)
 }
 
-
+function getType(params) {
+    return Object.prototype.toString.call(params).length
+}
 // export {
 //     isObject,
 //     hasOwnProperty,

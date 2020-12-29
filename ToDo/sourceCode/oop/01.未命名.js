@@ -26,3 +26,10 @@ p2.like[3] = 9
 console.log(person);
 console.log(p1);
 console.log(p2);
+
+function getType(params) {
+    let type=Object.prototype.toString.call(params)
+    return 
+}
+
+console.log(getType('sdjjd'));
