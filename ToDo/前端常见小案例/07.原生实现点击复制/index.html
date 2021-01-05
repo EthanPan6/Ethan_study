@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="text">需要复制的内容</h2>
+    <span id="copy">copy</span>
+    <script>
+        /*
+        参考连接:https://blog.csdn.net/qq_16149125/article/details/83019815
+        */
+        const text = document.getElementById('text');
+        const copy = document.getElementById('copy');
+        copy.onclick = function () {
+            var cInput = document.createElement('input');
+            cInput.setAttribute('readonly', 'readonly'); // 防止手机上弹出软键盘
+            cInput.value = text.innerText;
+            document.body.appendChild(cInput);
+            cInput.select();
+            let res = document.execCommand('Copy'); //复制成功则返回true,进行后续逻辑操作
+            document.body.removeChild(cInput);
+            // cInput.className = 'oInput';
+            // cInput.style.display = 'none';
+            return res
+        }
+    </script>
+</body>
+
+</html>

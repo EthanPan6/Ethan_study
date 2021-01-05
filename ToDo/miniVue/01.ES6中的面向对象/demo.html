@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Foo {
+            constructor() {
+                this.name = "李白";
+                this.age = 18
+            }
+            static show() {//静态方法无法被实例所调用
+                console.log('静态方法');
+            }
+            sayHi() {
+                console.log(this.name + ":Hello!");
+            }
+
+        }
+        var o = new Foo()
+        o.sayHi()
+        Foo.show()
+    </script>
+</body>
+
+</html>
