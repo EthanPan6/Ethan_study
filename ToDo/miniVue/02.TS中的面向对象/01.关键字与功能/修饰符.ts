@@ -1,5 +1,5 @@
 class Foo {
-    x: number = 0;
+    readonly x: number = 0;
     y: number = 0;
     constructor(x, y) {
         this.x = x;
@@ -24,6 +24,8 @@ class Bar extends Foo {
     }
 }
 let o = new Foo(1, 2)
+console.log(o.x);
+
 console.log(o.sum());
 console.log(Bar.showName);
 
