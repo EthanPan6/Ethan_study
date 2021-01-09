@@ -34,3 +34,4 @@ let o1 = new Singleton('zs');
 let o2 = new Singleton('ls');
 console.log(o1 === o2);
 
+var psw='ewbenyjn'
