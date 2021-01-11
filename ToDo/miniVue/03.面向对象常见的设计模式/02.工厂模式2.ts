@@ -1,8 +1,10 @@
 /*
 提供一个创建一系列相关对象的入口,统一了对象创建职责,创建对象时无需关心具体类
+
+使用工厂类来进行创建
 */
 
-//简单工厂模式
+//工厂模式
 function Foo() {
     this.name="李白"
 }
@@ -10,15 +12,19 @@ function Bar() {
     this.name="杜甫"
 }
 
-function Factory(arg:string){
-    let result;
+function Factory(){
+
+
+}
+Factory.prototype.create=function(arg:string){
+       let result;
     if(arg=='foo'){
         return result=new Foo();
     }else if(arg=='bar'){
         return result=new Bar();
     }
     return result;
-
 }
-let o=new Factory('bar')
+let fa=new Factory()
+let o=fa.create('foo')
 console.log(o.name);
