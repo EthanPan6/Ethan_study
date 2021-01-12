@@ -8,3 +8,4 @@ function Adapter(class1:Function,method:string){
 function Foo(){
     this.show=Adapter(Bar,'show')
 }
+function Bar(){}
