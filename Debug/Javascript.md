@@ -40,6 +40,6 @@ const watchChangeSize = function () {
 起因:进入某个看视频的小网站,进去以后出现一个带遮罩层的弹窗,点击弹窗的'X'失效,然后想通过控制台使得遮罩层`display:none`,打开控制台网站迅速跳转到另一个网站了
 
 想出的解决方案:
-+ 覆盖window里的location和history对象,使得它无法跳转
-+ 创建一个iframe将该网站插入
-+ 将该网站爬取下来,找到遮罩层的class或者id名,然后写一个插件将这个遮罩去掉
++ 覆盖window里的location和history对象,使得它无法跳转(失败)
++ 创建一个iframe将该网站插入(失败)
++ 将该网站爬取下来,找到遮罩层的class或者id名,然后写一个插件将这个遮罩去掉(待完成)
