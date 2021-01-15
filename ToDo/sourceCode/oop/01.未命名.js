@@ -34,8 +34,10 @@ function getType(params) {
 
 console.log(getType('sdjjd'));
 
-let p=new Promise((res,rej)=>{
+let p = new Promise((res, rej) => {
     res(999)
 })
 
-p.then(console.log)
+p.then(console.log).then(console.log)
+
+console.log(console.log(999));
