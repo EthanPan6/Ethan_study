@@ -1,19 +1,19 @@
 //判断value是否为非null的对象
-function isObject(value) {
+function isObject(value):boolean {
     return typeof value === "object" && value !== null;
 }
 
 //判断target对象中是否有key键值
-function hasOwnProperty(target, key) {
+function hasOwnProperty(target:object, key:string):boolean {
     return Object.hasOwnProperty.call(target, key)
 }
 
 //判断新旧值是否相等
-function isEqual(newValue, oldValue) {
+function isEqual(newValue, oldValue):boolean {
     return newValue === oldValue
 }
 //根据format格式化日期
-function formatDate(date, format) {
+function formatDate(date, format:string) {
     if (typeof date === "string") {
         var mts = date.match(/(\/Date\((\d+)\)\/)/);
         // console.log(mts);
@@ -70,7 +70,7 @@ function dateFormat(date, format) {
 // console.log(dateFormat(new Date(), 'yyyy-MM-dd'));
 
 //补零操作
-function zeroize(value) {
+function zeroize(value) :string{
     value = String(value);
     return value.length == 1 ? '0' + value : value;
 }
@@ -91,7 +91,14 @@ function isNumber(val) {
 
     return Number.isFinite(val)
 }
+//生成随机字符串
+function createRamdomString(len: number): string {
+    //
+    return Math.random().toString(36).slice(len)
+}
 
+
+//获取数据类型
 function getType(params) {
     var type = Object.prototype.toString.call(params)
     return type.match(/\[object(.*?\]/)[1]
@@ -116,6 +123,11 @@ var type = function (o) {
         return type(o) === t.toLowerCase();
     };
 });
+
+
+
+
+
 // export {
 //     isObject,
 //     hasOwnProperty,
