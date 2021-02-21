@@ -11,3 +11,9 @@ console.log(romdom16());
 console.log(romdom16());
 console.log(romdom16());
 console.log(romdom16());
+
+
+function rr() {
+    return Math.random().toString().slice(-16)
+}
+console.log(rr());

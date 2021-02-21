@@ -94,7 +94,7 @@ function isNumber(val) {
 //生成随机字符串
 function createRamdomString(len: number): string {
     //
-    return Math.random().toString(36).slice(len)
+    return Math.random().toString(36).slice(-len)
 }
 
 
