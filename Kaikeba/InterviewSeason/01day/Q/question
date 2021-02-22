@@ -4,7 +4,43 @@
  如 [3,1,3,2,5,4,5] 中，第 1 大的数字为 5，第2大的数字为 4，第5大的数字为 1。
 
 
-__proto__ 和 prototype 之前有什么关系？
+__proto__ 和 prototype 之间有什么关系？
 
 
  .call(), .apply() .bind() 的区别和作用？bind 方法如何来实现？
+
+ 1. 
+ /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+function getTheRanking(arr: number[], target: number): number {
+    if (!arr.includes(target)) { throw new Error('接收数组不包含查询排名的数字'); }
+
+    let sortedArr = [...new Set(arr)].sort((a, b) => b - a);
+    let ranking = sortedArr.indexOf(target) + 1;
+    return ranking;
+}
+
+2.
+prototype和__proto__都指向原型对象，任意一个函数（包括构造函数）都有一个prototype属性，指向该函数的原型对象，同样任意一个构造函数实例化的对象，都有一个__proto__属性，指向构造函数的原型对象。
+
+3.
+作用:三者都是用来改变函数的this对象的指向
+区别:
+    参数输入:三者的第一个参数都是接下来调用该函数的对象,call和bind方法的后续参数以逗号分隔输入,apply的后续参数为数组形式;
+    调用方式:call和apply会使函数立即调用,bind返回值为一个函数,所以需要手动调用;
+    兼容:低版本IE不兼容bind
+
+实现bind:
+
+Function.prototype.myBind = function () {
+    if (typeof this !== 'function') {
+        throw new Error('被修改的不是函数类型')
+    }
+    let _this = this;
+    let [o, args] = [...arguments];
+    return function () {
+        _this.apply(o, [args, ...arguments])
+    }
+}
