@@ -1,19 +1,35 @@
 
+//布尔
+let isOk:boolean=false;
+//数字
+let a:number=12;
+//字符串
+let str:string='hello world';
+
+//单类型数组
+let arr1:number[]=[1,2,3,5];
+let arr2:Array<number>=[12,5,9,5]
+
+//多类型数组
+let arr3:Array<number|boolean>=[12,5,9,5,true]
+
+//指定类型数组----元组
+let arr4:[string,number,boolean]=['s',1,true];
+
+
+//枚举类型
+enum pay_staus{
+    未支付=0,支付=1,交易成功=2
+}
+//使用
+let stat:pay_staus=pay_staus.交易成功//2
+
 //any类型
-let x: any = 12;
-x = "helllo Typescript !";
-x = true;
+let unknownlx:any;
+unknownlx=true;
+unknownlx=1;
+unknownlx='true';
+unknownlx=['true'];
 
-let y: any = 4;
-y.ifItExists();    // 正确，ifItExists方法在运行时可能存在，但这里并不会检查
-y.toFixed();    // 正确
 
-let arrayList: any[] = [1, false, 'fine'];
-arrayList[1] = 100;
 
-//null 和 undefine
-// 在tsconfig中启用 --strictNullChecks:true
-let num: number;
-num = 1; // 运行正确
-// num = undefined;    // 运行错误
-// num = null;    // 运行错误
