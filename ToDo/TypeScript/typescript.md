@@ -51,3 +51,4 @@ let arr3:Array<number|boolean>=[12,5,9,5,true]
 
 let arr4:[string,number,boolean]=['s',1,true];
 
+```

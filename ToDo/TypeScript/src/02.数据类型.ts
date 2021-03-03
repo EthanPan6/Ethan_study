@@ -31,5 +31,21 @@ unknownlx=1;
 unknownlx='true';
 unknownlx=['true'];
 
+// undefined类型,只能赋值为undefined
+let ss:undefined=undefined;
+let maybeanumber:number|undefined=1
 
+//null类型,只能被赋值为null
+let empty:null=null;
 
+//void类,无类型
+function func():void{}
+let fn=():void=>{}
+
+//never类型:是其他类型(包括null,undefined)的子类型,代表不会出现的值,所以只能赋值never且无法被直接赋值
+
+let dnever:never;
+
+dnever=(()=>{
+    throw new Error('异常')
+})()
