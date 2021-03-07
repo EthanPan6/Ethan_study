@@ -1,0 +1,63 @@
+<script>
+    Array.prototype.amap = function (callback /*, thisArg*/ ) {
+
+        var T, A, k;
+
+        if (this == null) {
+            throw new TypeError('this is null or not defined');
+        }
+        var O = Object(this);
+        var len = O.length >>> 0; //将其他进制的数转化为10进制
+
+        if (typeof callback !== 'function') {
+            throw new TypeError(callback + ' is not a function');
+        }
+
+        if (arguments.length > 1) {
+            T = arguments[1];
+        }
+
+        A = new Array(len);
+
+
+        k = 0;
+
+
+        while (k < len) {
+
+            var kValue, mappedValue;
+
+            if (k in O) {
+
+                kValue = O[k];
+
+                mappedValue = callback.call(T, kValue, k, O);
+
+                A[k] = mappedValue;
+            }
+
+            k++;
+        }
+
+
+        return A;
+    };
+
+    [1].amap(console.log)
+
+
+
+    Array.prototype.myMap = function (fn, context) {
+        var arr = []
+        if (typeof fn !== 'function') {
+            throw new Error('参数错误')
+        }
+
+        var len = this.length
+        for (var k = 0; k < len; k++) {
+            arr.push(fn.call(context, this[k], k, this))
+        }
+
+        return arr;
+    }
+</script>

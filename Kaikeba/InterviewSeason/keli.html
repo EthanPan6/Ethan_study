@@ -14,10 +14,13 @@
             console.log(`----最外层---`);
             console.log(arguments);
             if (curry.length === 0) return 'ss'
+
             return function curriedFn(...args) {
+
                 console.log(`----中间层---`);
                 console.log(arguments);
                 console.log(args);
+                
                 if (args.length < fn.length) {
                     return function () {
                         console.log(`----最内层---`);
